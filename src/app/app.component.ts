@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { PictureKingdomService } from './picture-kingdom.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Picture_Kingdom';
+  menuItems: any[];
+
+  constructor(private menuService: PictureKingdomService) {
+    this.menuItems = menuService.menuItems;
+  }
 }
