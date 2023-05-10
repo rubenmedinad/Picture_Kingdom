@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CarteleraComponent } from './cartelera/cartelera.component';
+import { AsientosComponent } from './asientos/asientos.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CarteleraComponent
+    CarteleraComponent,
+    AsientosComponent
   ],
   imports: [
     BrowserModule,
