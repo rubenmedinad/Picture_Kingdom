@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class PictureKingdomService {
   menuItems = [
-    { name: 'Home', route: '/' },
-    { name: 'About', route: '/about' },
+    { name: 'Inicio', route: '/' },
+    { name: 'Cartelera', route: '/cartelera' },
     { name: 'Contact', route: '/contact' }
   ];
     constructor() { }

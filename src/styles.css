@@ -1,4 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { width: 100%; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { width:100%}
+body { font-family: Roboto, "Helvetica Neue", sans-serif;background-image: linear-gradient(45deg, #437ba8, #002633); /* Gradiente de azul oscuro a azul marino */ }
