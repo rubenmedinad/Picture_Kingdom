@@ -1,0 +1,23 @@
+/* Estilos CSS personalizados */
+.sinopsis-image {
+    width: 200px; /* Ajusta el tamaño deseado para la imagen */
+    float: left;
+    margin-right: 20px; /* Espacio entre la imagen y el contenido de la sinopsis */
+    margin-left: 40px;
+  }
+  
+  .sinopsis-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .sinopsis-info {
+    overflow: hidden; /* Evita que el contenido flote alrededor de la imagen */
+  }
+  
+  .sinopsis-title {
+    text-align: center; /* Centrar el título */
+    color: white; /* Color de texto blanco */
+    font-family: "Millennia", sans-serif; /* Estilo de letra Millennia */
+  }
+  
