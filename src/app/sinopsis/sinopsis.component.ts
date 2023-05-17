@@ -20,7 +20,7 @@ export class SinopsisComponent {
     this.activarrutas.params.subscribe(data => {
       this.ide = data['id'];
     })
-    this.pelicula=this.peliculas[this.ide]
+    this.pelicula=this.peliculas[this.ide-1]
   }
 
 }
