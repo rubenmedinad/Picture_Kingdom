@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { pelicula } from './_Modules/pelicula';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,6 +21,17 @@ export class PictureKingdomService {
   ];
   getOfertas(): any[] {
     return this.ofertas;
+  }
+  peliculas: pelicula[] = [
+    new pelicula( 1,"Super Mario Bros: La película", 'Adaptación de la franquicia de videojuegos Super Mario Bros.', 'Fernando, Manuel','Ruben, Ismael', 100,  'COMEDIA, AVENTURA, ANIMACIÓN', 2023 ,'../assets/mariosinopsis.jpg'),
+    new pelicula( 2,"Película 2", 'Sinopsis de la Película 1.', 'director 1','reparto 1', 100,  'genero 1',  1990,'../assets/mariosinopsis.jpg'),
+    new pelicula( 3,"Película 3", 'Sinopsis de la Película 1.', 'director 1','reparto 1', 100,  'genero 1',  1990,'../assets/mariosinopsis.jpg'),
+    new pelicula( 4,"Película 4", 'Sinopsis de la Película 1.', 'director 1','reparto 1', 100,  'genero 1',  1990,'../assets/mariosinopsis.jpg'),
+    new pelicula( 5,"Película 5", 'Sinopsis de la Película 1.', 'director 1','reparto 1', 100,  'genero 1',  1990,'../assets/mariosinopsis.jpg'),
+    new pelicula( 6,"Película 6", 'Sinopsis de la Película 1.', 'director 1','reparto 1', 100,  'genero 1',  1990,'../assets/mariosinopsis.jpg'),
+  ];
+  getPeliculas():pelicula[] {
+    return this.peliculas
   }
 
     constructor() { }
