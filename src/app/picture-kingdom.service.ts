@@ -7,7 +7,7 @@ export class PictureKingdomService {
   menuItems = [
     { name: 'Inicio', route: '/' },
     { name: 'Cartelera', route: '/cartelera' },
-    { name: 'Contact', route: '/contact' }
+    { name: 'asientos', route: '/asientos' }
   ];
   pelis = [
     { titulo  : 'Inicio', route: '/' },
