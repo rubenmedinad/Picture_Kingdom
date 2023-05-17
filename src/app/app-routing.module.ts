@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cartelera', component: CarteleraComponent },
   { path: 'ofertas', component: OfertasEspecialesComponent },
-  { path: 'sinopsis', component: SinopsisComponent },
+  { path: 'sinopsis/:id', component: SinopsisComponent },
   { path: 'asientos', component: AsientosComponent }
 
 ]
