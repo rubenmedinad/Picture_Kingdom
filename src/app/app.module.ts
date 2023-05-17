@@ -11,7 +11,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { CarteleraComponent } from './cartelera/cartelera.component';
 import { OfertasEspecialesComponent } from './ofertas-especiales/ofertas-especiales.component';
 import { OfertasEspecialesCartelComponent } from './ofertas-especiales-cartel/ofertas-especiales-cartel.component';
-
+import { AsientosComponent } from './asientos/asientos.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { OfertasEspecialesCartelComponent } from './ofertas-especiales-cartel/of
     HomeComponent,
     CarteleraComponent,
     OfertasEspecialesComponent,
-    OfertasEspecialesCartelComponent
+    OfertasEspecialesCartelComponent,
+    AsientosComponent
   ],
   imports: [
     BrowserModule,
