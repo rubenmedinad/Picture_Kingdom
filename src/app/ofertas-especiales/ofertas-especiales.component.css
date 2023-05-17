@@ -1,70 +1,40 @@
-.card-row {
+.card-deck {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .card {
-  background-color: #f7f7f7;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  margin: 2%;
+  flex: 0 0 calc(33.33% - 20px);
+  margin: 0 10px 20px;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+  position: relative;
 }
 
-.card-left {
-  flex-basis: 30%;
-  height: 550px;
+.card:hover {
+  transform: scale(0.9) translateY(-10px);
 }
 
-.card-center {
-  flex-basis: 30%;
-  height: 550px;
-}
-
-.card-right {
-  flex-basis: 30%;
-  height: 550px;
-}
-
-.card img {
+.card-img-top {
   max-width: 100%;
+  width: 100%;
   height: auto;
-  margin-bottom: 10px;
 }
 
-.card h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card p {
-  font-size: 16px;
-  margin-bottom: 20px;
+.card-footer .btn {
+  text-align: center;
 }
-
-.card button {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-
-
-
-
-
-
-
-
 
 h1 {
   font-family: serif;
-  color:white;
+  color: white;
   font-size: 1.8em;
   text-align: center;
   text-transform: uppercase;
@@ -93,4 +63,12 @@ h1::before {
   background-color: white;
   transform: translate(-50%, 50%);
   box-shadow: 0 0 20px white;
+}
+
+@media (max-width: 768px) {
+  .card-img-top {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
 }
