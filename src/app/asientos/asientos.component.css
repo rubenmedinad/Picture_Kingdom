@@ -1,0 +1,97 @@
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 600px;
+}
+
+td.seat {
+  width: 30px;
+  height: 30px;
+  
+  text-align: center;
+  cursor: pointer;
+}
+
+
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.legend .seat {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+}
+
+.available {
+ 
+  border: 2px solid #333;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+th:first-child,
+td:first-child {
+  border-left: none;
+}
+
+th:last-child,
+td:last-child {
+  border-right: none;
+}
+
+table {
+  margin: 20px auto;
+}
+
+.seat {
+  display: inline-block;
+  border: none;
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+}
+
+.seat.occupied {
+  cursor: not-allowed;
+}
+
+
+.seat:hover {
+  opacity: 0.6;
+}
+
+.legend {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.legend span {
+  font-size: 16px;
+}
+
+  

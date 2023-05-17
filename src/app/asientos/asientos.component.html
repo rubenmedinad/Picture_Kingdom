@@ -1,0 +1,27 @@
+<h2>Selecciona tus asientos</h2>
+
+<div class="legend">
+  <div class="seat available"></div>
+  <span>Disponible</span>
+  <div class="seat occupied"></div>
+  <span>Ocupado</span>
+  <div class="seat selected"></div>
+  <span>Seleccionado</span>
+</div>
+
+<table>
+  <tbody>
+    <tr *ngFor="let row of seats">
+      <td>{{ row.name }}</td>
+      <td *ngFor="let seat of row.seats"
+        [ngClass]="{ 'seat': true, 'occupied': seat.occupied, 'selected': seat.selected }"
+        (click)="toggleSeatSelection(seat)">
+        <img *ngIf="!seat.selected && !seat.occupied" src="../../assets/sillon.png" width=150% height=150% alt="Asiento disponible">
+        <img *ngIf="seat.occupied && !seat.selected" src="../../assets/sillon_rojo.png" width=150% height=150% alt="Asiento ocupado">
+        <img *ngIf="seat.selected" src="../../assets/sillon_verde.png" width=150% height=150% alt="Asiento selected">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="reserveSeat()">Reservar</button>
