@@ -13,6 +13,7 @@ import { OfertasEspecialesComponent } from './ofertas-especiales/ofertas-especia
 import { Promocion1Component } from './promocion1/promocion1.component';
 import { Promocion2Component } from './promocion2/promocion2.component';
 import { Promocion3Component } from './promocion3/promocion3.component';
+import { SinopsisComponent } from './sinopsis/sinopsis.component';
 import { AsientosComponent } from './asientos/asientos.component';
 
 
@@ -21,6 +22,7 @@ import { AsientosComponent } from './asientos/asientos.component';
     AppComponent,
     HomeComponent,
     CarteleraComponent,
+    SinopsisComponent,
     OfertasEspecialesComponent,
     Promocion1Component,
     Promocion2Component,
