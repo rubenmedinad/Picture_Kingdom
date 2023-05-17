@@ -9,13 +9,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CarteleraComponent } from './cartelera/cartelera.component';
+import { OfertasEspecialesComponent } from './ofertas-especiales/ofertas-especiales.component';
+import { OfertasEspecialesCartelComponent } from './ofertas-especiales-cartel/ofertas-especiales-cartel.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CarteleraComponent
+    CarteleraComponent,
+    OfertasEspecialesComponent,
+    OfertasEspecialesCartelComponent
   ],
   imports: [
     BrowserModule,
