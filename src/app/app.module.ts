@@ -10,8 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { CarteleraComponent } from './cartelera/cartelera.component';
 import { OfertasEspecialesComponent } from './ofertas-especiales/ofertas-especiales.component';
-import { OfertasEspecialesCartelComponent } from './ofertas-especiales-cartel/ofertas-especiales-cartel.component';
 import { SinopsisComponent } from './sinopsis/sinopsis.component';
+
 
 
 @NgModule({
@@ -19,9 +19,9 @@ import { SinopsisComponent } from './sinopsis/sinopsis.component';
     AppComponent,
     HomeComponent,
     CarteleraComponent,
-    OfertasEspecialesComponent,
-    OfertasEspecialesCartelComponent,
-    SinopsisComponent
+    SinopsisComponent,
+    OfertasEspecialesComponent
+
   ],
   imports: [
     BrowserModule,
