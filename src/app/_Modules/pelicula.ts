@@ -8,7 +8,6 @@ export class pelicula{
     genero:string
     anio:number
     imagen:string
-    
     constructor(id:number, titulo:string, sinopsis:string, director:string, reparto:string, duracion:number, genero:string, anio:number, imagen:string){
     this.id=id;
     this.titulo=titulo;
@@ -19,6 +18,6 @@ export class pelicula{
     this.genero=genero;
     this.anio=anio;
     this.imagen=imagen;
-    
+
     }
     }

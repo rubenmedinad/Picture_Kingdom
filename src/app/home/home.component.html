@@ -31,17 +31,12 @@
   <br>
   <div class="content-all">
     <div class="content-carrousel">
-        <figure><img src=""></figure>
-        <figure><img src="../../assets/mariocarrusel.jpg" width="100%" height="100%"></figure>
-        <figure><img src="../../assets/vayavacacionescarrusel.jpg" width="100%" height="100%"></figure>
-        <figure><img src="../../assets/loveagaincarrusel.jpg" width="100%" height="100%"></figure>
-        <figure><img src="../../assets/65carrusel.jpg" width="100%" height="100%"></figure>
-        <figure><img src="../../assets/asediocarrusel.jpg" width="100%" height="100%"></figure>
-        <figure><img src="../../assets/guardianes carrusel.jpg" width="100%" height="100%"></figure>
-        <figure><img src="../../assets/spiderman.jpg" width="100%" height="100%"></figure>
-        <figure><img src="../../assets/sirenitacarrusel.jpg" width="100%" height="100%"></figure>
-        <figure><img src="../../assets/f&fcarrusel.jpg" width="100%" height="100%"></figure>
+      <figure><img src=""></figure>
+      <ng-container *ngFor="let pelicula of peliculas">
 
+          <figure><img src="{{pelicula.imagen}}" width="100%" height="100%" [routerLink]="['/sinopsis', pelicula.id]"></figure>
+
+      </ng-container>
 
     </div>
 </div>
