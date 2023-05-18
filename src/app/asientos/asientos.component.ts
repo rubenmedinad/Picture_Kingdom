@@ -10,6 +10,7 @@ interface Seat {
 interface Row {
   name: string;
   seats: Seat[];
+  
 }
 
 @Component({
@@ -20,6 +21,7 @@ interface Row {
 export class AsientosComponent {
   seats: Row[] = [];
   selectedSeats: { row: string, seat: number }[] = [];
+  pasoActual = 'Asientos';
   
   constructor() {
     for (let i = 1; i <= 10; i++) {
