@@ -1,62 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página con imagen y tabla</title>
+  <link rel="sinopsis" href="styles.css">
 </head>
 <body>
-  <main>
-    <div class="sinopsis-container">
-        <table class=>
-    <div class=>
-      <div class="titulo-header">
-        <h1 class="titulo-titulo">{{this.pelicula.titulo}}</h1>
-      </div>
-      <div class="director-header">
-        <td> <label class="directores-titulo">DIRECTORES: </label></td>
-        <h1 class="director-director">{{this.pelicula.director}}</h1>
-      </div>
-      <div class="reparto-header">
-        <td class="actores-titulo">ACTORES:</td>
-        <h1 class="reparto-reparto">{{this.pelicula.reparto}}</h1>
-      </div>
-      <div class="sinopsis-header">
-        <td class="sinopsis-titulo">Sinopsis</td>
-        <h1 class="sinopsis-sinopsis">{{this.pelicula.sinopsis}}</h1>
-      </div>
-    </div>
-      
+  <h1>{{this.pelicula.titulo}}</h1>
+  <div class="container">
+    <img src="../../assets/mariocarrusel.jpg" alt="Imagen">
+    <div class="table-container">
+      <table class="left-table">
         <tr>
-          <td>DURACIÓN: </td>
-        </tr>
-        <tr>
+          <td>DURACION:</td>
           <td>{{this.pelicula.duracion}}</td>
         </tr>
         <tr>
-          <td>GÉNERO: </td>
-        </tr>
-        <tr>
+          <td>GENERO:</td>
           <td>{{this.pelicula.genero}}</td>
         </tr>
         <tr>
           <td>FECHA DE ESTRENO:</td>
-        </tr>
-        <tr>
           <td>{{this.pelicula.anio}}</td>
         </tr>
       </table>
-      <div class="sinopsis-body">
-        <div class="sinopsis-image">
-          <img src={{this.pelicula.imagen}}>
-        </div>
-      </div>
+      <table class="right-table">
+        <tr>
+          <td>DIRECTORES:</td>
+          <td>{{this.pelicula.director}}</td>
+        </tr>
+        <tr>
+          <td>REPARTO:</td>
+          <td>{{this.pelicula.reparto}}</td>
+        </tr>
+        <tr>
+          <td>SINOPSIS:</td>
+          <td>{{this.pelicula.sinopsis}}</td>
+        </tr>
+      </table>
     </div>
-  </main>
-
-  <footer>
-    <!-- Pie de página -->
-    <!-- ... -->
-  </footer>
+  </div>
 </body>
 </html>
-

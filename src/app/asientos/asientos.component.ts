@@ -20,8 +20,8 @@ export class AsientosComponent {
   seats: Row[] = [];
 
   constructor() {
-    for (let i = 1; i <= 12; i++) {
-      let row: Row = { name: String.fromCharCode(64 + i), seats: [] };
+    for (let i = 1; i <= 10; i++) {
+      let row: Row = { name: String.fromCharCode(75 - i), seats: [] };
       for (let j = 1; j <= 14; j++) {
         let seat: Seat = { name: j, occupied: false, selected: false };
         row.seats.push(seat);

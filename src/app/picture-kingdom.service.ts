@@ -11,6 +11,7 @@ export class PictureKingdomService {
     { name: 'sinopsi', route: '/sinopsis' },
     { name: 'resumen', route: '/resumen' },
 
+    { name: 'sinopsis', route: '/sinopsis' },
 
   ];
   pelis = [
