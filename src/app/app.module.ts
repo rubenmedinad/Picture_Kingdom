@@ -15,6 +15,7 @@ import { Promocion2Component } from './promocion2/promocion2.component';
 import { Promocion3Component } from './promocion3/promocion3.component';
 import { SinopsisComponent } from './sinopsis/sinopsis.component';
 import { AsientosComponent } from './asientos/asientos.component';
+import { ResumenArticulosCompradosComponent } from './resumen-articulos-comprados/resumen-articulos-comprados.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AsientosComponent } from './asientos/asientos.component';
     Promocion1Component,
     Promocion2Component,
     Promocion3Component,
-    AsientosComponent
+    AsientosComponent,
+    ResumenArticulosCompradosComponent
 
   ],
   imports: [

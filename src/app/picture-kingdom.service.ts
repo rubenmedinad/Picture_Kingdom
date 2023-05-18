@@ -9,6 +9,9 @@ export class PictureKingdomService {
     { name: 'Cartelera', route: '/cartelera' },
     { name: 'asientos', route: '/asientos' },
     { name: 'sinopsi', route: '/sinopsis' },
+    { name: 'resumen', route: '/resumen' },
+
+    { name: 'sinopsis', route: '/sinopsis' },
 
   ];
   pelis = [

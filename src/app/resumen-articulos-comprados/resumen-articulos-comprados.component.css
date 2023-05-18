@@ -1,0 +1,26 @@
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-row label {
+  margin-right: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+#increase-quantity-icon,
+#decrease-quantity-icon {
+  padding: 5px 10px;
+  font-size: 16px;
+}
