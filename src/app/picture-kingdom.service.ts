@@ -8,7 +8,7 @@ export class PictureKingdomService {
     { name: 'Inicio', route: '/' },
     { name: 'Cartelera', route: '/cartelera' },
     { name: 'asientos', route: '/asientos' },
-    { name: 'sinopsi', route: '/sinopsis' },
+    { name: 'sinopsis', route: '/sinopsis' },
   
   ];
   pelis = [
