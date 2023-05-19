@@ -17,7 +17,7 @@ import { Promocion3Component } from './promocion3/promocion3.component';
 import { SinopsisComponent } from './sinopsis/sinopsis.component';
 import { AsientosComponent } from './asientos/asientos.component';
 import { MetodospagoComponent } from './metodospago/metodospago.component';
-
+import { MenuComprasComponent } from './menu-compras/menu-compras.component';
 
 
 @NgModule({
@@ -31,6 +31,7 @@ import { MetodospagoComponent } from './metodospago/metodospago.component';
     Promocion2Component,
     Promocion3Component,
     AsientosComponent,
+    MenuComprasComponent,
     MetodospagoComponent
 
   ],
