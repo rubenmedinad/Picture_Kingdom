@@ -1,0 +1,20 @@
+.progreso-compra {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .progreso-compra ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .progreso-compra li {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .progreso-compra li.activo {
+    color: blue;
+  }
+  

@@ -1,39 +1,50 @@
+<app-menu-compras></app-menu-compras>
+<h1 class="text-center mt-4">Elige Tu Asiento</h1>
+
 <div class="container">
-  <h2>Selecciona tus asientos</h2>
-
-  <div class="legend">
-    <div class="seat available"></div>
-    <span class="legend-text m-3">Disponible</span>
-    <img src="../../assets/sillon.png" width="20" height="20">
-    <div class="seat occupied"></div>
-    <span class="legend-text m-3">Ocupado</span>
-    <img src="../../assets/sillon_rojo.png" width="20" height="20">
-    <div class="seat selected"></div>
-    <span class="legend-text m-3">Seleccionado</span>
-    <img src="../../assets/sillon_verde.png" width="20" height="20">
+  <div class="index-column">
+    <div class="legend">
+      <div class="seat available"></div>
+      <span class="legend-text m-3">Disponible</span>
+      <img src="../../assets/sillon.png" width="20" height="20">
+      <div class="seat occupied"></div>
+      <span class="legend-text m-3">Ocupado</span>
+      <img src="../../assets/sillon_rojo.png" width="20" height="20">
+      <div class="seat selected"></div>
+      <span class="legend-text m-3">Seleccionado</span>
+      <img src="../../assets/sillon_verde.png" width="20" height="20">
+    </div>
   </div>
 
-  <table class="table-no-border">
-    <tbody>
-      <tr *ngFor="let row of seats; let i = index">
-        <td>{{ row.name }}</td>
-        <ng-container *ngFor="let seat of row.seats; let j = index">
-          <td [ngClass]="{ 'seat': true, 'occupied': seat.occupied, 'selected': seat.selected }"
-              (click)="toggleSeatSelection(seat)">
-            <img *ngIf="!seat.selected && !seat.occupied" src="../../assets/sillon.png" width="20" height="20" alt="Asiento disponible">
-            <img *ngIf="seat.occupied && !seat.selected" src="../../assets/sillon_rojo.png" width="20" height="20" alt="Asiento ocupado">
-            <img *ngIf="seat.selected" src="../../assets/sillon_verde.png" width="20" height="20" alt="Asiento seleccionado">
-          </td>
-          <td *ngIf="j === 2 || j === 10" class="spacer"></td>
-        </ng-container>
-      </tr>
-    </tbody>
-  </table>
-
-  <p>________________________________________________________________________________________</p>
-  
-  
-
-  <div class="text-center mt-4">
-    <button (click)="reserveSeat()" style="margin-bottom: 20px;">Reservar</button>
+  <div class="seating-plan">
+    <table class="table-no-border">
+      <tbody>
+        <tr  *ngFor="let row of seats; let i = index">
+          <td >{{ row.name }}</td>
+          <ng-container *ngFor="let seat of row.seats; let j = index">
+            <td [ngClass]="{ 'seat': true, 'occupied': seat.occupied, 'selected': seat.selected }"
+                (click)="toggleSeatSelection(seat)">
+              <img *ngIf="!seat.selected && !seat.occupied" src="../../assets/sillon.png" width="20" height="20" alt="Asiento disponible">
+              <img *ngIf="seat.occupied && !seat.selected" src="../../assets/sillon_rojo.png" width="20" height="20" alt="Asiento ocupado">
+              <img *ngIf="seat.selected" src="../../assets/sillon_verde.png" width="20" height="20" alt="Asiento seleccionado">
+            </td>
+            <td *ngIf="j === 2 || j === 10" class="spacer"></td>
+          </ng-container>
+        </tr>
+      </tbody>
+    </table>
   </div>
+
+  <div class="selected-seats">
+    <p>Asientos seleccionados:</p>
+    <ul>
+      <li *ngFor="let selectedSeat of selectedSeats">Fila: {{ selectedSeat.row }}, Asiento: {{ selectedSeat.seat }}</li>
+    </ul>
+  </div>
+
+  
+</div>
+<p class="text-center mt-4">___________________________________________________________________________</p>
+<div class="text-center mt-4">
+  <button (click)="reserveSeat()" style="margin-bottom: 20px;">Reservar</button>
+</div>

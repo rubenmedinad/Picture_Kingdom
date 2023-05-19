@@ -1,0 +1,8 @@
+<div class="progreso-compra">
+    <ul>
+      <li *ngFor="let paso of pasos" [ngClass]="{'activo': paso === pasoActual}">
+        {{ paso }}
+      </li>
+    </ul>
+  </div>
+  

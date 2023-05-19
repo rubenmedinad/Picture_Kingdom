@@ -19,6 +19,7 @@ import { AsientosComponent } from './asientos/asientos.component';
 import { MetodospagoComponent } from './metodospago/metodospago.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
