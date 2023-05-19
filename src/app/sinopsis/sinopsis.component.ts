@@ -14,7 +14,7 @@ export class SinopsisComponent {
     private rutes: Router){
     this.peliculas = peliculasS.getPeliculas()
   }
-  pelicula :pelicula= new pelicula(0,"","","","",0,"",0,"")
+  pelicula :pelicula= new pelicula(0,"","","","","","","","")
 
   ngOnInit(){
     this.activarrutas.params.subscribe(data => {

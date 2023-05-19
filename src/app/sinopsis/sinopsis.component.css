@@ -1,23 +1,37 @@
 h1 {
-    text-align: center;
-  }
-  .container img {
-    display: grid;
-    place-items: center;
-    width: 300px; /* Ajusta el tamaño de la imagen según tus preferencias */
-    height: auto; /* Mantiene la proporción de aspecto de la imagen */
-  }
+  text-align: center;
+}
+li {
+  list-style: none;
+}
+.container img {
+  margin-right: -500%;
+  margin: 0 auto;
+  width: 17%;
+  height: auto;
+}
   
 .table-container {
-    display: flex;
+    display:flex;
   }
   
   .left-table {
-    width: 20%;
+    width: 18%;
   }
   
   .right-table {
     margin-left: 100px;
-    width: 50%;
+    width: 60%;
+    margin-top: -300px;
+    margin-bottom:  20px;
   }
+  .left-table mark {
+    background-color: rgb(249, 212, 64); /* Establece el color de fondo deseado para resaltar el texto */
+    padding: 2px; /* Ajusta el relleno interno según tus preferencias */
+  }
+  
+  
+  
+  
+  
   

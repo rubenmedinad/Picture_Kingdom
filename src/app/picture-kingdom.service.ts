@@ -8,11 +8,7 @@ export class PictureKingdomService {
     { name: 'Inicio', route: '/' },
     { name: 'Cartelera', route: '/cartelera' },
     { name: 'asientos', route: '/asientos' },
-    { name: 'sinopsi', route: '/sinopsis' },
     { name: 'resumen', route: '/resumen' },
-
-    { name: 'sinopsis', route: '/sinopsis' },
-
   ];
   pelis = [
     { titulo  : 'Inicio', route: '/' },
@@ -28,15 +24,15 @@ export class PictureKingdomService {
     return this.ofertas;
   }
   peliculas: pelicula[] = [
-    new pelicula(1, "Super Mario Bros: La película", 'Adaptación de la franquicia de videojuegos Super Mario Bros.', 'Fernando, Manuel', 'Ruben, Ismael', 100, 'COMEDIA, AVENTURA, ANIMACIÓN', 2023, '../assets/mariosinopsis.jpg'),
-    new pelicula(2, "Fast and Furious X", 'Sinopsis de Fast and Furious X', 'Director Fast', 'Reparto Fast', 120, 'ACCIÓN', 2022, '../assets/f&fcarrusel.jpg'),
-    new pelicula(3, "La sirenita", 'Sinopsis de La sirenita', 'Director de La sirenita', 'Reparto de La sirenita', 110, 'ANIMACIÓN, FANTASÍA', 2023, '../assets/sirenitacarrusel.jpg'),
-    new pelicula(4, "Spiderman: Cruzando el Universo", 'Sinopsis de Spiderman: Cruzando el Universo', 'Director de Spiderman', 'Reparto de Spiderman', 115, 'ACCIÓN, AVENTURA, ANIMACIÓN', 2022, '../assets/spiderman.jpg'),
-    new pelicula(5, "Guardianes de la Galaxia 3", 'Sinopsis de Guardianes de la Galaxia 3', 'Director de Guardianes de la Galaxia', 'Reparto de Guardianes de la Galaxia', 130, 'ACCIÓN, CIENCIA FICCIÓN', 2023, '../assets/guardianes carrusel.jpg'),
-    new pelicula(6, "Asedio", 'Sinopsis de Asedio', 'Director de Asedio', 'Reparto de Asedio', 105, 'ACCIÓN, SUSPENSE', 2022, '../assets/asediocarrusel.jpg'),
-    new pelicula(7, "65", 'Sinopsis de 65', 'Director de 65', 'Reparto de 65', 95, 'DRAMA', 2023, '../assets/65carrusel.jpg'),
-    new pelicula(8, "Love Again", 'Sinopsis de Love Again', 'Director de Love Again', 'Reparto de Love Again', 120, 'ROMANCE, COMEDIA', 2022, '../assets/loveagaincarrusel.jpg'),
-    new pelicula(9, "Vaya Vacaciones", 'Sinopsis de Vaya Vacaciones', 'Director de Vaya Vacaciones', 'Reparto de Vaya Vacaciones', 100, 'COMEDIA', 2023, '../assets/vayavacacionescarrusel.jpg')
+    new pelicula(1, "Super Mario Bros: La película", 'Adaptación de la serie de videojuegos de Nintendo. La película cuenta la historia de Mario y Luigi, dos hermanos que viajan a un mundo oculto para rescatar a la Princesa Peach, capturada por el malvado Rey Bowser. Las cosas, sin embargo no serán sencillas. Mario y Luigi tendrán que enfrentarse a un ejército de setas animadas antes de luchar contra su oponente. Rutas de ladrillos y castillos con múltiples peligros serán algunos de los obstáculos que los hermanos tendrán que superar para conseguir su objetivo.', ' Aaron Horvath, Michael Jelenic ', 'Chris Pratt como Mario, Anya Taylor-Joy como la Princesa Peach, Charlie Day como Luigi, Jack Black como Bowser, Keegan-Michael Key como Toad, Seth Rogen como Donkey Kong, Fred Armisen como Cranky Kong, Sebastian Maniscalco como el Capataz Spike, Kevin Michael Richardson como Kamek, Khary Payton como el Rey Pingüino, Eric Bauza como los Koopas Soldados, Rino Romano como el Tío Tony, John DiMaggio como el Tío Arthur, Jessica DiCicco como un Toad Amarillo, Juliet Jelenic como Destello,', '1h 32min', 'COMEDIA, AVENTURA, ANIMACIÓN', '5 Abril 2023', '../assets/mariosinopsis.jpg'),
+    new pelicula(2, "Fast and Furious X", 'Sinopsis de Fast and Furious X', 'Director Fast', 'Reparto Fast', '2H', 'ACCIÓN', '2022', '../assets/f&fcarrusel.jpg'),
+    new pelicula(3, "La sirenita", 'Sinopsis de La sirenita', 'Director de La sirenita', 'Reparto de La sirenita', '1H 50min', 'ANIMACIÓN, FANTASÍA', '2023', '../assets/sirenitacarrusel.jpg'),
+    new pelicula(4, "Spiderman: Cruzando el Universo", 'Sinopsis de Spiderman: Cruzando el Universo', 'Director de Spiderman', 'Reparto de Spiderman', '1H 55min', 'ACCIÓN, AVENTURA, ANIMACIÓN', '2022', '../assets/spiderman.jpg'),
+    new pelicula(5, "Guardianes de la Galaxia 3", 'Sinopsis de Guardianes de la Galaxia 3', 'Director de Guardianes de la Galaxia', 'Reparto de Guardianes de la Galaxia', '130', 'ACCIÓN, CIENCIA FICCIÓN', '2023', '../assets/guardianes carrusel.jpg'),
+    new pelicula(6, "Asedio", 'Sinopsis de Asedio', 'Director de Asedio', 'Reparto de Asedio', '105', 'ACCIÓN, SUSPENSE', '2022', '../assets/asediocarrusel.jpg'),
+    new pelicula(7, "65", 'Sinopsis de 65', 'Director de 65', 'Reparto de 65', '95', 'DRAMA', '2023', '../assets/65carrusel.jpg'),
+    new pelicula(8, "Love Again", 'Sinopsis de Love Again', 'Director de Love Again', 'Reparto de Love Again', '120', 'ROMANCE, COMEDIA', '2022', '../assets/loveagaincarrusel.jpg'),
+    new pelicula(9, "Vaya Vacaciones", 'Sinopsis de Vaya Vacaciones', 'Director de Vaya Vacaciones', 'Reparto de Vaya Vacaciones', '100', 'COMEDIA', '2023', '../assets/vayavacacionescarrusel.jpg')
   ];
   getPeliculas():pelicula[] {
     return this.peliculas

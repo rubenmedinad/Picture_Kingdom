@@ -13,7 +13,7 @@ export class CarteleraComponent {
   constructor(private peliculasS:PictureKingdomService){
     this.peliculas = peliculasS.getPeliculas()
   }
-  pelicula :pelicula= new pelicula(0,"","","","",0,"",0,"")
+  pelicula :pelicula= new pelicula(0,"","","","","","","","")
 
   ngOnInit(){
     this.pelicula=this.peliculas[this.ide]

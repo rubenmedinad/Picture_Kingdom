@@ -1,44 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Página con imagen y tabla</title>
-  <link rel="sinopsis" href="styles.css">
-</head>
-<body>
-  <h1>{{this.pelicula.titulo}}</h1>
-  <div class="container">
-    <img src="../../assets/mariocarrusel.jpg" alt="Imagen">
-    <div class="table-container">
-      <table class="left-table">
-        <tr>
-          <td>DURACION:</td>
-          <td>{{this.pelicula.duracion}}</td>
-        </tr>
-        <tr>
-          <td>GENERO:</td>
-          <td>{{this.pelicula.genero}}</td>
-        </tr>
-        <tr>
-          <td>FECHA DE ESTRENO:</td>
-          <td>{{this.pelicula.anio}}</td>
-        </tr>
-      </table>
-      <table class="right-table">
-        <tr>
-          <td>DIRECTORES:</td>
-          <td>{{this.pelicula.director}}</td>
-        </tr>
-        <tr>
-          <td>REPARTO:</td>
-          <td>{{this.pelicula.reparto}}</td>
-        </tr>
-        <tr>
-          <td>SINOPSIS:</td>
-          <td>{{this.pelicula.sinopsis}}</td>
-        </tr>
-      </table>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Página con imagen y tabla</title>
+    <link rel="sinopsis" href="styles.css">
+  </head>
+  <body>
+    <h1><br>{{this.pelicula.titulo}}</h1>
+    <div class="container"><br>
+      <img src={{this.pelicula.imagen}} alt="Imagen">
+      <div class="table-container">
+        <table class="left-table">
+          <tr>
+            <td>DURACION: <br><mark>{{this.pelicula.duracion}}</mark></td>
+          </tr>
+          <tr>
+            <td>GENERO: <br><mark>{{this.pelicula.genero}}</mark></td>
+          </tr>
+          <tr>
+            <td>FECHA DE ESTRENO: <br><mark>{{this.pelicula.anio}}</mark></td>
+          </tr>
+        </table>
+        <table class="right-table">
+          <tr>
+            <li>DIRECTORES:<br><span class="directores">{{this.pelicula.director}}</span></li>
+          </tr>
+          <tr>
+            <li> REPARTO:<br><span class="reparto">{{this.pelicula.reparto}}</span></li>
+          </tr>
+          <tr>
+            <li>SINOPSIS:<br><span class="sinopsis">{{this.pelicula.sinopsis}}</span></li>
+          </tr>
+        </table>
+      </div>
     </div>
-  </div>
-</body>
-</html>
+  </body>
+  </html>
