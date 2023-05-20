@@ -33,6 +33,12 @@
           </tr>
         </table>
       </div>
+      <div class="day-menu">
+        <button *ngFor="let dia of DiasPeliculas" (click)="cambiarDiaSeleccionado(dia)" [class.active]="diaSeleccionado === dia">{{ dia }}</button>
+      </div>
+      <div class="button-row">
+        <button *ngFor="let hora of getHorariosPorDia(diaSeleccionado)" [routerLink]="['/asientos']">{{ hora }}</button>
+      </div>
     </div>
   </body>
   </html>
