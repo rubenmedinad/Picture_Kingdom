@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -15,7 +16,7 @@ import { Promocion2Component } from './promocion2/promocion2.component';
 import { Promocion3Component } from './promocion3/promocion3.component';
 import { SinopsisComponent } from './sinopsis/sinopsis.component';
 import { AsientosComponent } from './asientos/asientos.component';
-import { ResumenArticulosCompradosComponent } from './resumen-articulos-comprados/resumen-articulos-comprados.component';
+import { MetodospagoComponent } from './metodospago/metodospago.component';
 import { MenuComprasComponent } from './menu-compras/menu-compras.component';
 
 
@@ -30,8 +31,8 @@ import { MenuComprasComponent } from './menu-compras/menu-compras.component';
     Promocion2Component,
     Promocion3Component,
     AsientosComponent,
-    ResumenArticulosCompradosComponent,
-    MenuComprasComponent
+    MenuComprasComponent,
+    MetodospagoComponent
 
   ],
   imports: [
@@ -41,7 +42,8 @@ import { MenuComprasComponent } from './menu-compras/menu-compras.component';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    FormsModule
 
   ],
   providers: [],

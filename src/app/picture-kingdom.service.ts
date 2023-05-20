@@ -9,6 +9,14 @@ export class PictureKingdomService {
     { name: 'Inicio', route: '/' },
     { name: 'Cartelera', route: '/cartelera' },
     { name: 'resumen', route: '/resumen' },
+    { name: 'metodos', route:'/metodos'},
+
+  ];
+  entradas: any[] = [
+    { nombreEntrada: 'Entrada 1', precio: 20, numero: 0 },
+    { nombreEntrada: 'Entrada 2', precio: 30, numero: 0 },
+    { nombreEntrada: 'Entrada 3', precio: 15, numero: 0 }
+
   ];
   pelis = [
     { titulo  : 'Inicio', route: '/' },

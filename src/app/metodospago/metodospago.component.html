@@ -1,0 +1,34 @@
+<div class="container">
+  <table>
+    <tr>
+      <th>Tipo de Entrada</th>
+      <th>Precio</th>
+      <th>Número</th>
+      <th>Total</th>
+    </tr>
+    <tr *ngFor="let entrada of entradas">
+      <td>{{ entrada.nombreEntrada }}</td>
+      <td>
+        <div class="input-cont">
+          <input type="number" [value]="entrada.precio" readonly>
+        </div>
+      </td>
+      <td>
+        <div class="center">
+          <div class="addNumber_cont">
+            <button id="decrementar-btn" (click)="decrementarNumero(entrada)">-</button>
+            <div class="value_cont">
+              <h1>{{ entrada.numero }}</h1>
+            </div>
+            <button id="incrementar-btn" (click)="incrementarNumero(entrada)">+</button>
+          </div>
+        </div>
+      </td>
+      <td><span>{{ entrada.precio * entrada.numero }}</span></td>
+    </tr>
+    <tr>
+      <td colspan="3">Total general:</td>
+      <td>{{ calcularTotalGeneral() }}</td>
+    </tr>
+  </table>
+</div>
