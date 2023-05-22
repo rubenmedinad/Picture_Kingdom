@@ -9,7 +9,9 @@
 
 }
 body {
- background-color: grey;
+  background-image: url("../../assets/fondo_dorado.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 h2{
     text-align: center;
@@ -147,4 +149,5 @@ h1::before {
   display: flex;
   justify-content: space-between;
 }
+
 

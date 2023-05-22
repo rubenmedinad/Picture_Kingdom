@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Peliculas } from './_Modules/pelicula';
+import { Peliculas } from './_Modules/Peliculas';
 import { HorasPeliculas } from './_Modules/HorasPeliculas';
 @Injectable({
   providedIn: 'root'
@@ -8,8 +8,7 @@ export class PictureKingdomService {
   menuItems = [
     { name: 'Inicio', route: '/' },
     { name: 'Cartelera', route: '/cartelera' },
-    { name: 'resumen', route: '/resumen' },
-    { name: 'metodos', route:'/metodos'},
+    { name: 'metodos', route:'/metodos'}
 
   ];
   entradas: any[] = [

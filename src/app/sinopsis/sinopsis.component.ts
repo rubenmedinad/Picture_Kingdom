@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Peliculas } from '../_Modules/pelicula';
+import { Peliculas } from '../_Modules/Peliculas';
 import { PictureKingdomService } from '../picture-kingdom.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
