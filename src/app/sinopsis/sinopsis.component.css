@@ -31,16 +31,22 @@ li {
     padding: 2px; /* Ajusta el relleno interno según tus preferencias */
   }
 
-  .day-menu {
+  .dia-menu {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
-    margin-top: 80px;
+    gap: 10px;
   }
-  .day-menu button {
-    margin-right: 80px;
+  
+  .dia-menu button {
+    padding: 10px 20px;
+    font-size: 16px;
   }
-
+  
+  .dia-menu button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
   .button-row {
     display: flex;
     justify-content: center;

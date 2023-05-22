@@ -1,44 +1,36 @@
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Página con imagen y tabla</title>
-    <link rel="sinopsis" href="styles.css">
-  </head>
-  <body>
-    <h1><br>{{this.pelicula.titulo}}</h1>
-    <div class="container"><br>
-      <img src={{this.pelicula.imagen}} alt="Imagen">
-      <div class="table-container">
-        <table class="left-table">
-          <tr>
-            <td>DURACION: <br><mark>{{this.pelicula.duracion}}</mark></td>
-          </tr>
-          <tr>
-            <td>GENERO: <br><mark>{{this.pelicula.genero}}</mark></td>
-          </tr>
-          <tr>
-            <td>FECHA DE ESTRENO: <br><mark>{{this.pelicula.anio}}</mark></td>
-          </tr>
-        </table>
-        <table class="right-table">
-          <tr>
-            <li>DIRECTORES:<br><span class="directores">{{this.pelicula.director}}</span></li>
-          </tr>
-          <tr>
-            <li> REPARTO:<br><span class="reparto">{{this.pelicula.reparto}}</span></li>
-          </tr>
-          <tr>
-            <li>SINOPSIS:<br><span class="sinopsis">{{this.pelicula.sinopsis}}</span></li>
-          </tr>
-        </table>
-      </div>
-      <div class="day-menu">
-        <button *ngFor="let dia of DiasPeliculas" (click)="cambiarDiaSeleccionado(dia)" [class.active]="diaSeleccionado === dia">{{ dia }}</button>
-      </div>
-      <div class="button-row">
-        <button *ngFor="let hora of getHorariosPorDia(diaSeleccionado)" [routerLink]="['/asientos']">{{ hora }}</button>
-      </div>
-    </div>
-  </body>
-  </html>
+<h1><br>{{ pelicula.titulo }}</h1>
+<div class="container"><br>
+  <img [src]="pelicula.imagen" alt="Imagen">
+  <div class="table-container">
+    <table class="left-table">
+      <tr>
+        <td>DURACION: <br><mark>{{ pelicula.duracion }}</mark></td>
+      </tr>
+      <tr>
+        <td>GENERO: <br><mark>{{ pelicula.genero }}</mark></td>
+      </tr>
+      <tr>
+        <td>FECHA DE ESTRENO: <br><mark>{{ pelicula.anio }}</mark></td>
+      </tr>
+    </table>
+    <table class="right-table">
+      <tr>
+        <td>DIRECTORES:<br><span class="directores">{{ pelicula.director }}</span></td>
+      </tr>
+      <tr>
+        <td> REPARTO:<br><span class="reparto">{{ pelicula.reparto }}</span></td>
+      </tr>
+      <tr>
+        <td>SINOPSIS:<br><span class="sinopsis">{{ pelicula.sinopsis }}</span></td>
+      </tr>
+    </table>
+  </div>
+  <div class="dia-menu">
+    <button *ngFor="let dia of diasPeliculas" (click)="cambiarDiaSeleccionado(dia)" [class.active]="diaSeleccionado === dia">
+      {{ obtenerFechaActual(dia) }}
+    </button>
+  </div>
+  <div class="button-row">
+    <button *ngFor="let hora of getHorariosPorDia(diaSeleccionado)" [routerLink]="['/asientos']">{{ hora }}</button>
+  </div>
+</div>
