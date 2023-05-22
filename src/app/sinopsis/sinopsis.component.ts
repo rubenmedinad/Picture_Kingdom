@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { pelicula } from '../_Modules/pelicula';
+import { Peliculas } from '../_Modules/pelicula';
 import { PictureKingdomService } from '../picture-kingdom.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -9,9 +9,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./sinopsis.component.css']
 })
 export class SinopsisComponent {
-  peliculas: pelicula[] = [];
+  peliculas: Peliculas[] = [];
   ide: number = 0;
-  pelicula: pelicula = new pelicula(0, "", "", "", "", "", "", "", "");
+  pelicula: Peliculas = new Peliculas(0, "", "", "", "", "", "", "", "");
   diasPeliculas: number[] = [];
   horariosPorDia: { [key: number]: string[] } = {};
 
