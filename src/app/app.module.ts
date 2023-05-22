@@ -18,6 +18,7 @@ import { SinopsisComponent } from './sinopsis/sinopsis.component';
 import { AsientosComponent } from './asientos/asientos.component';
 import { MetodospagoComponent } from './metodospago/metodospago.component';
 import { MenuComprasComponent } from './menu-compras/menu-compras.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { MenuComprasComponent } from './menu-compras/menu-compras.component';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    BsDatepickerModule.forRoot()
 
   ],
   providers: [],

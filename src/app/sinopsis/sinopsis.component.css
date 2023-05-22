@@ -1,5 +1,6 @@
 h1 {
   text-align: center;
+  margin-bottom: 50px;
 }
 li {
   list-style: none;
@@ -23,11 +24,37 @@ li {
     margin-left: 100px;
     width: 60%;
     margin-top: -300px;
-    margin-bottom:  20px;
+    margin-bottom: 20px;
   }
   .left-table mark {
     background-color: rgb(249, 212, 64); /* Establece el color de fondo deseado para resaltar el texto */
     padding: 2px; /* Ajusta el relleno interno según tus preferencias */
+  }
+
+  .dia-menu {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .dia-menu button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+  .dia-menu button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .button-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .button-row button {
+    margin-right: 80px; /* Agrega margen derecho de 10px entre los botones */
   }
   
   
