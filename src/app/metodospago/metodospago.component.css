@@ -1,24 +1,58 @@
 * {
   margin: 0;
   padding: 0;
-  background-color: transparent;
+  background-color: #ffffff00;
   box-sizing: border-box;
 }
 
 body {
   width: 100%;
   height: 100vh;
-  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
+h1,
+p,
+th,
+td,
+.entrada,
+.precio,
+.center,
+.addNumber_cont,
+.decrease-btn,
+.increase-btn,
+.value_cont,
+.numero,
+.total,
+.input-cont {
+  background-color: #ffffff00;
+}
+
+/* Rest of the CSS code */
+.input-cont {
+  position: relative;
+  width: fit-content; /* Adjust the width based on content */
+}
+
+.input-cont input {
+  width: 80px; /* Set the desired width */
+  height: 100%;
+  padding: 0;
+  border: none; /* Remove borders */
+  outline: none;
+  background-color: transparent;
+  pointer-events: none; /* Make it non-clickable */
+}
+
+
 h1 {
   color: #000000;
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 18px;
+  margin-top: 15px;
+
 }
 
 p {
@@ -62,6 +96,7 @@ td {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .addNumber_cont {
@@ -77,6 +112,7 @@ td {
   width: 30px;
   height: 40px;
   border: none;
+  margin: 10%;
   border-radius: 5px;
   font-size: 20px;
   font-weight: bold;
@@ -87,6 +123,7 @@ td {
 .decrease-btn:hover,
 .increase-btn:hover {
   background-color: transparent;
+  margin: 10%;
 }
 
 .value_cont {
@@ -110,19 +147,14 @@ td {
   font-size: 20px;
 }
 
-.input-cont {
-  position: relative;
+.input_cont {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
 }
 
-.input-cont input {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  pointer-events: none;
-}
+
 
 .container {
   display: flex;

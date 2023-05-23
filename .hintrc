@@ -15,7 +15,8 @@
       "default",
       {
         "ignore": [
-          "-webkit-overflow-scrolling"
+          "-webkit-overflow-scrolling",
+          "width: fit-content"
         ]
       }
     ],

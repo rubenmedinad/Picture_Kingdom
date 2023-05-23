@@ -22,6 +22,9 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
+import { CompraofertasComponent } from './compraofertas/compraofertas.component';
+
+
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { MatButtonModule } from '@angular/material/button';
     Promocion3Component,
     AsientosComponent,
     MenuComprasComponent,
-    MetodospagoComponent
+    MetodospagoComponent,
+    CompraofertasComponent
 
   ],
   imports: [
