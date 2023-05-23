@@ -1,5 +1,40 @@
-<div *ngFor="let offer of offers">
-  <img src="{{offer.imagen}}" class="bd-placeholder-img card-img-top" width="100%" height="225" alt="Imagen de ejemplo">
-  <h2>{{ offer.name }}</h2>
-  <button (click)="buyOffer(offer)">Comprar</button>
+<div class="container">
+  <div *ngFor="let offer of offers">
+    <ng-container *ngIf="offer.id === selectedOfferId">
+      <div class="item-container">
+        <div class="image-container">
+          <img
+            src="{{ offer.image }}"
+            class="bd-placeholder-img card-img-top"
+            alt="Imagen de ejemplo"
+          />
+        </div>
+        <div class="content-container">
+          <h2>{{ offer.name }}</h2>
+          <h2 class="price">Precio: {{ offer.price }} €</h2>
+          <div class="addNumber_cont">
+            <button
+              id="decrementar-btn"
+              style="margin: 20%"
+              (click)="decrementarNumero()"
+            >
+              -
+            </button>
+            <div class="input_cont">
+              <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
+            </div>
+            <button
+              id="incrementar-btn"
+              style="margin: 20%"
+              (click)="incrementarNumero()"
+            >
+              +
+            </button>
+          </div>
+          <h2>{{ entrada.precio * entrada.numero }} €</h2>
+          <button (click)="buyOffer(offer)">Comprar</button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
 </div>
