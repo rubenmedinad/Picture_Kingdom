@@ -25,6 +25,9 @@ import { RegistroComponent } from './registro/registro.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { PagotarjetaComponent } from './pagotarjeta/pagotarjeta.component';
+
+
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import {MatButtonModule} from '@angular/material/button';
     MetodospagoComponent,
     CompraofertasComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    PagotarjetaComponent
 
   ],
   imports: [
