@@ -22,16 +22,15 @@
       </td>
       <td>
         <div class="center">
-            <div class="addNumber_cont">
-              <button id="decrementar-btn" style="margin:20%"(click)="decrementarNumero(entrada)"> - </button>
-              <div class="input_cont">
-                <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
-              </div>
-
-
-              <button id="incrementar-btn" style="margin:20%"(click)="incrementarNumero(entrada)"> + </button>
+          <div class="addNumber_cont">
+            <button id="decrementar-btn" style="margin:20%" (click)="decrementarNumero(entrada)"> - </button>
+            <div class="input_cont">
+              <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
             </div>
+            <button id="incrementar-btn" style="margin:20%" (click)="incrementarNumero(entrada)"> + </button>
           </div>
+        </div>
+
       </td>
       <td>
         <span
@@ -43,6 +42,16 @@
       <td colspan="3">Total general:</td>
       <td>
         <h1>{{ calcularTotalGeneral() }} €</h1>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <a
+          mat-button
+          [routerLink]="['/tarjeta', cantidadAsientos, calcularTotalGeneral()]"
+        >
+          Realizar pago
+        </a>
       </td>
     </tr>
   </table>

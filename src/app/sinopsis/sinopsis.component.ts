@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Peliculas } from '../_Modules/Peliculas';
 import { PictureKingdomService } from '../picture-kingdom.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Ventas } from '../_Modules/Ventas';
 
 @Component({
   selector: 'app-sinopsis',
@@ -30,14 +31,14 @@ export class SinopsisComponent {
       this.ide = data['id'];
     });
     this.pelicula = this.peliculas[this.ide - 1];
-
+    this.peliculasS.rellenarVentas(this.ide)
     this.generarFechas();
   }
 
   generarFechas() {
     const fechaActual = new Date();
     this.diasPeliculas = Array.from({ length: 6 }, (_, i) => i);
-    
+
     const opcionesFecha = { weekday: 'short', month: 'long', day: 'numeric' };
 
     this.horariosPorDia = {
@@ -68,4 +69,5 @@ export class SinopsisComponent {
     };
     return fechaActual.toLocaleDateString('es-ES', opcionesFecha);
   }
+
 }

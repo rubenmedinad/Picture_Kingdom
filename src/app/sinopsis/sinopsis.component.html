@@ -31,6 +31,12 @@
     </button>
   </div>
   <div class="button-row">
-    <button *ngFor="let hora of getHorariosPorDia(diaSeleccionado)" [routerLink]="['/asientos']">{{ hora }}</button>
+    <button *ngFor="let hora of getHorariosPorDia(diaSeleccionado)"
+            [routerLink]="['/asientos', diaSeleccionado, hora]"
+            [queryParams]="{ dia: diaSeleccionado, hora: horariosPorDia }">
+      {{ hora }}
+    </button>
   </div>
+
+
 </div>

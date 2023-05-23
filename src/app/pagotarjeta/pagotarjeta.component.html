@@ -1,46 +1,43 @@
-<form>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+<app-menu-compras></app-menu-compras>
+<router-outlet></router-outlet>
+
+<h1>INTRODUCE TUS DATOS BANCARIOS</h1>
+
+<div class="container">
+  <form (ngSubmit)="submitForm()" [formGroup]="form" class="payment-form">
+    <div class="form-group">
+      <label for="inputCardNumber">Número de tarjeta</label>
+      <input type="text" class="form-control" id="inputCardNumber" formControlName="cardNumber" placeholder="Número de tarjeta" (input)="formatCardNumber()" [(ngModel)]="cardNumberValue" required maxlength="19">
     </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
+    <div class="form-group">
+      <label for="inputExpirationMonth" >Fecha de caducidad</label>
+      <div class="expiration-inputs">
+        <select class="form-control small-input" formControlName="expirationMonth" required>
+        <option value="">Mes</option>
+        <option *ngFor="let month of months" [value]="month">{{ month }}</option>
       </select>
+
+      <select class="form-control small-input" formControlName="expirationYear" required>
+        <option value="">Año</option>
+        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+      </select>
+
+      </div>
     </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
+    <div class="form-group">
+      <label for="inputCVV">CVV</label>
+      <div class="cvv-input-wrapper">
+        <input type="{{ showCVV ? 'text' : 'password' }}" class="form-control" id="inputCVV" formControlName="cvv" placeholder="CVV" minlength="3" maxlength="3" required>
+        <button mat-icon-button class="cvv-toggle-button" (mousedown)="showCVV = true" (mouseup)="showCVV = false" (mouseleave)="showCVV = false">
+          <mat-icon>{{ showCVV ? 'visibility' : 'visibility_off' }}</mat-icon>
+        </button>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
+
+
+
+
+
+    <button type="submit" [disabled]="form.invalid">Enviar</button>
+  </form>
+</div>
