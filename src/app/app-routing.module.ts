@@ -10,7 +10,8 @@ import { Promocion2Component } from './promocion2/promocion2.component';
 import { Promocion3Component } from './promocion3/promocion3.component';
 import { MetodospagoComponent } from './metodospago/metodospago.component';
 import { CompraofertasComponent } from './compraofertas/compraofertas.component';
-
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cartelera', component: CarteleraComponent },
@@ -21,8 +22,9 @@ const routes: Routes = [
   { path: 'promocion3', component: Promocion3Component },
   { path: 'sinopsis/:id', component: SinopsisComponent },
   { path: 'metodos/:cantidadAsientos', component: MetodospagoComponent },
-  { path: 'compraofertas/:id/:name/:image', component: CompraofertasComponent }
-
+  { path: 'compraofertas/:id/:name/:image', component: CompraofertasComponent },
+  { path: 'login',component:LoginComponent},
+  {path:'registro',component:RegistroComponent}
 ]
 
 @NgModule({

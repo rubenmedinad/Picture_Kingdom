@@ -20,8 +20,11 @@ import { MetodospagoComponent } from './metodospago/metodospago.component';
 import { MenuComprasComponent } from './menu-compras/menu-compras.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CompraofertasComponent } from './compraofertas/compraofertas.component';
-
-
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,9 @@ import { CompraofertasComponent } from './compraofertas/compraofertas.component'
     AsientosComponent,
     MenuComprasComponent,
     MetodospagoComponent,
-    CompraofertasComponent
+    CompraofertasComponent,
+    LoginComponent,
+    RegistroComponent
 
   ],
   imports: [
@@ -48,7 +53,10 @@ import { CompraofertasComponent } from './compraofertas/compraofertas.component'
     MatSidenavModule,
     MatListModule,
     FormsModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
 
   ],
   providers: [],
