@@ -19,6 +19,8 @@ import { AsientosComponent } from './asientos/asientos.component';
 import { MetodospagoComponent } from './metodospago/metodospago.component';
 import { MenuComprasComponent } from './menu-compras/menu-compras.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { CompraofertasComponent } from './compraofertas/compraofertas.component';
+
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     Promocion3Component,
     AsientosComponent,
     MenuComprasComponent,
-    MetodospagoComponent
+    MetodospagoComponent,
+    CompraofertasComponent
 
   ],
   imports: [

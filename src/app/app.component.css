@@ -1,6 +1,5 @@
 html, body {
   height: 100%;
-
 }
 
 .mat-toolbar {
@@ -15,15 +14,14 @@ html, body {
   background-color: transparent;
   color: white;
   border: none;
-
 }
-
 
 .logo-img {
   max-height: 80px;
   max-width: 100%;
-  position:  center;
+  position: center;
 }
+
 
 .sidenav {
   position: fixed;
@@ -43,5 +41,4 @@ html, body {
 .mat-sidenav-content {
   height: 100%;
   width: 100%;
-  
 }

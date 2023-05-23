@@ -1,0 +1,5 @@
+<div *ngFor="let offer of offers">
+  <img src="{{offer.imagen}}" class="bd-placeholder-img card-img-top" width="100%" height="225" alt="Imagen de ejemplo">
+  <h2>{{ offer.name }}</h2>
+  <button (click)="buyOffer(offer)">Comprar</button>
+</div>

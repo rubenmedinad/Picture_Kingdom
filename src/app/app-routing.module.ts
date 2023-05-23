@@ -9,6 +9,8 @@ import { Promocion1Component } from './promocion1/promocion1.component';
 import { Promocion2Component } from './promocion2/promocion2.component';
 import { Promocion3Component } from './promocion3/promocion3.component';
 import { MetodospagoComponent } from './metodospago/metodospago.component';
+import { CompraofertasComponent } from './compraofertas/compraofertas.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cartelera', component: CarteleraComponent },
@@ -19,6 +21,7 @@ const routes: Routes = [
   { path: 'promocion3', component: Promocion3Component },
   { path: 'sinopsis/:id', component: SinopsisComponent },
   { path: 'metodos', component: MetodospagoComponent },
+  { path: 'compraofertas/:id/:name/:image', component: CompraofertasComponent },
   { path: 'asientos', component: AsientosComponent }
 
 ]

@@ -14,8 +14,9 @@
 <mat-sidenav-container >
   <mat-sidenav #sidenav class="sidenav">
     <mat-nav-list>
-      <a mat-list-item *ngFor="let menuItem of menuItems" [routerLink]="menuItem.route">{{ menuItem.name }}</a>
+      <a mat-list-item *ngFor="let menuItem of menuItems" [routerLink]="menuItem.route" class="menu-item">{{ menuItem.name }}</a>
     </mat-nav-list>
+
   </mat-sidenav>
 
   <mat-sidenav-content>
