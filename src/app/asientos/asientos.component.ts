@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { MenuComprasComponent } from '../menu-compras/menu-compras.component';
 interface Seat {
   row: string;
   name: number;

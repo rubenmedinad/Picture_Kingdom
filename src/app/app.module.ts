@@ -19,7 +19,9 @@ import { AsientosComponent } from './asientos/asientos.component';
 import { MetodospagoComponent } from './metodospago/metodospago.component';
 import { MenuComprasComponent } from './menu-compras/menu-compras.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,9 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     MatSidenavModule,
     MatListModule,
     FormsModule,
+    MatTabsModule,
+    MatMenuModule,
+    MatButtonModule,
     BsDatepickerModule.forRoot()
 
   ],
