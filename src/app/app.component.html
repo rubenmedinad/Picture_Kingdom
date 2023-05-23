@@ -1,23 +1,29 @@
-<mat-toolbar color="black" class="toolbar">
-  <button mat-icon-button (click)="sidenav.toggle()" class="example-icon mat-icon-no-color" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.component.css"> <!-- Agrega esta línea -->
+  <title>Picture Kingdom</title>
+</head>
+<body>
+  <mat-toolbar color="black" class="toolbar">
+    <button mat-icon-button (click)="sidenav.toggle()" class="example-icon mat-icon-no-color" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
 
-  <a href="" style="flex-grow: 1; display: flex; justify-content: center; align-items: center;">
-    <img class="logo-img" src="../assets/Picture_Kingdom.jpg" alt="Picture Kingdom Logo">
-  </a>
-</mat-toolbar>
+    <a href="" style="flex-grow: 1; display: flex; justify-content: center; align-items: center;">
+      <img class="logo-img" src="../assets/Picture_Kingdom.jpg" alt="Picture Kingdom Logo">
+    </a>
+  </mat-toolbar>
 
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav class="sidenav">
+      <mat-nav-list>
+        <a mat-list-item class="white-text" *ngFor="let menuItem of menuItems" [routerLink]="menuItem.route">{{ menuItem.name }}</a>
+      </mat-nav-list>
+    </mat-sidenav>
 
-
-
-<mat-sidenav-container >
-  <mat-sidenav #sidenav class="sidenav">
-    <mat-nav-list>
-      <a mat-list-item *ngFor="let menuItem of menuItems" [routerLink]="menuItem.route" class="menu-item">{{ menuItem.name }}</a>
-    </mat-nav-list>
-
-  </mat-sidenav>
 
   <mat-sidenav-content>
     <router-outlet></router-outlet>
@@ -45,10 +51,8 @@
             +1 (555) 123-4567
           </a>
         </div>
-      </div>
-    </footer>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
-
-
+      </footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</body>
+</html>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { pelicula } from '../_Modules/pelicula';
+import { Peliculas } from '../_Modules/Peliculas';
 import { PictureKingdomService } from '../picture-kingdom.service';
 @Component({
   selector: 'app-home',
@@ -7,12 +7,12 @@ import { PictureKingdomService } from '../picture-kingdom.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  peliculas: pelicula[] = []
+  peliculas: Peliculas[] = []
   ide:number = 0
   constructor(private peliculasS:PictureKingdomService){
     this.peliculas = peliculasS.getPeliculas()
   }
-  pelicula :pelicula= new pelicula(0,"","","","","","","","")
+  pelicula :Peliculas= new Peliculas(0,"","","","","","","","")
 
   ngOnInit(){
     this.pelicula=this.peliculas[this.ide-1]

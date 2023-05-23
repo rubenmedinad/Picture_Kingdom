@@ -1,4 +1,4 @@
-export class pelicula{
+export class Peliculas{
     id:number
     titulo:string
     sinopsis:string
