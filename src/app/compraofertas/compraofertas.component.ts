@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PictureKingdomService } from '../picture-kingdom.service';
 
 @Component({
@@ -8,15 +9,46 @@ import { PictureKingdomService } from '../picture-kingdom.service';
 })
 export class CompraofertasComponent implements OnInit {
   offers: any[] = [];
+  selectedOfferId: number | undefined;
+  entrada: any = {
+    numero: 1,
+    precio: 0
+  };
 
-  constructor(private pictureKingdomService: PictureKingdomService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private pictureKingdomService: PictureKingdomService
+  ) {}
 
   ngOnInit() {
-    this.offers = this.pictureKingdomService.getOfertas();
+    this.entrada.numero = 0;
+    this.offers = this.pictureKingdomService.getOffers();
+    const idParam = this.route.snapshot.paramMap.get('id');
+    this.selectedOfferId = idParam ? +idParam : undefined;
+    this.calculatePrice();
   }
 
   buyOffer(offer: any) {
     // Código para realizar la compra
   }
-}
 
+  incrementarNumero() {
+    this.entrada.numero++;
+    this.calculatePrice();
+  }
+
+  decrementarNumero() {
+    if (this.entrada.numero > 1) {
+      this.entrada.numero--;
+      this.calculatePrice();
+    }
+  }
+
+  calculatePrice() {
+    const selectedOffer = this.offers.find((offer) => offer.id === this.selectedOfferId);
+    if (selectedOffer) {
+      this.entrada.precio = selectedOffer.price;
+    }
+  }
+}

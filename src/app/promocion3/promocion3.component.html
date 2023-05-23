@@ -1,11 +1,10 @@
-<router-outlet></router-outlet>
 <body>
-  <div class="container">
+  <div class="container"*ngIf="offers">
     <br>
     <img class="image" src="../../assets/venta_fb.jpg" alt="Imagen de la oferta">
     <div class="text">
       <br>
-      <h2>¡Consigue una entrada al cine al comprar paquetes de Popitas!</h2>
+      <h2>{{ offers[2]?.name }}</h2>
       <p>En Picture Kingdom, durante esta promoción especial, te ofrecemos la oportunidad de conseguir una entrada al cine al adquirir nuestros deliciosos paquetes de Popitas. ¿Quieres saber más sobre esta increíble oferta? ¡Aquí te lo contamos todo!</p>
       <ul>
         <li>Combo irresistible: Disfruta de la combinación perfecta de entretenimiento y sabores con nuestros paquetes de Popitas. Cada paquete contiene nuestras deliciosas palomitas de maíz, perfectas para acompañar tu experiencia cinematográfica.</li>
@@ -16,7 +15,7 @@
         <li>Fecha límite: Esta promoción es por tiempo limitado, así que no pierdas la oportunidad de aprovecharla. Adquiere tus paquetes de Popitas y asegura tu entrada al cine cuanto antes.</li>
       </ul>
       <p>No dejes pasar la oportunidad de disfrutar de nuestras deliciosas Popitas y obtener una entrada al cine de regalo en Picture Kingdom. ¡Ven y vive momentos inolvidables en la gran pantalla mientras saboreas tus snacks favoritos!</p>
-      <a class="button" href="enlace_de_compra">Comprar paquetes de Popitas</a>
-  </div>
+      <a class="button" [routerLink]="['/compraofertas', offers[2]?.id, offers[2]?.name, offers[2]?.image]">¡Compra ahora y vive momentos inolvidables en la gran pantalla!</a>
+    </div>
 </div>
 </body>

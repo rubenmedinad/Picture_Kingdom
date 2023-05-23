@@ -15,16 +15,16 @@
       </td>
       <td>
         <div class="center">
-          <div class="addNumber_cont">
-            <button id="decrementar-btn" style="margin:20%"(click)="decrementarNumero(entrada)"> - </button>
-            <div class="input_cont">
-              <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
+            <div class="addNumber_cont">
+              <button id="decrementar-btn" style="margin:20%"(click)="decrementarNumero(entrada)"> - </button>
+              <div class="input_cont">
+                <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
+              </div>
+
+
+              <button id="incrementar-btn" style="margin:20%"(click)="incrementarNumero(entrada)"> + </button>
             </div>
-
-
-            <button id="incrementar-btn" style="margin:20%"(click)="incrementarNumero(entrada)"> + </button>
           </div>
-        </div>
       </td>
       <td><span><h1>{{ entrada.precio * entrada.numero }}</h1></span></td>
     </tr>
