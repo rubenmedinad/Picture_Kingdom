@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'promocion2', component: Promocion2Component },
   { path: 'promocion3', component: Promocion3Component },
   { path: 'sinopsis/:id', component: SinopsisComponent },
-  { path: 'metodos', component: MetodospagoComponent },
+  { path: 'metodos/:cantidadAsientos', component: MetodospagoComponent },
   { path: 'compraofertas/:id/:name/:image', component: CompraofertasComponent }
 
 ]

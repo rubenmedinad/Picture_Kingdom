@@ -1,3 +1,5 @@
+<app-menu-compras></app-menu-compras>
+<router-outlet></router-outlet>
 <div class="container">
   <table>
     <tr>
@@ -10,27 +12,44 @@
       <td>{{ entrada.nombreEntrada }}</td>
       <td>
         <div class="input-cont">
-          <input type="number" [value]="entrada.precio" readonly>
+          <input type="number" [value]="entrada.precio" readonly />
         </div>
       </td>
       <td>
         <div class="center">
           <div class="addNumber_cont">
-            <button id="decrementar-btn" style="margin:20%"(click)="decrementarNumero(entrada)"> - </button>
+            <button
+              id="decrementar-btn"
+              style="margin: 20%"
+              (click)="decrementarNumero(entrada)"
+            >
+              -
+            </button>
             <div class="input_cont">
               <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
             </div>
 
-
-            <button id="incrementar-btn" style="margin:20%"(click)="incrementarNumero(entrada)"> + </button>
+            <button
+              id="incrementar-btn"
+              style="margin: 20%"
+              (click)="incrementarNumero(entrada)"
+            >
+              +
+            </button>
           </div>
         </div>
       </td>
-      <td><span><h1>{{ entrada.precio * entrada.numero }}</h1></span></td>
+      <td>
+        <span
+          ><h1>{{ entrada.precio * entrada.numero }}</h1></span
+        >
+      </td>
     </tr>
     <tr>
       <td colspan="3">Total general:</td>
-      <td><h1>{{ calcularTotalGeneral() }} €</h1></td>
+      <td>
+        <h1>{{ calcularTotalGeneral() }} €</h1>
+      </td>
     </tr>
   </table>
 </div>
