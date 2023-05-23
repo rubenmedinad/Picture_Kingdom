@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
 interface Seat {
   row: string;
   name: number;
@@ -23,7 +23,7 @@ export class AsientosComponent {
   selectedSeats: { row: string, seat: number }[] = [];
   pasoActual = 'Asientos';
   
-  constructor() {
+  constructor(private router: Router) {
     for (let i = 1; i <= 10; i++) {
       let row: Row = { name: String.fromCharCode(75 - i), seats: [] };
       for (let j = 1; j <= 14; j++) {
@@ -55,13 +55,15 @@ export class AsientosComponent {
       const seats = row.seats.filter(seat => seat.selected);
       return acc.concat(seats);
     }, []);
-
+  
     // Marcar los asientos seleccionados como ocupados y reiniciar la selección
     selectedSeats.forEach(seat => {
       seat.occupied = true;
       seat.selected = false;
     });
-}
+  
+  
+  }
 
 }
 
