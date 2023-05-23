@@ -1,3 +1,5 @@
+<app-menu-compras></app-menu-compras>
+<router-outlet></router-outlet>
 <div class="container">
   <table>
     <tr>
@@ -10,7 +12,7 @@
       <td>{{ entrada.nombreEntrada }}</td>
       <td>
         <div class="input-cont">
-          <input type="number" [value]="entrada.precio" readonly>
+          <input type="number" [value]="entrada.precio" readonly />
         </div>
       </td>
       <td>
@@ -26,11 +28,17 @@
             </div>
           </div>
       </td>
-      <td><span><h1>{{ entrada.precio * entrada.numero }}</h1></span></td>
+      <td>
+        <span
+          ><h1>{{ entrada.precio * entrada.numero }}</h1></span
+        >
+      </td>
     </tr>
     <tr>
       <td colspan="3">Total general:</td>
-      <td><h1>{{ calcularTotalGeneral() }} €</h1></td>
+      <td>
+        <h1>{{ calcularTotalGeneral() }} €</h1>
+      </td>
     </tr>
   </table>
 </div>
