@@ -20,6 +20,7 @@ import { MetodospagoComponent } from './metodospago/metodospago.component';
 import { MenuComprasComponent } from './menu-compras/menu-compras.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CompraofertasComponent } from './compraofertas/compraofertas.component';
+import { PagotarjetaComponent } from './pagotarjeta/pagotarjeta.component';
 
 
 
@@ -36,7 +37,8 @@ import { CompraofertasComponent } from './compraofertas/compraofertas.component'
     AsientosComponent,
     MenuComprasComponent,
     MetodospagoComponent,
-    CompraofertasComponent
+    CompraofertasComponent,
+    PagotarjetaComponent
 
   ],
   imports: [
