@@ -47,13 +47,15 @@ html, body {
 }
 
 .sidenav {
-  background-image: url("../assets/fondo_dorado2.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color:aliceblue
 
 }
 
 
+.footer-name {
+  margin-top: 40px;
+  color: white;
+}
 
 
 

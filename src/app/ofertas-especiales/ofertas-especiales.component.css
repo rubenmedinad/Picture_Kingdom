@@ -34,7 +34,7 @@
 
 h1 {
   font-family: serif;
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 1.8em;
   text-align: center;
   text-transform: uppercase;
@@ -48,7 +48,7 @@ h1::after {
   left: 50%;
   width: 100px;
   height: 3px;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   transform: translateX(-50%);
 }
 
@@ -60,9 +60,9 @@ h1::before {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   transform: translate(-50%, 50%);
-  box-shadow: 0 0 20px white;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
 }
 
 @media (max-width: 768px) {

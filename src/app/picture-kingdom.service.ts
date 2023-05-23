@@ -8,7 +8,6 @@ export class PictureKingdomService {
   menuItems = [
     { name: 'Inicio', route: '/' },
     { name: 'Cartelera', route: '/cartelera' },
-    { name: 'metodos', route:'/metodos'}
 
   ];
   entradas: any[] = [
