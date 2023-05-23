@@ -1,52 +1,120 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="app.component.css"> <!-- Agrega esta línea -->
-  <title>Picture Kingdom</title>
-</head>
-<body>
-  <mat-toolbar color="black" class="toolbar">
-    <button mat-icon-button (click)="sidenav.toggle()" class="example-icon mat-icon-no-color" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
 
-    <a href="" style="flex-grow: 1; display: flex; justify-content: center; align-items: center;">
-      <img class="logo-img" src="../assets/Picture_Kingdom.jpg" alt="Picture Kingdom Logo">
-    </a>
-  </mat-toolbar>
 
-  <mat-sidenav-container>
-    <mat-sidenav #sidenav class="sidenav">
-      <mat-nav-list>
-        <a mat-list-item class="white-text" *ngFor="let menuItem of menuItems" [routerLink]="menuItem.route">{{ menuItem.name }}</a>
-      </mat-nav-list>
-    </mat-sidenav>
+  <body>
 
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-    <footer class="footer alaign:botto">
-      <div class="footer-container">
-        <mat-toolbar>
-          <span class="footer-name">Picture Kingdom</span>
-          <span class="footer-spacer"></span>
-          <a mat-button href="https://www.instagram.com/picturekingdomofficial/" target="_blank"><mat-icon>instagram</mat-icon>Síguenos en Instagram</a>
-          <a mat-button href="https://twitter.com/picturekingdom" target="_blank"><mat-icon>twitter</mat-icon>Síguenos en Twitter</a>
-        </mat-toolbar>
-        <div class="footer-contact">
-          <a href="mailto:info@picturekingdom.com">
-            <mat-icon>email</mat-icon>
-            info@picturekingdom.com
-          </a>
-          <a href="tel:+15551234567">
-            <mat-icon>phone</mat-icon>
-            +1 (555) 123-4567
-          </a>
-        </div>
-        </div>
-      </footer>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-</body>
-</html>
+    <mat-toolbar color="black" class="toolbar">
+
+      <button
+        mat-icon-button
+        (click)="sidenav.toggle()"
+        class="example-icon mat-icon-no-color"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+
+
+      </button>
+
+
+      <a
+        href=""
+        style="
+          flex-grow: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+
+        <img
+          class="logo-img"
+          src="../assets/Picture_Kingdom.jpg"
+          alt="Picture Kingdom Logo"
+        />
+
+
+      </a>
+
+
+    </mat-toolbar>
+
+
+    <mat-sidenav-container>
+
+      <mat-sidenav #sidenav class="sidenav">
+
+        <mat-nav-list>
+
+          <a
+            mat-list-item
+            class="white-text"
+            *ngFor="let menuItem of menuItems"
+            [routerLink]="menuItem.route"
+            >{{ menuItem.name }}</a
+          >
+
+
+        </mat-nav-list>
+
+
+      </mat-sidenav>
+
+
+      <mat-sidenav-content>
+     <router-outlet></router-outlet>
+
+
+        <footer class="footer alaign:botto">
+
+          <div class="footer-container">
+
+            <mat-toolbar>
+              <span class="footer-name">Picture Kingdom</span>
+
+              <span class="footer-spacer"></span>
+
+
+              <a
+                mat-button
+                href="https://www.instagram.com/picturekingdomofficial/"
+                target="_blank"
+                ><mat-icon>instagram</mat-icon>Síguenos en Instagram</a
+              >
+              <a
+                mat-button
+                href="https://twitter.com/picturekingdom"
+                target="_blank"
+                ><mat-icon>twitter</mat-icon>Síguenos en Twitter</a
+              >
+            </mat-toolbar>
+
+            <div class="footer-contact">
+              <a href="mailto:info@picturekingdom.com">
+                <mat-icon>email</mat-icon>
+
+                info@picturekingdom.com
+              </a>
+
+
+              <a href="tel:+15551234567">
+           <mat-icon>phone</mat-icon>
+
+               +1 (555) 123-4567
+              </a>
+
+
+            </div>
+
+
+          </div>
+
+
+        </footer>
+
+
+      </mat-sidenav-content>
+
+
+    </mat-sidenav-container>
+  </body>
+

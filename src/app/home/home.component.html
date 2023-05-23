@@ -1,57 +1,149 @@
 
 <body>
-  <div >
-    <div class="hero ">
-      <div id="carouselExampleFade" class="carousel slide carousel-fade text-center" data-bs-ride="carousel" width="2000" height="2500" >
+
+  <div>
+
+    <div class="hero">
+
+      <div
+        id="carouselExampleFade"
+        class="carousel slide carousel-fade text-center"
+        data-bs-ride="carousel"
+        width="2000"
+        height="2500"
+      >
+
         <div class="carousel-inner">
+
           <div class="carousel-item active">
-            <img src="../../assets/ASEDIO.jpg" class="d-block mx-auto w-100"  alt="...">
+
+            <img
+              src="../../assets/ASEDIO.jpg"
+              class="d-block mx-auto w-100"
+              alt="..."
+            />
+
+
           </div>
+
+
           <div class="carousel-item">
-            <img src="../../assets/spidermanarriba.jpg " class="d-block mx-auto w-100"  alt="...">    </div>
+
+            <img
+              src="../../assets/spidermanarriba.jpg "
+              class="d-block mx-auto w-100"
+              alt="..."
+            />
+
+          </div>
+
+
           <div class="carousel-item">
-            <img src="../../assets/vacaciones.jpg" class="d-block mx-auto w-100"alt="...">    </div>
-            <div class="carousel-item">
-              <img src="../../assets/f&f.jpg" class="d-block mx-auto w-100"  alt="...">    </div>
+
+            <img
+              src="../../assets/vacaciones.jpg"
+              class="d-block mx-auto w-100"
+              alt="..."
+            />
+
+          </div>
+
+
+          <div class="carousel-item">
+
+            <img
+              src="../../assets/f&f.jpg"
+              class="d-block mx-auto w-100"
+              alt="..."
+            />
+
+          </div>
+
+
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="prev"
+        >
+
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
+
+         <span class="visually-hidden">Anterior</span>
+
+
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+
+
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleFade"
+          data-bs-slide="next"
+        >
+
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Siguiente</span>
+
+           <span class="visually-hidden">Siguiente</span>
+
+
         </button>
+
+
       </div>
+
+
+    </div>
+
+
+  </div>
+
+  <br /><br /><br /><br /><br />
+
+
+  <h1>TOP PELÍCULAS SEMANAL</h1>
+
+<br />
+
+
+  <div class="content-all">
+
+    <div class="content-carrousel">
+
+      <figure><img src="" /></figure>
+
+
+      <ng-container *ngFor="let pelicula of peliculas">
+
+        <figure>
+          <img
+            src="{{ pelicula.imagen }}"
+            width="100%"
+            height="100%"
+            [routerLink]="['/sinopsis', pelicula.id]"
+          />
+        </figure>
+
+             
+      </ng-container>
+
+         
     </div>
   </div>
 
-  <br><br><br><br><br>
-  <h1>TOP PELÍCULAS SEMANAL</h1>
-  <br>
-  <div class="content-all">
-    <div class="content-carrousel">
-      <figure><img src=""></figure>
-      <ng-container *ngFor="let pelicula of peliculas">
+  <br /><br /><br /><br /><br /><br /><br />
 
-          <figure><img src="{{pelicula.imagen}}" width="100%" height="100%" [routerLink]="['/sinopsis', pelicula.id]"></figure>
+  <br /><br /><br /><br /><br /><br /><br />
 
-      </ng-container>
+  <br /><br /><br />
 
-    </div>
-</div>
+  <app-ofertas-especiales></app-ofertas-especiales>
 
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
+  <br /><br /><br />
 
-<br><br><br>
+  <br /><br /><br /><br /><br /><br /><br />
 
-<app-ofertas-especiales></app-ofertas-especiales>
-
-
-<br><br><br>
-
-<br><br><br><br><br><br><br>
-
-<br><br><br><br><br><br><br>
+  <br /><br /><br /><br /><br /><br /><br />
 </body>

@@ -12,7 +12,7 @@ export class MenuComprasComponent {
 
   tabs = [
     { label: 'Inicio', route: '/asientos', component: AsientosComponent },
-    { label: 'Acerca', route: '/promocion1', component: Promocion1Component },
+    { label: 'Acerca', route: '/metodos', component: Promocion1Component },
     { label: 'Contacto', route: '/promocion2', component: Promocion2Component }
   ];
 
