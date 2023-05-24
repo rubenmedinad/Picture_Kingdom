@@ -47,12 +47,15 @@ export class PictureKingdomService {
   getPeliculas():Peliculas[] {
     return this.peliculas
   }
-  rellenarVentas(params:any) {
-
-    this.ventas.push(params)
+  rellenarVentas(params: any) {
+    this.ventas.push(params);
   }
+
   obtenerVentas(): any[] {
     return this.ventas;
+  }
+  vaciarVentas() {
+    this.ventas = [];
   }
     constructor() { }
 }

@@ -27,6 +27,7 @@ export class AsientosComponent {
 
   constructor(private router: Router,private peliculasS: PictureKingdomService) {
 
+
     for (let i = 1; i <= 10; i++) {
       let row: Row = { name: String.fromCharCode(75 - i), seats: [] };
       for (let j = 1; j <= 14; j++) {
@@ -66,6 +67,9 @@ export class AsientosComponent {
     });
 
 
+  }
+  ActualizarArray(){
+    this.peliculasS.rellenarVentas({Asientos:this.selectedSeats})
   }
   ngOnInit(){
     console.log(this.peliculasS.obtenerVentas())

@@ -7,21 +7,20 @@
   <form (ngSubmit)="submitForm()" [formGroup]="form" class="payment-form">
     <div class="form-group">
       <label for="inputCardNumber">Número de tarjeta</label>
-      <input type="text" class="form-control" id="inputCardNumber" formControlName="cardNumber" placeholder="Número de tarjeta" (input)="formatCardNumber()" [(ngModel)]="cardNumberValue" required maxlength="19">
+      <input type="text" class="form-control" id="inputCardNumber" formControlName="cardNumber" placeholder="Número de tarjeta" (input)="formatCardNumber()" required maxlength="19">
     </div>
     <div class="form-group">
       <label for="inputExpirationMonth" >Fecha de caducidad</label>
       <div class="expiration-inputs">
         <select class="form-control small-input" formControlName="expirationMonth" required>
-        <option value="">Mes</option>
-        <option *ngFor="let month of months" [value]="month">{{ month }}</option>
-      </select>
+          <option value="">Mes</option>
+          <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+        </select>
 
-      <select class="form-control small-input" formControlName="expirationYear" required>
-        <option value="">Año</option>
-        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
-      </select>
-
+        <select class="form-control small-input" formControlName="expirationYear" required>
+          <option value="">Año</option>
+          <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+        </select>
       </div>
     </div>
     <div class="form-group">
@@ -33,11 +32,6 @@
         </button>
       </div>
     </div>
-
-
-
-
-
     <button type="submit" [disabled]="form.invalid">Enviar</button>
   </form>
 </div>
