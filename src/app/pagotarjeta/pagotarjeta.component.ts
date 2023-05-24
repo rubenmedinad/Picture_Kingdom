@@ -14,9 +14,15 @@ export class PagotarjetaComponent implements OnInit {
   showCVV: boolean = false;
   datosBancarios: { numeroCuenta: string, mes: number, anio: number, cvv: number }[]= [];
 
+  months: number[] = [];
+  years: number[] = [];
+
   constructor(private peliculasS: PictureKingdomService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.generateMonthOptions();
+    this.generateYearOptions();
+  }
 
   formatCardNumber() {
     let formattedNumber = this.cardNumberValue.replace(/[^0-9]/g, ''); // Eliminar caracteres no numéricos
@@ -66,5 +72,19 @@ export class PagotarjetaComponent implements OnInit {
   ActualizarArray() {
     this.peliculasS.rellenarVentas({ Datos_Bancarios: this.datosBancarios });
     console.log(this.peliculasS.obtenerVentas());
+  }
+
+  generateMonthOptions() {
+    for (let i = 1; i <= 12; i++) {
+      this.months.push(i);
+    }
+  }
+
+  generateYearOptions() {
+    const currentYear = new Date().getFullYear();
+    const maxYear = 2065;
+    for (let i = currentYear; i <= maxYear; i++) {
+      this.years.push(i);
+    }
   }
 }
