@@ -11,9 +11,9 @@ export class PictureKingdomService {
 
   ];
   entradas: any[] = [
-    { nombreEntrada: 'Entrada 1', precio: 20, numero: 0 },
-    { nombreEntrada: 'Entrada 2', precio: 30, numero: 0 },
-    { nombreEntrada: 'Entrada 3', precio: 15, numero: 0 }
+    { nombreEntrada: 'Normal', precio: 8.90, numero: 0 },
+    { nombreEntrada: 'Abono Joven', precio: 6.50, numero: 0 },
+    { nombreEntrada: 'Familia Numerosa', precio: 6.50, numero: 0 }
 
   ];
   pelis = [

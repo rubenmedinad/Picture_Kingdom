@@ -3,27 +3,23 @@
     <tr>
       <th>Tipo de Entrada</th>
       <th>Precio</th>
-      <th>Número</th>
+      <th class="numero">Número</th> <!-- Elimina el colspan="2" que se agregó anteriormente -->
       <th>Total</th>
     </tr>
     <tr *ngFor="let entrada of entradas">
       <td>{{ entrada.nombreEntrada }}</td>
       <td>
         <div class="input-cont">
-          <input type="number" [value]="entrada.precio" readonly>
+          <td>{{entrada.precio}}</td>
         </div>
       </td>
-      <td>
-        <div class="center">
-          <div class="addNumber_cont">
-            <button id="decrementar-btn" style="margin:20%"(click)="decrementarNumero(entrada)"> - </button>
-            <div class="input_cont">
-              <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
-            </div>
-
-
-            <button id="incrementar-btn" style="margin:20%"(click)="incrementarNumero(entrada)"> + </button>
+      <td class="center"> <!-- Agrega la clase "center" a esta celda -->
+        <div class="addNumber_cont">
+          <button id="decrementar-btn" style="margin:20%"(click)="decrementarNumero(entrada)"> - </button>
+          <div class="input_cont">
+            <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
           </div>
+          <button id="incrementar-btn" style="margin:20%"(click)="incrementarNumero(entrada)"> + </button>
         </div>
       </td>
       <td><span><h1>{{ entrada.precio * entrada.numero }}</h1></span></td>

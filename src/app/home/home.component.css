@@ -1,153 +1,138 @@
-
-.hero{
-  display: flex;
-  align-items:top;
-  height: 273px;
-  width: 100%;
-  overflow: hidden;
-
-
+.hero {
+  display: flex; /* Establece el elemento como un elemento flexible */
+  align-items: top; /* Alinea los elementos hijos en la parte superior del contenedor */
+  height: 273px; /* Establece la altura del elemento a 273 píxeles */
+  width: 100%; /* Establece el ancho del elemento al 100% del ancho del contenedor */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde del elemento */
 }
+
 body {
-  background-color: rgb(255, 255, 255);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-h2{
-    text-align: center;
-    font-size: 40px;
-    font-family: arial;
-    margin-top: 80px;
-    color: aqua;
-    text-shadow: 0px 0px 6px black;
+  background-color: rgb(255, 255, 255); /* Establece el color de fondo del cuerpo del documento */
+  background-size: cover; /* Ajusta la imagen de fondo para que cubra todo el elemento */
+  background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
 }
 
-.content-all{
-    width: 160px;
-    margin: auto;
-    perspective: 750px;
-    position: relative;
-    margin-top: 50px;
-
+h2 {
+  text-align: center; /* Centra el texto horizontalmente dentro del elemento */
+  font-size: 40px; /* Establece el tamaño de fuente a 40 píxeles */
+  font-family: arial; /* Establece la fuente del texto como Arial */
+  margin-top: 80px; /* Agrega un margen superior de 80 píxeles al elemento */
+  color: aqua; /* Establece el color del texto como Aqua */
+  text-shadow: 0px 0px 6px black; /* Agrega una sombra de texto con desplazamiento y difuminado */
 }
 
-.content-carrousel{
-  width: 100%;
-  position: absolute;
-  animation: rotar 32s infinite linear; /* aumentar la duración */
-  transform-style: preserve-3d;
+.content-all {
+  width: 160px; /* Establece el ancho del elemento a 160 píxeles */
+  margin: auto; /* Centra horizontalmente el elemento dentro de su contenedor */
+  perspective: 750px; /* Establece la perspectiva 3D para los elementos descendientes */
+  position: relative; /* Establece el posicionamiento relativo del elemento */
+  margin-top: 50px; /* Agrega un margen superior de 50 píxeles al elemento */
 }
 
-
-.content-carrousel:hover{
-    animation-play-state: paused;
-    cursor: pointer;
+.content-carrousel {
+  width: 100%; /* Establece el ancho del elemento al 100% del ancho del contenedor */
+  position: absolute; /* Establece el posicionamiento absoluto del elemento */
+  animation: rotar 32s infinite linear; /* Establece la animación de rotación con una duración de 32 segundos y se repite infinitamente */
+  transform-style: preserve-3d; /* Establece el estilo de transformación 3D para los elementos descendientes */
 }
 
-
-.content-carrousel figure{
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    position: absolute;
-    box-shadow: 0px 0px 20px 0px black;
-    transition: all 300ms;
-
+.content-carrousel:hover {
+  animation-play-state: paused; /* Pausa la animación cuando el cursor está sobre el elemento */
+  cursor: pointer; /* Cambia el cursor del mouse a un puntero */
 }
 
-.content-carrousel figure:hover{
-    box-shadow: 0px 0px 0px 0px black;
-    transition: all 300ms;
+.content-carrousel figure {
+  width: 100%; /* Establece el ancho del elemento al 100% del ancho del contenedor */
+  height: 200px; /* Establece la altura del elemento a 200 píxeles */
+  overflow: hidden; /* Oculta cualquier contenido que se desborde del elemento */
+  position: absolute; /* Establece el posicionamiento absoluto del elemento */
+  box-shadow: 0px 0px 20px 0px black; /* Agrega una sombra al elemento */
+  transition: all 300ms; /* Aplica una transición suave a todas las propiedades durante 300 milisegundos */
 }
 
-.content-carrousel figure:nth-child(1){transform: rotateY(0deg) translateZ(300px);}
-.content-carrousel figure:nth-child(2){transform: rotateY(40deg) translateZ(300px);}
-.content-carrousel figure:nth-child(3){transform: rotateY(80deg) translateZ(300px);}
-.content-carrousel figure:nth-child(4){transform: rotateY(120deg) translateZ(300px);}
-.content-carrousel figure:nth-child(5){transform: rotateY(160deg) translateZ(300px);}
-.content-carrousel figure:nth-child(6){transform: rotateY(200deg) translateZ(300px);}
-.content-carrousel figure:nth-child(7){transform: rotateY(240deg) translateZ(300px);}
-.content-carrousel figure:nth-child(8){transform: rotateY(280deg) translateZ(300px);}
-.content-carrousel figure:nth-child(9){transform: rotateY(320deg) translateZ(300px);}
-.content-carrousel figure:nth-child(10){transform: rotateY(360deg) translateZ(300px);}
+.content-carrousel figure:hover {
+  box-shadow: 0px 0px 0px 0px black; /* Elimina la sombra del elemento cuando se pasa el cursor sobre él */
+  transition: all 300ms; /* Aplica una transición suave a todas las propiedades durante 300 milisegundos */
+}
+.content-carrousel figure:nth-child(1){transform: rotateY(0deg) translateZ(300px);}/* Aplica una rotación 3D y una traslación en el eje Z al primer elemento */
+.content-carrousel figure:nth-child(2){transform: rotateY(40deg) translateZ(300px);}/* Aplica una rotación 3D y una traslación en el eje Z al primer elemento */
+.content-carrousel figure:nth-child(3){transform: rotateY(80deg) translateZ(300px);}/* Aplica una rotación 3D y una traslación en el eje Z al primer elemento */
+.content-carrousel figure:nth-child(4){transform: rotateY(120deg) translateZ(300px);}/* Aplica una rotación 3D y una traslación en el eje Z al primer elemento */
+.content-carrousel figure:nth-child(5){transform: rotateY(160deg) translateZ(300px);}/* Aplica una rotación 3D y una traslación en el eje Z al primer elemento */
+.content-carrousel figure:nth-child(6){transform: rotateY(200deg) translateZ(300px);}/* Aplica una rotación 3D y una traslación en el eje Z al primer elemento */
+.content-carrousel figure:nth-child(7){transform: rotateY(240deg) translateZ(300px);}/* Aplica una rotación 3D y una traslación en el eje Z al primer elemento */
+.content-carrousel figure:nth-child(8){transform: rotateY(280deg) translateZ(300px);}/* Aplica una rotación 3D y una traslación en el eje Z al primer elemento */
+.content-carrousel figure:nth-child(9){transform: rotateY(320deg) translateZ(300px);}/* Aplica una rotación 3D y una traslación en el eje Z al primer elemento */
+.content-carrousel figure:nth-child(10){transform: rotateY(360deg) translateZ(300px);}/* Aplica una rotación 3D y una traslación en el eje Z al primer elemento */
 
-.content-carrousel img{
-    width: 100%;
-    transition: all 600ms;
+.content-carrousel img {
+  width: 100%; /* Establece el ancho de la imagen al 100% del ancho del elemento */
+  transition: all 600ms; /* Aplica una transición suave a todas las propiedades durante 600 milisegundos */
 }
 
-.content-carrousel img:hover{
-    transform: scale(1.2);
-    transition: all 600ms;
+.content-carrousel img:hover {
+  transform: scale(1.2); /* Escala la imagen al 120% de su tamaño original cuando se pasa el cursor sobre ella */
+  transition: all 600ms; /* Aplica una transición suave a todas las propiedades durante 600 milisegundos */
 }
 
-
-@keyframes rotar{
-    from{
-        transform: rotateY(0deg);
-    }to{
-        transform: rotateY(360deg);
-    }
+@keyframes rotar {
+  from {
+    transform: rotateY(0deg); /* Establece la transformación inicial de la animación */
+  }
+  to {
+    transform: rotateY(360deg); /* Establece la transformación final de la animación */
+  }
 }
+
 h1 {
-  font-family: serif;
-  color:rgb(0, 0, 0);
-  font-size: 1.8em;
-  text-align: center;
-  text-transform: uppercase;
-  position: relative;
+  font-family: serif; /* Establece la fuente del texto como una fuente serif */
+  color: rgb(0, 0, 0); /* Establece el color del texto como negro */
+  font-size: 1.8em; /* Establece el tamaño de fuente a 1.8 veces el tamaño normal */
+  text-align: center; /* Centra el texto horizontalmente dentro del elemento */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  position: relative; /* Establece el posicionamiento relativo del elemento */
 }
 
 h1::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 100px;
-  height: 3px;
-  background-color: rgb(0, 0, 0);
-  transform: translateX(-50%);
+  content: ""; /* Agrega contenido después del texto */
+  position: absolute; /* Establece el posicionamiento absoluto del elemento después del texto */
+  bottom: 0; /* Establece la posición inferior del elemento después del texto */
+  left: 50%; /* Establece la posición izquierda del elemento después del texto */
+  width: 100px; /* Establece el ancho del elemento a 100 píxeles */
+  height: 3px; /* Establece la altura del elemento a 3 píxeles */
+  background-color: rgb(0, 0, 0); /* Establece el color de fondo del elemento como negro */
+  transform: translateX(-50%); /* Desplaza el elemento horizontalmente en un 50% hacia la izquierda */
 }
 
 h1::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgb(0, 0, 0);
-  transform: translate(-50%, 50%);
-  box-shadow: 0 0 20px rgb(0, 0, 0);
+  content: ""; /* Agrega contenido antes del texto */
+  position: absolute; /* Establece el posicionamiento absoluto del elemento antes del texto */
+  bottom: 0; /* Establece la posición inferior del elemento antes del texto */
+  left: 50%; /* Establece la posición izquierda del elemento antes del texto */
+  width: 10px; /* Establece el ancho del elemento a 10 píxeles */
+  height: 10px; /* Establece la altura del elemento a 10 píxeles */
+  border-radius: 50%; /* Establece el radio de borde para crear un círculo */
+  background-color: rgb(0, 0, 0); /* Establece el color de fondo del elemento como negro */
+  transform: translate(-50%, 50%); /* Desplaza el elemento horizontalmente en un 50% hacia la izquierda y verticalmente en un 50% hacia abajo */
+  box-shadow: 0 0 20px rgb(0, 0, 0); /* Agrega una sombra al elemento */
 }
-
-
 
 .header {
-  color: rgb(0, 0, 0);
-  text-align: center;
-  text-decoration: underline;
-  font-weight: bold;
+  color: rgb(0, 0, 0); /* Establece el color del texto como negro */
+  text-align: center; /* Centra el texto horizontalmente dentro del elemento */
+  text-decoration: underline; /* Subraya el texto */
+  font-weight: bold; /* Establece el grosor de la fuente como negrita */
 }
-
-
-
 
 .card-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: flex; /* Establece el elemento como un elemento flexible */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en una nueva línea cuando no hay suficiente espacio horizontal */
+  justify-content: space-between; /* Distribuye el espacio sobrante entre los elementos de manera uniforme */
 }
 
 
 
 
 
-
-.card-row {
-  display: flex;
-  justify-content: space-between;
-}
 
 

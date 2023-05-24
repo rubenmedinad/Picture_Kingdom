@@ -1,65 +1,63 @@
 h1 {
-  text-align: center;
-  margin-bottom: 50px;
+  text-align: center; /* Centra el texto del encabezado horizontalmente */
+  margin-bottom: 50px; /* Agrega un margen inferior de 50 píxeles al elemento */
 }
+
 li {
-  list-style: none;
+  list-style: none; /* Elimina los marcadores de lista predeterminados */
 }
+
 .container img {
-  margin-right: -500%;
-  margin: 0 auto;
-  width: 17%;
-  height: auto;
+  margin-right: -500%; /* Desplaza la imagen hacia la izquierda, fuera de la vista (-500% del ancho del contenedor) */
+  margin: 0 auto; /* Centra la imagen horizontalmente dentro de su contenedor */
+  width: 17%; /* Establece el ancho de la imagen al 17% del ancho del contenedor */
+  height: auto; /* Ajusta automáticamente la altura de la imagen proporcionalmente */
 }
-  
+
 .table-container {
-    display:flex;
-  }
-  
-  .left-table {
-    width: 18%;
-  }
-  
-  .right-table {
-    margin-left: 100px;
-    width: 60%;
-    margin-top: -300px;
-    margin-bottom: 20px;
-  }
-  .left-table mark {
-    background-color: rgb(249, 212, 64); /* Establece el color de fondo deseado para resaltar el texto */
-    padding: 2px; /* Ajusta el relleno interno según tus preferencias */
-  }
+  display:flex; /* Establece el contenedor como un elemento flexible */
+}
 
-  .dia-menu {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .dia-menu button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
-  
-  .dia-menu button.active {
-    background-color: #007bff;
-    color: #fff;
-  }
-  .button-row {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-  }
-  .button-row button {
-    margin-right: 80px; /* Agrega margen derecho de 10px entre los botones */
-  }
+.left-table {
+  width: 18%; /* Establece el ancho del elemento al 18% del ancho del contenedor */
+}
 
-  
-  
-  
-  
-  
-  
+.right-table {
+  margin-left: 100px; /* Agrega un margen izquierdo de 100 píxeles */
+  width: 75%; /* Establece el ancho del elemento al 60% del ancho del contenedor */
+  margin-top: -300px; /* Desplaza el elemento hacia arriba, fuera de la vista (-300 píxeles) */
+  margin-bottom: 20px; /* Agrega un margen inferior de 20 píxeles al elemento */
+}
+
+.left-table mark {
+  background-color: rgb(249, 212, 64); /* Establece el color de fondo deseado para resaltar el texto */
+  padding: 2px; /* Ajusta el relleno interno según tus preferencias */
+}
+
+.dia-menu {
+  margin-top: 20px; /* Agrega un margen superior de 20 píxeles al elemento */
+  display: flex; /* Establece el elemento como un elemento flexible */
+  justify-content: center; /* Centra horizontalmente los elementos dentro del contenedor */
+  gap: 10px; /* Establece un espacio de 10 píxeles entre los elementos */
+}
+
+.dia-menu button {
+  padding: 20px; /* Establece el relleno interno del botón */
+  font-size: 16px; /* Establece el tamaño de fuente del botón */
+}
+
+.dia-menu button.active {
+  background-color: #007bff; /* Establece el color de fondo cuando el botón está activo */
+  color: #fff; /* Establece el color de texto cuando el botón está activo */
+}
+
+.button-row {
+  display: flex; /* Establece el elemento como un elemento flexible */
+  justify-content: center; /* Centra horizontalmente los elementos dentro del contenedor */
+  margin-top: 100px; /* Agrega un margen superior de 100 píxeles al elemento */
+  margin-bottom: 100px; /* Agrega un margen inferior de 100 píxeles al elemento */
+}
+
+.button-row button {
+  margin-right: 80px; /* Agrega un margen derecho de 80 píxeles entre los botones */
+}
