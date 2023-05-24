@@ -24,6 +24,7 @@ export class AsientosComponent {
   seats: Row[] = [];
   selectedSeats: { row: string, seat: number }[] = [];
   pasoActual = 'Asientos';
+  cantidadAsientos:number = 0
 
   constructor(private router: Router,private peliculasS: PictureKingdomService) {
 
@@ -35,6 +36,13 @@ export class AsientosComponent {
         row.seats.push(seat);
       }
       this.seats.push(row);
+    }
+  }
+  ngOnInit(){
+    console.log(this.peliculasS.obtenerVentas())
+    console.log(this.peliculasS.obtenerVentas().length)
+    if(this.peliculasS.obtenerVentas().length >= 4){
+      this.peliculasS.eliminarUltimoElemento(3)
     }
   }
 
@@ -68,12 +76,12 @@ export class AsientosComponent {
 
 
   }
-  ActualizarArray(){
-    this.peliculasS.rellenarVentas({Asientos:this.selectedSeats})
+  ActualizarArray() {
+    this.cantidadAsientos = this.selectedSeats.length;
+    console.log(this.cantidadAsientos);
+    this.peliculasS.rellenarVentas({ Asientos: this.selectedSeats });
   }
-  ngOnInit(){
-    console.log(this.peliculasS.obtenerVentas())
-  }
+
 
 }
 

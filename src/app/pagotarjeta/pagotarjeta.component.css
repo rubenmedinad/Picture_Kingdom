@@ -6,12 +6,12 @@
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
-h1 {
-  font-family: Arial, sans-serif; /* Fuente seria */
-  text-align: center; /* Centrar el texto */
-  margin-top: 50px; /* Margen superior de 20px */
-}
 
+h1 {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+}
 
 .payment-form {
   padding: 15px;
@@ -34,12 +34,13 @@ h1 {
 .hidden-label {
   display: none;
 }
+
 .cvv-input-wrapper {
   position: relative;
 }
 
 .cvv-input-wrapper input {
-  padding-right: 40px; /* Espacio para el botón de visibilidad */
+  padding-right: 40px;
 }
 
 .cvv-toggle-button {
@@ -47,8 +48,7 @@ h1 {
   top: 50%;
   right: 5px;
   transform: translateY(-50%);
-  border: none; /* Quita los bordes */
-  background-color: transparent; /* Quita el fondo */
-  box-shadow: none; /* Quita la sombra */
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
 }
-

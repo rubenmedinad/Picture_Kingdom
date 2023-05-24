@@ -5,7 +5,7 @@
 
 <div class="container">
   <div class="container">
-    <p>Asientos = {{ cantidadAsientos }}</p>
+    <p>Asientos = {{ asientosLength }}</p>
   <table>
     <tr>
       <th>Tipo de Entrada</th>
@@ -29,7 +29,7 @@
             </div>
             <button id="incrementar-btn" style="margin:20%" (click)="incrementarNumero(entrada)"> + </button>
           </div>
-          <button id="incrementar-btn" style="margin:20%"(click)="incrementarNumero(entrada)"> + </button>
+
         </div>
 
       </td>
@@ -49,7 +49,9 @@
       <td colspan="4">
         <a
           mat-button
-          [routerLink]="['/tarjeta', cantidadAsientos, calcularTotalGeneral()]"
+          (click)="ActualizarArray()"
+          [routerLink]="['/tarjeta', asientosLength, calcularTotalGeneral()]"
+          [disabled]="entrada.numero < asientosLength && this.calcularTotalEntradas() < this.asientosLength"
         >
           Realizar pago
         </a>

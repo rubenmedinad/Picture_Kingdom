@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PictureKingdomService } from '../picture-kingdom.service';
 
 @Component({
   selector: 'app-pagotarjeta',
@@ -7,38 +7,64 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./pagotarjeta.component.css']
 })
 export class PagotarjetaComponent implements OnInit {
-  form!: FormGroup;
-  months: number[] = Array.from({ length: 12 }, (_, i) => i + 1);
-  years: number[] = Array.from({ length: 28 }, (_, i) => 2005 - i);
-  showCVV: boolean = false;
-
-  constructor(private formBuilder: FormBuilder) { }
-
-  ngOnInit() {
-    this.form = this.formBuilder.group({
-      cardNumber: ['', Validators.required],
-      expirationMonth: ['', Validators.required],
-      expirationYear: ['', Validators.required],
-      cvv: ['', Validators.required]
-    });
-  }
   cardNumberValue: string = '';
+  expirationMonthValue: string = '';
+  expirationYearValue: string = '';
+  cvvValue: string = '';
+  showCVV: boolean = false;
+  datosBancarios: { numeroCuenta: string, mes: number, anio: number, cvv: number }[]= [];
+
+  constructor(private peliculasS: PictureKingdomService) {}
+
+  ngOnInit() {}
 
   formatCardNumber() {
-    let formattedNumber = this.cardNumberValue.replace(/-/g, ''); // Eliminar guiones existentes
-    formattedNumber = formattedNumber.replace(/\D/g, ''); // Eliminar caracteres no numéricos
-    const chunks = formattedNumber.match(/.{1,4}/g); // Dividir en grupos de 4 números
-    if (chunks) {
-      this.cardNumberValue = chunks.join('-'); // Unir con guiones
+    let formattedNumber = this.cardNumberValue.replace(/[^0-9]/g, ''); // Eliminar caracteres no numéricos
+
+    const chunks = [];
+    for (let i = 0; i < formattedNumber.length; i += 4) {
+      chunks.push(formattedNumber.substr(i, 4));
+    }
+
+    this.cardNumberValue = chunks.join('-'); // Unir con guiones
+
+    // Limitar el número de caracteres a 19
+    if (this.cardNumberValue.length > 19) {
+      this.cardNumberValue = this.cardNumberValue.slice(0, 19);
     }
   }
+
   toggleCVVVisibility() {
     this.showCVV = !this.showCVV;
   }
 
+  enviar() {
+    if (
+      this.cardNumberValue &&
+      this.expirationMonthValue &&
+      this.expirationYearValue &&
+      this.cvvValue
+    ) {
+      const datos = {
+        numeroCuenta: this.cardNumberValue,
+        mes: Number(this.expirationMonthValue),
+        anio: Number(this.expirationYearValue),
+        cvv: Number(this.cvvValue)
+      };
 
-  submitForm() {
-    // Aquí puedes agregar la lógica para procesar el formulario
-    // Por ejemplo, puedes acceder a los valores ingresados en el formulario utilizando this.form.value
+      this.datosBancarios.push(datos);
+      console.log(this.datosBancarios);
+
+      // Restablecer los campos
+      this.cardNumberValue = '';
+      this.expirationMonthValue = '';
+      this.expirationYearValue = '';
+      this.cvvValue = '';
+    }
+  }
+
+  ActualizarArray() {
+    this.peliculasS.rellenarVentas({ Datos_Bancarios: this.datosBancarios });
+    console.log(this.peliculasS.obtenerVentas());
   }
 }

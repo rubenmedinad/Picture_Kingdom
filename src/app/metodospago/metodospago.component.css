@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  max-width: 800px; /* Se ha aumentado el ancho máximo */
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -9,40 +9,67 @@
 table {
   width: 100%;
   border-collapse: collapse;
+  background-color: transparent; /* Elimina el fondo de la tabla */
 }
 
 th, td {
   padding: 10px;
   text-align: left;
+  border: none; /* Elimina los bordes entre columnas */
+}
+td:nth-child(4) {
+  max-width: 50px; /* Ajusta el ancho máximo según tus necesidades */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+td:nth-child(2) {
+  max-width: 100px; /* Ajusta el ancho máximo según tus necesidades */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: -40px; /* Ajusta el margen derecho negativo según tus necesidades */
+}
+td:nth-child(2) input[type="number"] {
+  max-width: 70px; /* Ajusta el ancho máximo según tus necesidades */
+}
+td:nth-child(3) {
+  max-width: 100px; /* Ajusta el ancho máximo según tus necesidades */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: -10px; /* Ajusta el margen derecho negativo según tus necesidades */
 }
 
+
 th {
-  background-color: #f2f2f2;
+  background-color: transparent;
 }
 
 tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: transparent;
 }
 
-.input-cont {
-  position: relative;
-}
+
 
 .input-cont input[type="number"] {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  width: 20%;
+
+  border: none; /* Elimina el borde */
+  outline: none; /* Elimina el contorno al recibir el foco */
+  background-color: transparent; /* Elimina el fondo */
   font-size: 14px;
+  pointer-events: none; /* Hace que el input no sea cliclable */
 }
+
 
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.numero{
+
+.numero {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,18 +85,18 @@ tr:nth-child(even) {
   height: 30px;
   padding: 0;
   border: none;
-  background-color: #f2f2f2;
+  background-color: transparent; /* Elimina el fondo del botón */
   font-size: 16px;
   cursor: pointer;
 }
 
 .addNumber_cont .input_cont {
   width: 50px;
-  height: 50px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 10px;
+
 }
 
 .addNumber_cont h1 {

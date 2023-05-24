@@ -57,5 +57,10 @@ export class PictureKingdomService {
   vaciarVentas() {
     this.ventas = [];
   }
-    constructor() { }
+  eliminarUltimoElemento(exceso: number): void {
+
+      this.ventas.splice(exceso);
+  }
+
+  constructor() { }
 }

@@ -15,6 +15,7 @@ export class HomeComponent {
   pelicula :Peliculas= new Peliculas(0,"","","","","","","","")
 
   ngOnInit(){
+    console.log(this.peliculasS.obtenerVentas())
     this.pelicula=this.peliculas[this.ide-1]
   }
 
