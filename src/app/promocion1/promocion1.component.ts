@@ -17,7 +17,7 @@ export class Promocion1Component implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.offers = this.pictureKingdomService.offers;
+    this.offers = this.pictureKingdomService.getOffers();
   }
 
   buyOffer(offer: any) {

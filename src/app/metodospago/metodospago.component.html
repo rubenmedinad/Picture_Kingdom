@@ -1,4 +1,11 @@
+<app-menu-compras></app-menu-compras>
+<router-outlet></router-outlet>
+
+
+
 <div class="container">
+  <div class="container">
+    <p>Asientos = {{ cantidadAsientos }}</p>
   <table>
     <tr>
       <th>Tipo de Entrada</th>
@@ -10,23 +17,43 @@
       <td>{{ entrada.nombreEntrada }}</td>
       <td>
         <div class="input-cont">
-          <td>{{entrada.precio}}</td>
+          <input type="number" [value]="entrada.precio" readonly />
         </div>
       </td>
-      <td class="center"> <!-- Agrega la clase "center" a esta celda -->
-        <div class="addNumber_cont">
-          <button id="decrementar-btn" style="margin:20%"(click)="decrementarNumero(entrada)"> - </button>
-          <div class="input_cont">
-            <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
+      <td>
+        <div class="center">
+          <div class="addNumber_cont">
+            <button id="decrementar-btn" style="margin:20%" (click)="decrementarNumero(entrada)"> - </button>
+            <div class="input_cont">
+              <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
+            </div>
+            <button id="incrementar-btn" style="margin:20%" (click)="incrementarNumero(entrada)"> + </button>
           </div>
           <button id="incrementar-btn" style="margin:20%"(click)="incrementarNumero(entrada)"> + </button>
         </div>
+
       </td>
-      <td><span><h1>{{ entrada.precio * entrada.numero }}</h1></span></td>
+      <td>
+        <span
+          ><h1>{{ entrada.precio * entrada.numero }}</h1></span
+        >
+      </td>
     </tr>
     <tr>
       <td colspan="3">Total general:</td>
-      <td><h1>{{ calcularTotalGeneral() }} €</h1></td>
+      <td>
+        <h1>{{ calcularTotalGeneral() }} €</h1>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <a
+          mat-button
+          [routerLink]="['/tarjeta', cantidadAsientos, calcularTotalGeneral()]"
+        >
+          Realizar pago
+        </a>
+      </td>
     </tr>
   </table>
 </div>

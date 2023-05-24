@@ -1,20 +1,5 @@
-.progreso-compra {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .progreso-compra ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-  }
-  
-  .progreso-compra li {
-    margin-right: 10px;
-    font-weight: bold;
-  }
-  
-  .progreso-compra li.activo {
-    color: blue;
-  }
-  
+
+.nav-link.active {
+  background-color: 		#DAA520; /* Reemplaza #ff0000 con el color deseado */
+  color: #ffffff; /* Reemplaza #ffffff con el color deseado para el texto */
+}

@@ -1,11 +1,10 @@
-<router-outlet></router-outlet>
 <body>
-  <div class="container">
+  <div class="container"*ngIf="offers">
     <br>
     <img class="image" src="../../assets/bannner-promo1.jpg" alt="Imagen de la oferta">
     <div class="text">
       <br>
-      <h2>¡Únete al Reino VIP de Picture Kingdom!</h2>
+      <h2>{{ offers[1]?.name }}</h2>
       <p>¡Prepárate para vivir la experiencia cinematográfica exclusiva en Picture Kingdom como miembro del Reino VIP! ¿Quieres saber por qué unirte a nuestro programa VIP es la mejor opción para los amantes del cine? Aquí te lo contamos:</p>
       <ul>
         <li>Beneficios inigualables: Como miembro del Reino VIP, disfrutarás de ventajas exclusivas durante todo el año. Accede a descuentos especiales en entradas, combos de snacks y bebidas, y mucho más. ¡Disfruta de tus películas favoritas con privilegios únicos!</li>
@@ -16,7 +15,7 @@
         <li>Comodidades adicionales: Además de la proyección de películas, el Reino VIP de Picture Kingdom ofrece comodidades adicionales. Disfruta de servicios de bar exclusivos, posibilidad de reservar tus asientos preferidos con anticipación y acceso a áreas especiales diseñadas para tu máximo confort.</li>
       </ul>
       <p>No te pierdas la oportunidad de unirte al Reino VIP de Picture Kingdom y experimentar el cine de una manera extraordinaria. ¡Únete a nosotros y forma parte de una comunidad selecta de amantes del séptimo arte!</p>
-      <a class="button" href="enlace_de_compra">¡Únete al Reino VIP ahora!</a>
+      <a class="button" [routerLink]="['/compraofertas', offers[1]?.id, offers[1]?.name, offers[1]?.image]">¡Compra ahora y vive momentos inolvidables en la gran pantalla!</a>
     </div>
   </div>
 </body>

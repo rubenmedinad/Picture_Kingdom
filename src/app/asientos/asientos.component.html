@@ -1,4 +1,5 @@
 <app-menu-compras></app-menu-compras>
+<router-outlet></router-outlet>
 <h1 class="text-center mt-4">Elige Tu Asiento</h1>
 
 <div class="container">
@@ -46,5 +47,5 @@
 </div>
 <p class="text-center mt-4">________________________________________________</p>
 <div class="text-center mt-4">
-  <button (click)="reserveSeat()" [routerLink]="['/metodos']" style="margin-bottom: 20px;">Reservar</button>
+  <button (click)="reserveSeat(); ActualizarArray()" [routerLink]="['/metodos', selectedSeats.length]" [disabled]="selectedSeats.length === 0" style="margin-bottom: 20px;">Reservar</button>
 </div>

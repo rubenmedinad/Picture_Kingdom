@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { PictureKingdomService } from '../picture-kingdom.service';
 interface Seat {
   row: string;
   name: number;
@@ -10,7 +11,7 @@ interface Seat {
 interface Row {
   name: string;
   seats: Seat[];
-  
+
 }
 
 @Component({
@@ -19,11 +20,14 @@ interface Row {
   styleUrls: ['./asientos.component.css']
 })
 export class AsientosComponent {
+
   seats: Row[] = [];
   selectedSeats: { row: string, seat: number }[] = [];
   pasoActual = 'Asientos';
-  
-  constructor() {
+
+  constructor(private router: Router,private peliculasS: PictureKingdomService) {
+
+
     for (let i = 1; i <= 10; i++) {
       let row: Row = { name: String.fromCharCode(75 - i), seats: [] };
       for (let j = 1; j <= 14; j++) {
@@ -48,7 +52,7 @@ export class AsientosComponent {
     }
   }
 
-  
+
   reserveSeat() {
     // Encontrar los asientos seleccionados
     const selectedSeats = this.seats.reduce<Seat[]>((acc, row) => {
@@ -61,7 +65,15 @@ export class AsientosComponent {
       seat.occupied = true;
       seat.selected = false;
     });
-}
+
+
+  }
+  ActualizarArray(){
+    this.peliculasS.rellenarVentas({Asientos:this.selectedSeats})
+  }
+  ngOnInit(){
+    console.log(this.peliculasS.obtenerVentas())
+  }
 
 }
 

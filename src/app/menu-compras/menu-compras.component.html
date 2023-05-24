@@ -1,8 +1,12 @@
-<div class="progreso-compra">
-    <ul>
-      <li *ngFor="let paso of pasos" [ngClass]="{'activo': paso === pasoActual}">
-        {{ paso }}
-      </li>
-    </ul>
-  </div>
-  
+<ul class="nav nav-tabs justify-content-center">
+  <li class="nav-item flex-fill text-center">
+    <a class="nav-link" routerLink="/asientos" routerLinkActive="active">Elige Asientos</a>
+  </li>
+  <li class="nav-item flex-fill text-center">
+    <a class="nav-link" routerLink="/metodos" routerLinkActive="active">Elige Entradas</a>
+  </li>
+  <li class="nav-item flex-fill text-center">
+    <a class="nav-link" routerLink="/tarjeta" routerLinkActive="active">Paga tus entradas</a>
+  </li>
+</ul>
+
