@@ -1,14 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Peliculas } from './_Modules/Peliculas';
-
+import { EditarperfilComponent } from './editarperfil/editarperfil.component';
 import {Ventas} from './_Modules/Ventas';
+
 @Injectable({
   providedIn: 'root'
 })
 export class PictureKingdomService {
+
   menuItems = [
     { name: 'Inicio', route: '/' },
     { name: 'Cartelera', route: '/cartelera' },
+    { name: 'Perfil', route: '/editarperfil' }
 
   ];
   entradas: any[] = [

@@ -1,0 +1,14 @@
+.image-container {
+    display: inline-block;
+    background-color: transparent;
+}
+
+.image-container img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: 150px; 
+    background-color: transparent;
+    background: none;
+    border: none;
+}
