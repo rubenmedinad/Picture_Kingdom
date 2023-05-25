@@ -13,6 +13,7 @@ import { CompraofertasComponent } from './compraofertas/compraofertas.component'
 import { PagotarjetaComponent } from './pagotarjeta/pagotarjeta.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { FinalizarCompraComponent } from './finalizar-compra/finalizar-compra.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cartelera', component: CarteleraComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'metodos', component: MetodospagoComponent },
   { path: 'compraofertas/:id/:name/:image', component: CompraofertasComponent },
   { path: 'login',component:LoginComponent},
+  { path: 'finalizar', component: FinalizarCompraComponent },
   {path:'registro',component:RegistroComponent}
 ]
 

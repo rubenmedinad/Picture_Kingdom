@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { FinalizarCompraComponent } from '../finalizar-compra/finalizar-compra.component';
 import { PictureKingdomService } from '../picture-kingdom.service';
 
 @Component({
@@ -17,7 +19,10 @@ export class PagotarjetaComponent implements OnInit {
   months: number[] = [];
   years: number[] = [];
 
-  constructor(private peliculasS: PictureKingdomService) {}
+  constructor(
+    private dialog: MatDialog,
+    private peliculasS: PictureKingdomService
+  ) {}
 
   ngOnInit() {
     this.generateMonthOptions();
@@ -86,5 +91,15 @@ export class PagotarjetaComponent implements OnInit {
     for (let i = currentYear; i <= maxYear; i++) {
       this.years.push(i);
     }
+  }
+
+  abrirDialogo(): void {
+    const dialogRef = this.dialog.open(FinalizarCompraComponent, {
+      width: '400px',
+      disableClose: true,
+      data: {}
+    });
+
+    
   }
 }
