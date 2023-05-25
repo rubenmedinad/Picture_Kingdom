@@ -1,0 +1,18 @@
+<body>
+
+  <div class="container">
+    <form class="login-form" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>CORREO</mat-label>
+        <input matInput [(ngModel)]="CORREO" name="username" >
+      </mat-form-field><br>
+      <mat-form-field appearance="outline">
+        <mat-label>CONTRASEÑA</mat-label>
+        <input matInput [(ngModel)]="contrasena" name="password" type="password">
+      </mat-form-field><br>
+      <button mat-raised-button color="primary">ENTRAR</button>
+
+      <p [routerLink]="['/registro']">REGISTRARSE</p>
+    </form>
+  </div>
+</body>

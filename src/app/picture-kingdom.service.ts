@@ -1,19 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Peliculas } from './_Modules/Peliculas';
-import { HorasPeliculas } from './_Modules/HorasPeliculas';
+import { EditarperfilComponent } from './editarperfil/editarperfil.component';
+import {Ventas} from './_Modules/Ventas';
+
 @Injectable({
   providedIn: 'root'
 })
 export class PictureKingdomService {
+
   menuItems = [
     { name: 'Inicio', route: '/' },
     { name: 'Cartelera', route: '/cartelera' },
+    { name: 'Perfil', route: '/editarperfil' }
 
   ];
   entradas: any[] = [
-    { nombreEntrada: 'Entrada 1', precio: 20, numero: 0 },
-    { nombreEntrada: 'Entrada 2', precio: 30, numero: 0 },
-    { nombreEntrada: 'Entrada 3', precio: 15, numero: 0 }
+    { nombreEntrada: 'Normal', precio: 8.90, numero: 0 },
+    { nombreEntrada: 'Abono Joven', precio: 6.50, numero: 0 },
+    { nombreEntrada: 'Familia Numerosa', precio: 6.50, numero: 0 }
 
   ];
   pelis = [
@@ -21,7 +25,7 @@ export class PictureKingdomService {
     { name: 'Cartelera', route: '/cartelera' },
     { name: 'Contact', route: '/contact' }
   ];
-
+  ventas:any[] = []
 
   peliculas: Peliculas[] = [
     new Peliculas(1, "Super Mario Bros: La película", 'Adaptación de la serie de videojuegos de Nintendo. La película cuenta la historia de Mario y Luigi, dos hermanos que viajan a un mundo oculto para rescatar a la Princesa Peach, capturada por el malvado Rey Bowser. Las cosas, sin embargo no serán sencillas. Mario y Luigi tendrán que enfrentarse a un ejército de setas animadas antes de luchar contra su oponente. Rutas de ladrillos y castillos con múltiples peligros serán algunos de los obstáculos que los hermanos tendrán que superar para conseguir su objetivo.', ' Aaron Horvath, Michael Jelenic ', 'Chris Pratt como Mario, Anya Taylor-Joy como la Princesa Peach, Charlie Day como Luigi, Jack Black como Bowser, Keegan-Michael Key como Toad, Seth Rogen como Donkey Kong, Fred Armisen como Cranky Kong, Sebastian Maniscalco como el Capataz Spike, Kevin Michael Richardson como Kamek, Khary Payton como el Rey Pingüino, Eric Bauza como los Koopas Soldados, Rino Romano como el Tío Tony, John DiMaggio como el Tío Arthur, Jessica DiCicco como un Toad Amarillo, Juliet Jelenic como Destello.', '1h 32min', 'COMEDIA, AVENTURA, ANIMACIÓN', '5 Abril 2023', '../assets/mariosinopsis.jpg'),
@@ -46,5 +50,20 @@ export class PictureKingdomService {
   getPeliculas():Peliculas[] {
     return this.peliculas
   }
-    constructor() { }
+  rellenarVentas(params: any) {
+    this.ventas.push(params);
+  }
+
+  obtenerVentas(): any[] {
+    return this.ventas;
+  }
+  vaciarVentas() {
+    this.ventas = [];
+  }
+  eliminarUltimoElemento(exceso: number): void {
+
+      this.ventas.splice(exceso);
+  }
+
+  constructor() { }
 }

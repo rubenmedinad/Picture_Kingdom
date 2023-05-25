@@ -1,0 +1,55 @@
+<div class="container">
+  <div style="position: relative; display: inline-block;">
+    <img [src]="editarfoto" alt="Imagen">
+    <button class="corner-button" (click)="openDialog()"></button>
+  </div>
+  <div class="table-container">
+  </div>
+</div>
+
+<form>
+  <table>
+    <tr>
+      <th>Nombre</th>
+      <td>
+        <div class="form-group">
+          <input type="text" id="nombre" name="nombre" [(ngModel)]="editar.nombre">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Apellido</th>
+      <td>
+        <div class="form-group">
+          <input type="text" id="apellido" name="apellido" [(ngModel)]="editar.apellido">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Contraseña</th>
+      <td>
+        <div class="form-group">
+          <input type="text" id="contrasena" name="contrasena" [(ngModel)]="editar.contrasena">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td>
+        <div class="form-group">
+          <input type="text" id="email" name="email" [(ngModel)]="editar.email">
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Teléfono</th>
+      <td>
+        <div class="form-group">
+          <input type="text" id="telefono" name="telefono" [(ngModel)]="editar.telefono">
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <button type="submit">Guardar Cambios</button>
+</form>

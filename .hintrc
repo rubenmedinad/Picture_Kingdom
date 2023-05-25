@@ -23,7 +23,8 @@
     "axe/forms": [
       "default",
       {
-        "label": "off"
+        "label": "off",
+        "select-name": "off"
       }
     ],
     "axe/parsing": [
@@ -31,6 +32,7 @@
       {
         "duplicate-id-aria": "off"
       }
-    ]
+    ],
+    "button-type": "off"
   }
 }

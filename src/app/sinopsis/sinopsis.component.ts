@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Peliculas } from '../_Modules/Peliculas';
 import { PictureKingdomService } from '../picture-kingdom.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Ventas } from '../_Modules/Ventas';
 
 @Component({
   selector: 'app-sinopsis',
@@ -14,8 +15,9 @@ export class SinopsisComponent {
   pelicula: Peliculas = new Peliculas(0, "", "", "", "", "", "", "", "");
   diasPeliculas: number[] = [];
   horariosPorDia: { [key: number]: string[] } = {};
-
   diaSeleccionado: number = 0;
+  horaSeleccionada: string = '';
+
 
   constructor(
     private peliculasS: PictureKingdomService,
@@ -30,14 +32,16 @@ export class SinopsisComponent {
       this.ide = data['id'];
     });
     this.pelicula = this.peliculas[this.ide - 1];
-
+    this.peliculasS.vaciarVentas();
     this.generarFechas();
   }
+
+
 
   generarFechas() {
     const fechaActual = new Date();
     this.diasPeliculas = Array.from({ length: 6 }, (_, i) => i);
-    
+
     const opcionesFecha = { weekday: 'short', month: 'long', day: 'numeric' };
 
     this.horariosPorDia = {
@@ -51,12 +55,21 @@ export class SinopsisComponent {
   }
 
   cambiarDiaSeleccionado(dia: number) {
+    
     this.diaSeleccionado = dia;
+
   }
 
   getHorariosPorDia(dia: number): string[] {
+
     return this.horariosPorDia[dia] || [];
   }
+  obtenerHorariosPorDiaString(dia: number): string {
+    const horarios = this.getHorariosPorDia(dia);
+    return horarios.join(', ');
+  }
+
+
 
   obtenerFechaActual(dia: number): string {
     const fechaActual = new Date();
@@ -68,4 +81,16 @@ export class SinopsisComponent {
     };
     return fechaActual.toLocaleDateString('es-ES', opcionesFecha);
   }
+
+
+
+ActualizarArray(hora: string){
+  this.horaSeleccionada = hora;
+  this.peliculasS.rellenarVentas({PeliculaID:this.ide})
+  this.peliculasS.rellenarVentas({ HoraID: this.horaSeleccionada });
+  this.peliculasS.rellenarVentas({DiaID:this.obtenerFechaActual(this.diaSeleccionado)})
+}
+
+
+
 }

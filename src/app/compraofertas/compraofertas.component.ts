@@ -11,7 +11,7 @@ export class CompraofertasComponent implements OnInit {
   offers: any[] = [];
   selectedOfferId: number | undefined;
   entrada: any = {
-    numero: 1,
+    numero: 0,
     precio: 0
   };
 
@@ -22,7 +22,6 @@ export class CompraofertasComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.entrada.numero = 0;
     this.offers = this.pictureKingdomService.getOffers();
     const idParam = this.route.snapshot.paramMap.get('id');
     this.selectedOfferId = idParam ? +idParam : undefined;
@@ -32,14 +31,13 @@ export class CompraofertasComponent implements OnInit {
   buyOffer(offer: any) {
     // Código para realizar la compra
   }
-
   incrementarNumero() {
     this.entrada.numero++;
     this.calculatePrice();
   }
 
   decrementarNumero() {
-    if (this.entrada.numero > 1) {
+    if (this.entrada.numero > 0) {
       this.entrada.numero--;
       this.calculatePrice();
     }
@@ -50,5 +48,9 @@ export class CompraofertasComponent implements OnInit {
     if (selectedOffer) {
       this.entrada.precio = selectedOffer.price;
     }
+  }
+
+  getTotalDeCompra(): number {
+    return this.entrada.precio * this.entrada.numero;
   }
 }

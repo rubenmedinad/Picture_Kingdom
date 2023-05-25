@@ -1,165 +1,123 @@
-* {
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff00;
-  box-sizing: border-box;
-}
-
-body {
+.container {
   width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-h1,
-p,
-th,
-td,
-.entrada,
-.precio,
-.center,
-.addNumber_cont,
-.decrease-btn,
-.increase-btn,
-.value_cont,
-.numero,
-.total,
-.input-cont {
-  background-color: #ffffff00;
-}
-
-/* Rest of the CSS code */
-.input-cont {
-  position: relative;
-  width: fit-content; /* Adjust the width based on content */
-}
-
-.input-cont input {
-  width: 80px; /* Set the desired width */
-  height: 100%;
-  padding: 0;
-  border: none; /* Remove borders */
-  outline: none;
-  background-color: transparent;
-  pointer-events: none; /* Make it non-clickable */
-}
-
-
-h1 {
-  color: #000000;
-  font-size: 18px;
-  margin-top: 15px;
-
-}
-
-p {
-  color: #000000;
-  font-size: 18px;
-  margin-bottom: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
 table {
-  background-color: transparent;
+  width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
-  border: none;
-  margin: 20px;
+  background-color: transparent; /* Elimina el fondo de la tabla */
 }
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border: none; /* Elimina los bordes entre columnas */
+}
+td:nth-child(4) {
+  max-width: 50px; /* Ajusta el ancho máximo según tus necesidades */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+td:nth-child(2) {
+  max-width: 100px; /* Ajusta el ancho máximo según tus necesidades */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: -40px; /* Ajusta el margen derecho negativo según tus necesidades */
+}
+td:nth-child(2) input[type="number"] {
+  max-width: 70px; /* Ajusta el ancho máximo según tus necesidades */
+}
+td:nth-child(3) {
+  max-width: 100px; /* Ajusta el ancho máximo según tus necesidades */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: -10px; /* Ajusta el margen derecho negativo según tus necesidades */
+}
+
 
 th {
   background-color: transparent;
-  color: #000000;
-  padding: 10px;
 }
 
-td {
+tr:nth-child(even) {
   background-color: transparent;
-  padding: 10px;
-  border: none;
 }
 
-.entrada {
-  background-color: transparent;
-  font-weight: bold;
+
+
+.input-cont input[type="number"] {
+  width: 20%;
+
+  border: none; /* Elimina el borde */
+  outline: none; /* Elimina el contorno al recibir el foco */
+  background-color: transparent; /* Elimina el fondo */
+  font-size: 14px;
+  pointer-events: none; /* Hace que el input no sea cliclable */
 }
 
-.precio {
-  background-color: transparent;
-  width: 70px;
-}
 
 .center {
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.addNumber_cont {
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.decrease-btn,
-.increase-btn {
-  background-color: transparent;
-  width: 30px;
-  height: 40px;
-  border: none;
-  margin: 10%;
-  border-radius: 5px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
-}
-
-.decrease-btn:hover,
-.increase-btn:hover {
-  background-color: transparent;
-  margin: 10%;
-}
-
-.value_cont {
-  width: 60px;
-  height: 60px;
-  margin: 10px;
-  border-radius: 5px;
-  background-color: transparent;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .numero {
-  font-size: 28px;
-}
-
-.total {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.input_cont {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  text-align: center;
-}
-
-
-
-.container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
-  margin: 20px;
+}
+
+.addNumber_cont {
+  display: flex;
+  align-items: center;
+}
+
+.addNumber_cont button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  background-color: transparent; /* Elimina el fondo del botón */
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.addNumber_cont .input_cont {
+  width: 50px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.addNumber_cont h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+span h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+tr:last-child {
+  font-weight: bold;
+}
+
+tr:last-child td:first-child {
+  text-align: right;
+}
+
+tr:last-child h1 {
+  font-size: 28px;
+  margin: 0;
 }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -20,7 +20,18 @@ import { MetodospagoComponent } from './metodospago/metodospago.component';
 import { MenuComprasComponent } from './menu-compras/menu-compras.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CompraofertasComponent } from './compraofertas/compraofertas.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from'@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import { PagotarjetaComponent } from './pagotarjeta/pagotarjeta.component';
+import { FinalizarpagoComponent } from './finalizarpago/finalizarpago.component';
+import { FinalizarCompraComponent } from './finalizar-compra/finalizar-compra.component';
+import { EditarperfilComponent } from './editarperfil/editarperfil.component';
+import { MidialogoComponent } from './midialogo/midialogo.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -37,7 +48,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AsientosComponent,
     MenuComprasComponent,
     MetodospagoComponent,
-    CompraofertasComponent
+    CompraofertasComponent,
+    LoginComponent,
+    RegistroComponent,
+    PagotarjetaComponent,
+    FinalizarpagoComponent,
+    FinalizarCompraComponent,
+    EditarperfilComponent,
+    MidialogoComponent,
+
 
   ],
   imports: [
@@ -48,12 +67,17 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDialogModule,
+
 
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

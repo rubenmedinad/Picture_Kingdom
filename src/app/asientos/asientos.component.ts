@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { BasedeDatosService } from '../basede-datos.service';
 import { Asientos } from '../_Modules/Asientos';
 import { Peliculas } from '../_Modules/Peliculas';
+import { PictureKingdomService } from '../picture-kingdom.service';
 interface Seat {
   row: string;
   name: number;
@@ -13,7 +14,7 @@ interface Seat {
 interface Row {
   name: string;
   seats: Seat[];
-  
+
 }
 
 @Component({
@@ -22,6 +23,7 @@ interface Row {
   styleUrls: ['./asientos.component.css']
 })
 export class AsientosComponent {
+
   seats: Row[] = [];
   selectedSeats: { row: string, seat: number }[] = [];
   pasoActual = 'Asientos';
@@ -29,6 +31,11 @@ export class AsientosComponent {
   pelicula : Peliculas [] = []
   
   constructor(private router: Router, private servicio:BasedeDatosService) {
+  cantidadAsientos:number = 0
+
+  constructor(private router: Router,private peliculasS: PictureKingdomService) {
+
+
     for (let i = 1; i <= 10; i++) {
       let row: Row = { name: String.fromCharCode(75 - i), seats: [] };
       for (let j = 1; j <= 14; j++) {
@@ -40,12 +47,15 @@ export class AsientosComponent {
   }
   ngOnInit(): void{
     this.servicio.listarasientos().subscribe(datos => this.asiento=datos);
-    this.servicio.listarpeliculas().subscribe(datos => this.pelicula=datos);
    
     
+  ngOnInit(){
+    console.log(this.peliculasS.obtenerVentas())
+    if(this.peliculasS.obtenerVentas().length >= 4){
+      this.peliculasS.eliminarUltimoElemento(3)
+    }
   }
 
-  toggleSeatSelection(seat: Seat) {
     if (!seat.occupied) {
       seat.selected = !seat.selected;
       if (seat.selected) {
@@ -59,22 +69,28 @@ export class AsientosComponent {
     }
   }
 
-  
+
   reserveSeat() {
     // Encontrar los asientos seleccionados
     const selectedSeats = this.seats.reduce<Seat[]>((acc, row) => {
       const seats = row.seats.filter(seat => seat.selected);
       return acc.concat(seats);
     }, []);
-  
+
     // Marcar los asientos seleccionados como ocupados y reiniciar la selección
     selectedSeats.forEach(seat => {
       seat.occupied = true;
       seat.selected = false;
     });
-  
-  
+
+
   }
+  ActualizarArray() {
+    this.cantidadAsientos = this.selectedSeats.length;
+    console.log(this.cantidadAsientos);
+    this.peliculasS.rellenarVentas({ Asientos: this.selectedSeats });
+  }
+
 
 }
 

@@ -1,16 +1,14 @@
 <app-menu-compras></app-menu-compras>
 <router-outlet></router-outlet>
 
-
-
 <div class="container">
   <div class="container">
-    <p>Asientos = {{ cantidadAsientos }}</p>
+    <p>Asientos = {{ asientosLength }}</p>
   <table>
     <tr>
       <th>Tipo de Entrada</th>
       <th>Precio</th>
-      <th>Número</th>
+      <th class="numero">Número</th> <!-- Elimina el colspan="2" que se agregó anteriormente -->
       <th>Total</th>
     </tr>
     <tr *ngFor="let entrada of entradas">
@@ -22,16 +20,16 @@
       </td>
       <td>
         <div class="center">
-            <div class="addNumber_cont">
-              <button id="decrementar-btn" style="margin:20%"(click)="decrementarNumero(entrada)"> - </button>
-              <div class="input_cont">
-                <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
-              </div>
-
-
-              <button id="incrementar-btn" style="margin:20%"(click)="incrementarNumero(entrada)"> + </button>
+          <div class="addNumber_cont">
+            <button id="decrementar-btn" style="margin:20%" (click)="decrementarNumero(entrada)"> - </button>
+            <div class="input_cont">
+              <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
             </div>
+            <button id="incrementar-btn" style="margin:20%" (click)="incrementarNumero(entrada)"> + </button>
           </div>
+
+        </div>
+
       </td>
       <td>
         <span
@@ -43,6 +41,18 @@
       <td colspan="3">Total general:</td>
       <td>
         <h1>{{ calcularTotalGeneral() }} €</h1>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <a
+          mat-button
+          (click)="ActualizarArray()"
+          [routerLink]="['/tarjeta', asientosLength, calcularTotalGeneral()]"
+          [disabled]="entrada.numero < asientosLength && this.calcularTotalEntradas() < this.asientosLength"
+        >
+          Realizar pago
+        </a>
       </td>
     </tr>
   </table>
