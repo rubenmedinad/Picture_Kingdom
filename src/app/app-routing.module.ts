@@ -13,6 +13,8 @@ import { CompraofertasComponent } from './compraofertas/compraofertas.component'
 import { PagotarjetaComponent } from './pagotarjeta/pagotarjeta.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { EditarperfilComponent } from './editarperfil/editarperfil.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cartelera', component: CarteleraComponent },
@@ -26,7 +28,8 @@ const routes: Routes = [
   { path: 'metodos', component: MetodospagoComponent },
   { path: 'compraofertas/:id/:name/:image', component: CompraofertasComponent },
   { path: 'login',component:LoginComponent},
-  {path:'registro',component:RegistroComponent}
+  { path: 'registro',component:RegistroComponent},
+  { path: 'editarperfil',component:EditarperfilComponent}
 ]
 
 @NgModule({

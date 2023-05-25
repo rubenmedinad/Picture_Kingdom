@@ -26,6 +26,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { PagotarjetaComponent } from './pagotarjeta/pagotarjeta.component';
+import { EditarperfilComponent } from './editarperfil/editarperfil.component';
+import { MidialogoComponent } from './midialogo/midialogo.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -45,7 +48,10 @@ import { PagotarjetaComponent } from './pagotarjeta/pagotarjeta.component';
     CompraofertasComponent,
     LoginComponent,
     RegistroComponent,
-    PagotarjetaComponent
+    PagotarjetaComponent,
+    EditarperfilComponent,
+    MidialogoComponent,
+    
 
   ],
   imports: [
@@ -61,7 +67,8 @@ import { PagotarjetaComponent } from './pagotarjeta/pagotarjeta.component';
     BsDatepickerModule.forRoot(),
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
 
   ],
   providers: [],

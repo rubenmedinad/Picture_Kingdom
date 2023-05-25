@@ -1,0 +1,75 @@
+.form-container {
+  display: inline-block;
+  flex-direction: row;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  text-align: relative;
+}
+
+
+.container img {
+  margin: 120px 20px 10px 60px; /* Agrega margen superior, derecho, inferior e izquierdo */
+  width: 15%;
+  height: auto;
+}
+.corner-button {
+  position: absolute; /* Corrige el valor de posición */
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  margin-right: 858px;
+  margin-bottom: 10px;
+  /* Otros estilos personalizados */
+}
+
+
+/* Estilos para el formulario */
+form {
+  width: 500px; /* Puedes ajustar el ancho según tus necesidades */
+  margin: 0 auto; /* Centra el formulario en la página */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: -190px;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+}
+
+/* Estilos adicionales para los inputs */
+input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  border-bottom: none; /* Elimina la línea debajo del input */
+}
+
+/* Estilos para el botón */
+button[type="submit"] {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 9px;
+  margin-left: 334px;
+  margin-bottom: 100px;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+
+}
