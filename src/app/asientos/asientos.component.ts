@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { BasedeDatosService } from '../basede-datos.service';
+import { Asientos } from '../_Modules/Asientos';
+import { Peliculas } from '../_Modules/Peliculas';
 interface Seat {
   row: string;
   name: number;
@@ -22,8 +25,10 @@ export class AsientosComponent {
   seats: Row[] = [];
   selectedSeats: { row: string, seat: number }[] = [];
   pasoActual = 'Asientos';
+  asiento : Asientos [] = []
+  pelicula : Peliculas [] = []
   
-  constructor(private router: Router) {
+  constructor(private router: Router, private servicio:BasedeDatosService) {
     for (let i = 1; i <= 10; i++) {
       let row: Row = { name: String.fromCharCode(75 - i), seats: [] };
       for (let j = 1; j <= 14; j++) {
@@ -32,6 +37,12 @@ export class AsientosComponent {
       }
       this.seats.push(row);
     }
+  }
+  ngOnInit(): void{
+    this.servicio.listarasientos().subscribe(datos => this.asiento=datos);
+    this.servicio.listarpeliculas().subscribe(datos => this.pelicula=datos);
+   
+    
   }
 
   toggleSeatSelection(seat: Seat) {

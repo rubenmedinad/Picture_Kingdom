@@ -20,6 +20,7 @@ import { MetodospagoComponent } from './metodospago/metodospago.component';
 import { MenuComprasComponent } from './menu-compras/menu-compras.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CompraofertasComponent } from './compraofertas/compraofertas.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
@@ -48,6 +49,7 @@ import { CompraofertasComponent } from './compraofertas/compraofertas.component'
     MatSidenavModule,
     MatListModule,
     FormsModule,
+    HttpClientModule,
     BsDatepickerModule.forRoot()
 
   ],
