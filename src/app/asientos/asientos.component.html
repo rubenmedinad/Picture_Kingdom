@@ -55,11 +55,3 @@
 <div class="text-center mt-4">
   <button (click)="reserveSeat(); ActualizarArray()" [routerLink]="['/metodos']" [disabled]="selectedSeats.length === 0" style="margin-bottom: 20px;">Reservar</button>
 </div>
-
-<table>
-<tr *ngFor="let elemento of pelicula">
-  <td>{{elemento.id}}</td>
-  <td>{{elemento.titulo}}</td>
-  <td>{{elemento.sinopsis}}</td>
-  </tr>
-</table>
