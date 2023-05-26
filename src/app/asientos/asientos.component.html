@@ -35,6 +35,7 @@
       </tbody>
     </table>
   </div>
+  
 
   <div class="selected-seats">
     <p>Asientos seleccionados:</p>
@@ -42,9 +43,14 @@
       <li *ngFor="let selectedSeat of selectedSeats">Fila: {{ selectedSeat.row }}, Asiento: {{ selectedSeat.seat }}</li>
     </ul>
   </div>
-
-
 </div>
+
+<div>
+  <img src="../../assets/pantalla.png" class="pantallas-image">
+</div>
+
+<div class="text-center mt-4">
+  <button (click)="reserveSeat()" [routerLink]="['/metodos',selectedSeats.length]" [disabled]="selectedSeats.length === 0" style="margin-bottom: 20px;" class="boton">Reservar</button>
 <p class="text-center mt-4">________________________________________________</p>
 <div class="text-center mt-4">
   <button (click)="reserveSeat(); ActualizarArray()" [routerLink]="['/metodos']" [disabled]="selectedSeats.length === 0" style="margin-bottom: 20px;">Reservar</button>

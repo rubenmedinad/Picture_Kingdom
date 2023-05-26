@@ -25,7 +25,6 @@ body {
   margin: auto;
 }
 
-
 .login-form > * {
   margin-bottom: 10px;
 }
@@ -34,4 +33,27 @@ body {
   padding: 20px;
   height: 60px;
   width: 100%;
+}
+.entrar{
+  color: white;
+  background-color: #5015be;
+  padding: 22px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.entrar:hover {
+  background-color: #5d19da;
+}
+
+.registro-link {
+  color: white;
+  background-color: #5015be;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.registro-link:hover {
+  background-color: #5d19da;
 }

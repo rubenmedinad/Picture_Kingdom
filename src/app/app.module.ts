@@ -20,6 +20,7 @@ import { MetodospagoComponent } from './metodospago/metodospago.component';
 import { MenuComprasComponent } from './menu-compras/menu-compras.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CompraofertasComponent } from './compraofertas/compraofertas.component';
+import { HttpClient, HttpClientModule } from'@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -68,15 +69,15 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatListModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     BsDatepickerModule.forRoot(),
     MatFormFieldModule,
-    MatDialogModule,
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
 
+
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

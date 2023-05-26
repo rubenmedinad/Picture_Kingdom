@@ -88,3 +88,15 @@
 .text-center {
   text-align: center;
 }
+
+.pantallas-image {
+  margin-top: -190px;
+  margin-left: 10px;
+  width: 100%;
+  max-width: 2000px;
+  margin-bottom: -90px; /* Ajusta el tamaño máximo de la imagen según tus necesidades */
+}
+
+.boton{
+  margin-top: -30px;
+}
