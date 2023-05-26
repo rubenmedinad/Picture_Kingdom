@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { BasedeDatosService } from '../basede-datos.service';
+import { Asientos } from '../_Modules/Asientos';
+import { Peliculas } from '../_Modules/Peliculas';
 import { PictureKingdomService } from '../picture-kingdom.service';
 interface Seat {
   row: string;
@@ -24,6 +27,10 @@ export class AsientosComponent {
   seats: Row[] = [];
   selectedSeats: { row: string, seat: number }[] = [];
   pasoActual = 'Asientos';
+  asiento : Asientos [] = []
+  pelicula : Peliculas [] = []
+  
+  constructor(private router: Router, private servicio:BasedeDatosService) {
   cantidadAsientos:number = 0
 
   constructor(private router: Router,private peliculasS: PictureKingdomService) {
@@ -38,15 +45,17 @@ export class AsientosComponent {
       this.seats.push(row);
     }
   }
+  ngOnInit(): void{
+    this.servicio.listarasientos().subscribe(datos => this.asiento=datos);
+   
+    
   ngOnInit(){
     console.log(this.peliculasS.obtenerVentas())
-    console.log(this.peliculasS.obtenerVentas().length)
     if(this.peliculasS.obtenerVentas().length >= 4){
       this.peliculasS.eliminarUltimoElemento(3)
     }
   }
 
-  toggleSeatSelection(seat: Seat) {
     if (!seat.occupied) {
       seat.selected = !seat.selected;
       if (seat.selected) {
