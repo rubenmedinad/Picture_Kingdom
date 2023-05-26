@@ -1,13 +1,10 @@
-<html>
-<body>
-    <div class="image-container">
-        <img [src]="imagenSeleccionada1" alt="Imagen" (click)="seleccionarImagen(1)">
-    </div>
-    <div class="image-container">
-        <img src="{{imagenSeleccionada2}}" alt="Imagen seleccionada2" (click)="seleccionarImagen(2)">
-    </div>
-    <div class="image-container">
-        <img [src]="imagenSeleccionada3" alt="Imagen seleccionada3" (click)="seleccionarImagen(3)">
-    </div>
-</body>
-</html>
+<div class="image-container">
+    <img [src]="imagenSeleccionada1" alt="Imagen" (click)="seleccionarImagen(1)">
+  </div>
+  <div class="image-container">
+    <img [src]="imagenSeleccionada2" alt="Imagen seleccionada2" (click)="seleccionarImagen(2)">
+  </div>
+  <div class="image-container">
+    <img [src]="imagenSeleccionada3" alt="Imagen seleccionada3" (click)="seleccionarImagen(3)">
+  </div>
+  

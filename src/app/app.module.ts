@@ -70,12 +70,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     FormsModule,
     BsDatepickerModule.forRoot(),
     MatFormFieldModule,
-    MatDialogModule,
+    MatDialogModule,  // Aquí está el primer MatDialogModule
     MatInputModule,
     MatButtonModule,
-    MatDialogModule,
-
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
