@@ -95,11 +95,12 @@ export class PagotarjetaComponent implements OnInit {
 
   abrirDialogo(): void {
     const dialogRef = this.dialog.open(FinalizarCompraComponent, {
-      width: '400px',
+      width: '500px', // Cambia el ancho del diálogo
+      height: '300px', // Cambia la altura del diálogo
       disableClose: true,
       data: {}
     });
 
-    
+
   }
 }

@@ -38,6 +38,10 @@ export class PictureKingdomService {
     new Peliculas(8, "Love Again", '¿Qué ocurriría si un mensaje de texto al azar te llevara al amor de tu vida? En esta comedia romántica, mientras intenta superar la pérdida de su prometido, Mira Ray envía una serie de mensajes románticos a su antiguo número de teléfono… sin tener en cuenta que el número había sido reasignado al nuevo teléfono de trabajo de Rob Burns. Rob, periodista, queda sorprendido por la honestidad de los mensajes de texto. Cuando le asignan la tarea de escribir un artículo sobre la mega estrella Celine Dion, él le pide ayuda para averiguar cómo conocer a Mira en persona… y conquistar así su corazón.', 'Jim Strouse', 'Priyanka Chopra Jonas, Celia Imrie, Omid Djalili, Russell Tovey, Sam Heughan, Céline Dion', '1h 44min', 'DRAMA, ROMANCE, COMEDIA', '12 Mayo 2023', '../assets/loveagaincarrusel.jpg'),
     new Peliculas(9, "Vaya Vacaciones", 'Manuela y José quieren mucho a sus hijos y, sobre todo, idolatran a sus nietos. Pero los padres de estos han tomado por costumbre dejar a sus retoños al cuidado de sus abuelos, día sí y día también. Manuela y José ya no recuerdan la última vez que tuvieron un rato para ellos mismos.', 'Víctor García León', 'Ramón Barea, Ernesto Sevilla, Toni Acosta, Tito Valverde, Nuria Herrero, Daniela Rubio', '1h 30min', 'COMEDIA', '21 Abril 2023', '../assets/vayavacacionescarrusel.jpg')
   ];
+  buscarPeliculaPorId(id: number): Peliculas | undefined {
+    return this.peliculas.find((pelicula) => pelicula.id === id);
+  }
+
   offers = [
     { id: 1, name: "¡BLACK FRIDAY EN PICTURE KINGDOM!", image: '../assets/BANNER-PDF-ENTRADA-BLACK-FRIDAY.jpg', price: "9.99" },
     { id: 2, name: "¡Únete al Reino VIP de Picture Kingdom!", image: '../assets/bannner-promo1.jpg', price: "19.99" },
