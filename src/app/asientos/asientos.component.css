@@ -28,12 +28,16 @@
 .selected-seats {
   margin-left: 100px;
   margin-top: 20px;
+  max-height: 200px; /* Establece una altura máxima para mostrar el desplazamiento */
+  overflow-y: auto; /* Añade una barra de desplazamiento vertical automáticamente cuando sea necesario */
 }
 
-.selected-seats ul {
+.selected-seats-list ul {
   padding: 0;
   list-style: none;
+  margin: 0;
 }
+
 
 .selected-seats li {
   margin-bottom: 5px;
@@ -47,7 +51,7 @@
 .table-no-border td,
 .table-no-border th {
   border: none;
-  letter-spacing: 1px; 
+  letter-spacing: 1px;
 }
 
 .spacer {
