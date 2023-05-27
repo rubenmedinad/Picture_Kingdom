@@ -32,26 +32,33 @@
 
   <mat-sidenav-content>
     <router-outlet></router-outlet>
-    <footer class="footer alaign:botto">
+    <footer class="footer">
       <div class="footer-container">
-        <mat-toolbar>
-          <span class="footer-name">Picture Kingdom</span>
-          <span class="footer-spacer"></span>
-          <a mat-button href="https://www.instagram.com/picturekingdomofficial/" target="_blank"><mat-icon>instagram</mat-icon>Síguenos en Instagram</a>
-          <a mat-button href="https://twitter.com/picturekingdom" target="_blank"><mat-icon>twitter</mat-icon>Síguenos en Twitter</a>
+        <mat-toolbar color="black">
+          <div class="footer-line">
+            <span class="footer-name" style="color: #f1be41;">PICTURE KINGDOM</span>
+          </div>
+          <div class="footer-line">
+            <a mat-button href="https://www.instagram.com/picturekingdomofficial/" target="_blank" class="social-link" style="color: #f1be41;">
+              <mat-icon>photo_camera</mat-icon>Síguenos en Instagram
+            </a>
+            <a mat-button href="https://twitter.com/picturekingdom" target="_blank" class="social-link" style="color: #f1be41;">
+              <mat-icon>verifie</mat-icon>Síguenos en Twitter
+            </a>
+            <a mat-button href="mailto:info@picturekingdom.com" target="_blank" class="contact-link" style="color: #f1be41;">
+              <mat-icon>email</mat-icon> info@picturekingdom.com
+            </a>
+            <a mat-button href="tel:+15551234567" class="contact-link" target="_blank" style="color: #f1be41;">
+              <mat-icon>phone</mat-icon>+1 (555) 123-4567
+            </a>
+          </div>
         </mat-toolbar>
-        <div class="footer-contact">
-          <a href="mailto:info@picturekingdom.com">
-            <mat-icon>email</mat-icon>
-            info@picturekingdom.com
-          </a>
-          <a href="tel:+15551234567">
-            <mat-icon>phone</mat-icon>
-            +1 (555) 123-4567
-          </a>
-        </div>
-        </div>
-      </footer>
+      </div>
+    </footer>
+
+
+
+
     </mat-sidenav-content>
   </mat-sidenav-container>
 </body>
