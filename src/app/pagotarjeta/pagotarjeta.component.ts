@@ -44,18 +44,22 @@ export class PagotarjetaComponent implements OnInit {
       this.cardNumberValue = this.cardNumberValue.slice(0, 19);
     }
   }
+  cvvValueFocused: boolean = false;
 
-  toggleCVVVisibility() {
-    this.showCVV = !this.showCVV;
+  onCVVFocus() {
+    this.cvvValueFocused = true;
   }
 
+  toggleCVVVisibility(show: boolean) {
+    if (!this.cvvValueFocused) {
+      this.showCVV = show;
+    }
+  }
+
+
+
   enviar() {
-    if (
-      this.cardNumberValue &&
-      this.expirationMonthValue &&
-      this.expirationYearValue &&
-      this.cvvValue
-    ) {
+    if (this.formValid()) {
       const datos = {
         numeroCuenta: this.cardNumberValue,
         mes: Number(this.expirationMonthValue),
@@ -72,6 +76,15 @@ export class PagotarjetaComponent implements OnInit {
       this.expirationYearValue = '';
       this.cvvValue = '';
     }
+  }
+
+  formValid() {
+    return (
+      this.cardNumberValue &&
+      this.expirationMonthValue &&
+      this.expirationYearValue &&
+      this.cvvValue
+    );
   }
 
   ActualizarArray() {
@@ -100,7 +113,5 @@ export class PagotarjetaComponent implements OnInit {
       disableClose: true,
       data: {}
     });
-
-
   }
 }
