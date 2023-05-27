@@ -4,56 +4,51 @@
 <div class="container">
   <div class="container">
     <p>Asientos = {{ asientosLength }}</p>
-  <table>
-    <tr>
-      <th>Tipo de Entrada</th>
-      <th>Precio</th>
-      <th class="numero">Número</th> <!-- Elimina el colspan="2" que se agregó anteriormente -->
-      <th>Total</th>
-    </tr>
-    <tr *ngFor="let entrada of entradas">
-      <td>{{ entrada.nombreEntrada }}</td>
-      <td>
-        <div class="input-cont">
-          <input type="number" [value]="entrada.precio" readonly />
-        </div>
-      </td>
-      <td>
-        <div class="center">
-          <div class="addNumber_cont">
-            <button id="decrementar-btn" style="margin:20%" (click)="decrementarNumero(entrada)"> - </button>
-            <div class="input_cont">
-              <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
-            </div>
-            <button id="incrementar-btn" style="margin:20%" (click)="incrementarNumero(entrada)"> + </button>
+    <table>
+      <tr>
+        <th>Tipo de Entrada</th>
+        <th>Precio</th>
+        <th class="numero">Número</th>
+        <th>Total</th>
+      </tr>
+      <tr *ngFor="let entrada of entradas">
+        <td>{{ entrada.nombreEntrada }}</td>
+        <td>
+          <div class="input-cont">
+            <td>{{ entrada.precio }}</td>
           </div>
+        </td>
+        <td>
+          <div class="center">
+            <div class="addNumber_cont">
+              <button id="decrementar-btn" style="margin:20%" (click)="decrementarNumero(entrada)"> - </button>
+              <div class="input_cont">
+                <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
+              </div>
+              <button id="incrementar-btn" style="margin:20%" (click)="incrementarNumero(entrada)"> + </button>
+            </div>
+          </div>
+        </td>
+        <td>
+          <span><h1>{{ entrada.precio * entrada.numero }}</h1></span>
+        </td>
+      </tr>
+      <tr>
 
-        </div>
+      </tr>
+      <tr>
+        <td colspan="4" class="total-value">
+          <h1 style="float: left;">Total general:</h1>
+          <h1 style="float: right;">{{ calcularTotalGeneral() }} €</h1>
+        </td>
+      </tr>
 
-      </td>
-      <td>
-        <span
-          ><h1>{{ entrada.precio * entrada.numero }}</h1></span
-        >
-      </td>
-    </tr>
-    <tr>
-      <td colspan="3">Total general:</td>
-      <td>
-        <h1>{{ calcularTotalGeneral() }} €</h1>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="4">
-        <a
-          mat-button
-          (click)="ActualizarArray()"
-          [routerLink]="['/tarjeta', asientosLength, calcularTotalGeneral()]"
-          [disabled]="entrada.numero < asientosLength && this.calcularTotalEntradas() < this.asientosLength"
-        >
-          Realizar pago
-        </a>
-      </td>
-    </tr>
-  </table>
+
+      <tr>
+        <td colspan="4" class="reserve-button">
+          <a mat-button (click)="ActualizarArray()" [routerLink]="['/tarjeta', asientosLength, calcularTotalGeneral()]" [disabled]="entrada.numero < asientosLength && this.calcularTotalEntradas() < this.asientosLength" style="background-color: #f1be41;">Realizar pago</a>
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
