@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 import { PictureKingdomService } from '../picture-kingdom.service';
 import jsPDF from 'jspdf';
 
@@ -9,7 +10,11 @@ import jsPDF from 'jspdf';
   styleUrls: ['./finalizar-compra.component.css'],
 })
 export class FinalizarCompraComponent implements OnInit {
-  constructor(private router: Router, private peliculasS: PictureKingdomService) {}
+  constructor(
+    private router: Router,
+    private peliculasS: PictureKingdomService,
+    private dialogRef: MatDialogRef<FinalizarCompraComponent>
+  ) {}
 
   ngOnInit() {
     // Código relacionado con la inicialización del componente
@@ -17,6 +22,7 @@ export class FinalizarCompraComponent implements OnInit {
 
   volverAlHome() {
     this.router.navigate(['']);
+    this.dialogRef.close();
   }
 
   descargarPDF() {
@@ -27,106 +33,63 @@ export class FinalizarCompraComponent implements OnInit {
     const peliculaID = parseInt(compra[0].PeliculaID);
     const pelicula = this.peliculasS.peliculas.find((p) => p.id === peliculaID);
     const imagenURL = pelicula?.imagen;
-    // Crear un elemento de imagen HTML para la imagen de la película
-    const imgElement = new Image();
+
+    const entradaWidth = 160; // Ancho de la entrada
+    const entradaHeight = 80; // Alto de la entrada
+    const entradaMargin = 10; // Margen entre entradas
 
     // Verificar que imagenURL tenga un valor antes de asignarlo
     if (imagenURL) {
-      imgElement.src = imagenURL;
-
-      // Esperar a que la imagen se cargue antes de agregarla al PDF
+      // Esperar a que se cargue la imagen antes de generar el PDF
+      const imgElement = new Image();
       imgElement.onload = () => {
-        const imagenWidth = 60; // Ancho de la imagen de la película
-        const imagenHeight = 60; // Alto de la imagen de la película
-        const imagenX = (210 - imagenWidth) / 2; // Posición X centrada de la imagen de la película
+        // Calcular la cantidad de entradas necesarias
+        const cantidadEntradas = compra[3]?.Asientos.length;
 
-        // Agregar la primera página con el logo ocupando todo el espacio
-        
-
-        const tiposEntradaUnicos = Array.from(
-          new Set(
-            compra[4]?.Entradas.map((entrada: any) => entrada.nombreEntrada)
-          )
-        );
-
-        // Generar una página separada para cada tipo de entrada y asiento
-        tiposEntradaUnicos.forEach((tipoEntrada: any, index: number) => {
-          if (index > 0) {
+        // Generar una entrada por cada asiento
+        for (let i = 0; i < cantidadEntradas; i++) {
+          if (i > 0) {
             doc.addPage();
           }
 
-          // Definir la posición de los elementos de texto en cada página
-          const tituloX = 20; // Posición X del título
-          const tituloY = 100; // Posición Y del título
-          const duracionX = 20; // Posición X de la duración
-          const duracionY = 110; // Posición Y de la duración
-          const diaX = 20; // Posición X del día
-          const diaY = 120; // Posición Y del día
-          const horaX = 20; // Posición X de la hora
-          const horaY = 130; // Posición Y de la hora
-          const asientoX = 20; // Posición X del asiento
-          const asientoY = 140; // Posición Y del asiento
+          // Calcular la posición de la entrada
           const entradaX = 20; // Posición X de la entrada
-          const entradaY = 150; // Posición Y de la entrada
+          const entradaY = 20 + i * (entradaHeight + entradaMargin); // Posición Y de la entrada
 
-          // Agregar la imagen de la película en cada página
-          doc.addImage(
-            imgElement,
-            'PNG',
-            imagenX,
-            20,
-            imagenWidth,
-            imagenHeight
-          );
+          // Agregar la imagen de la película en la entrada
+          doc.addImage(imgElement, 'PNG', entradaX, entradaY, entradaWidth / 3, entradaHeight);
 
-          // Agregar el título de la película
-          doc.setFontSize(16);
+          // Agregar los detalles de la entrada (título, duración, día, hora, asiento y tipo de entrada)
+          const detallesX = entradaX + entradaWidth / 3 + 10; // Posición X de los detalles
+          const detallesY = entradaY + 10; // Posición Y de los detalles
+
+          doc.setFontSize(12);
           doc.setFont('helvetica', 'bold');
-          doc.text(pelicula?.titulo ?? 'Sin título', tituloX, tituloY);
+          doc.text(pelicula?.titulo ?? 'Sin título', detallesX, detallesY);
 
-          // Agregar la duración de la película
-          doc.setFontSize(12);
+          doc.setFontSize(10);
           doc.setFont('helvetica', 'normal');
+          doc.text(`Duración: ${pelicula?.duracion ?? 'Sin duración'}`, detallesX, detallesY + 10);
+          doc.text(`Día: ${compra[2]?.DiaID}`, detallesX, detallesY + 20);
+          doc.text(`Hora: ${compra[1]?.HoraID}`, detallesX, detallesY + 30);
+
+          const asiento = compra[3]?.Asientos[i];
           doc.text(
-            `Duración: ${pelicula?.duracion ?? 'Sin duración'}`,
-            duracionX,
-            duracionY
+            `Asiento: Fila ${asiento.row}, Asiento ${asiento.seat}`,
+            detallesX,
+            detallesY + 40
           );
 
-          // Agregar el día
-          doc.setFontSize(12);
-          doc.setFont('helvetica', 'normal');
-          doc.text(`Día: ${compra[2]?.DiaID}`, diaX, diaY);
-
-          // Agregar la hora
-          doc.setFontSize(12);
-          doc.setFont('helvetica', 'normal');
-          doc.text(`Hora: ${compra[1]?.HoraID}`, horaX, horaY);
-
-          // Agregar el asiento
-          doc.setFontSize(12);
-          doc.setFont('helvetica', 'normal');
-          doc.text(
-            `Asiento: Fila ${compra[3]?.Asientos[index]?.row}, Asiento ${compra[3]?.Asientos[index]?.seat}`,
-            asientoX,
-            asientoY
-          );
-
-          // Agregar las entradas correspondientes al tipo de entrada actual
-          doc.setFontSize(12);
-          doc.setFont('helvetica', 'normal');
-          const entradasFiltradas = compra[4]?.Entradas.filter(
-            (entrada: any) => entrada.nombreEntrada === tipoEntrada
-          );
-          entradasFiltradas.forEach((entrada: any, entradaIndex: number) => {
-            const entradaText = `${entrada.nombreEntrada} - Cantidad: ${entrada.numero} - Precio: ${entrada.precio} - Total: ${entrada.total}`;
-            doc.text(entradaText, entradaX, entradaY + entradaIndex * 6);
-          });
-        });
+          const tipoEntrada = compra[4]?.Entradas[i]?.nombreEntrada;
+          doc.text(`Tipo de entrada: ${tipoEntrada}`, detallesX, detallesY + 50);
+        }
 
         // Guardar el PDF
         doc.save('compra.pdf');
       };
+
+      // Asignar la URL de la imagen y cargarla
+      imgElement.src = imagenURL;
     } else {
       console.error('No se pudo obtener la URL de la imagen.');
     }

@@ -27,7 +27,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { PagotarjetaComponent } from './pagotarjeta/pagotarjeta.component';
-import { FinalizarpagoComponent } from './finalizarpago/finalizarpago.component';
 import { FinalizarCompraComponent } from './finalizar-compra/finalizar-compra.component';
 import { EditarperfilComponent } from './editarperfil/editarperfil.component';
 import { MidialogoComponent } from './midialogo/midialogo.component';
@@ -52,7 +51,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginComponent,
     RegistroComponent,
     PagotarjetaComponent,
-    FinalizarpagoComponent,
     FinalizarCompraComponent,
     EditarperfilComponent,
     MidialogoComponent,
