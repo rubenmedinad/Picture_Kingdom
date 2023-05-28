@@ -82,7 +82,7 @@
   color: #333;
   cursor: pointer;
   flex-grow: 1;
-  margin-bottom: 10px;
+  margin: 10px; /* Añadir un margen de 10px en todos los lados */
 }
 
 .button-row-full-width button:hover {
@@ -90,6 +90,7 @@
   background-color: #f1be41;
   color: #fff;
 }
+
 .linea-cine {
   background-color: black;
   color: #f1be41;
