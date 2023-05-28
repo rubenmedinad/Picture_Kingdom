@@ -36,6 +36,7 @@ export class FinalizarCompraComponent implements OnInit {
 
     const entradaWidth = 160; // Ancho de la entrada
     const entradaHeight = 80; // Alto de la entrada
+    const margenVertical = 10; // Margen vertical entre entradas
 
     // Verificar que imagenURL tenga un valor antes de asignarlo
     if (imagenURL) {
@@ -45,15 +46,15 @@ export class FinalizarCompraComponent implements OnInit {
         // Calcular la cantidad de entradas necesarias
         const cantidadEntradas = compra[3]?.Asientos.length;
 
-        // Generar una entrada por cada asiento
+        // Generar una entrada por página
         for (let i = 0; i < cantidadEntradas; i++) {
+          // Calcular la posición de la entrada
+          const entradaX = 20; // Posición X de la entrada
+          const entradaY = 20; // Posición Y de la entrada
+
           if (i > 0) {
             doc.addPage();
           }
-
-          // Calcular la posición de la entrada
-          const entradaX = 20; // Posición X de la entrada
-          const entradaY = 20 + i * entradaHeight; // Posición Y de la entrada
 
           // Agregar la imagen de la película en la entrada
           doc.addImage(imgElement, 'PNG', entradaX, entradaY, entradaWidth / 3, entradaHeight);
@@ -80,7 +81,12 @@ export class FinalizarCompraComponent implements OnInit {
           );
 
           const tipoEntrada = compra[4]?.Entradas[i]?.nombreEntrada;
-          doc.text(`Tipo de entrada: ${tipoEntrada}`, detallesX, detallesY + 50);
+          const tipoEntradaAsociado = compra[4]?.Entradas[i]?.tipoAsociado;
+          doc.text(`Tipo de entrada: ${tipoEntrada} - ${tipoEntradaAsociado}`, detallesX, detallesY + 50);
+
+          if (i !== cantidadEntradas - 1) {
+            doc.addPage();
+          }
         }
 
         // Guardar el PDF
@@ -93,5 +99,11 @@ export class FinalizarCompraComponent implements OnInit {
       console.error('No se pudo obtener la URL de la imagen.');
     }
   }
+
+
+
+
+
+
 
 }

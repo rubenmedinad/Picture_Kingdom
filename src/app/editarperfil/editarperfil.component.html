@@ -3,45 +3,46 @@
   <div>
     <table>
       <tr>
-        <th>Nombre</th>
+        <th style="color: #f1be41;">Nombre</th>
         <td>
           <input type="text" id="nombre" name="nombre" [(ngModel)]="editar.nombre">
         </td>
       </tr>
       <tr>
-        <th>Apellido</th>
+        <th style="color: #f1be41;">Apellido</th>
         <td>
           <input type="text" id="apellido" name="apellido" [(ngModel)]="editar.apellido">
         </td>
       </tr>
       <tr>
-        <th>Contraseña Antigua</th>
+        <th style="color: #f1be41;">Contraseña Antigua</th>
         <td>
           <input type="text" id="contrasenaantigua" name="contrasenaantigua" [(ngModel)]="editar.contrasenaantigua">
         </td>
       </tr>
       <tr>
-        <th>Contraseña Nueva</th>
+        <th style="color: #f1be41;">Contraseña Nueva</th>
         <td>
           <input type="text" id="contrasenanueva" name="contrasenanueva" [(ngModel)]="editar.contrasenanueva">
         </td>
       </tr>
       <tr>
-        <th>Email</th>
+        <th style="color: #f1be41;">Email</th>
         <td>
           <input type="text" id="email" name="email" [(ngModel)]="editar.email">
         </td>
       </tr>
       <tr>
-        <th>Teléfono</th>
+        <th style="color: #f1be41;">Teléfono</th>
         <td>
           <input type="text" id="telefono" name="telefono" [(ngModel)]="editar.telefono">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="text-align: center;">
+          <button type="submit">Guardar Cambios</button>
         </td>
       </tr>
     </table>
   </div>
 </div>
-
-<form>
-  <button type="submit">Guardar Cambios</button>
-</form>

@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  CORREO: string="";
-  contrasena: string="";
+  CORREO: string = "";
+  contrasena: string = "";
 
   onSubmit() {
     // Accede a los valores de los campos

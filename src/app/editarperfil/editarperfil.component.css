@@ -1,18 +1,25 @@
 .container {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   position: relative;
   text-align: left;
+  border: 2px solid #f1be41;
+  background-color: black;
+  margin: 20px auto;
+  width: 70%;
+  height: auto;
+  box-sizing: border-box;
 }
 
 .container img {
-  margin: 120px 100px 10px 150px;
-  width: 15%;
+  margin: 100px 100px 10px 150px;
+  width: 20%;
   height: auto;
 }
 
 .container table {
-  margin-top: 110px;
+  margin-top: 90px;
 }
 
 .container table tr {
@@ -23,9 +30,10 @@ input[type="text"] {
   width: 100%;
   padding: 5px;
   border-top-style: solid;
-  border-radius:15px;
+  border-radius: 15px;
   border-bottom: none;
   margin-top: 10px;
+  border: 2px solid #f1be41;
 }
 
 button[type="submit"] {
@@ -36,10 +44,14 @@ button[type="submit"] {
   border-radius: 10px;
   cursor: pointer;
   margin: 9px;
-  margin-left: 680px;
-  margin-bottom: 100px;
+  margin-left: 0;
+  margin-bottom: 20px;
 }
 
 button[type="submit"]:hover {
   background-color: #45a049;
+}
+
+.container table tr:last-child td {
+  margin-top: 30px; /* Margen superior adicional para el último td */
 }

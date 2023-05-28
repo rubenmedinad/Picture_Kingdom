@@ -1,17 +1,26 @@
 .image-container {
-    display: inline-block;
-    background-color: transparent;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid #f1be41;
+  padding: 5px;
+
+}
+
+.image-container:last-child {
+  margin-right: 0; /* Eliminar el margen derecho del último contenedor */
 }
 
 .image-container img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    max-height: 130px; 
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 61px;
-    background-color: transparent;
-    background: none;
-    border: none;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 130px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto; /* Alinear la imagen al centro horizontalmente */
+  margin-right: auto; /* Alinear la imagen al centro horizontalmente */
+  background-color: transparent;
+  background: none;
+  border: none;
+  border: 2px solid #f1be41;
 }
