@@ -16,15 +16,17 @@
             <button
               id="decrementar-btn"
               style="margin: 20%"
+              class="button"
               (click)="decrementarNumero()"
             >
               -
             </button>
             <div class="input_cont">
-              <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
+              <h2 class="text-center text-bottom">{{ entrada.numero }}</h2>
             </div>
             <button
               id="incrementar-btn"
+              class="button"
               style="margin: 20%"
               (click)="incrementarNumero()"
             >
@@ -32,7 +34,7 @@
             </button>
           </div>
           <h2>{{ getTotalDeCompra() }} €</h2>
-          <button (click)="buyOffer(offer)">Comprar</button>
+          <button class="button" (click)="buyOffer(offer)">Comprar</button>
         </div>
       </div>
     </ng-container>

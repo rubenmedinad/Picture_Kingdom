@@ -23,9 +23,7 @@ export class FinalizarCompraComponent implements OnInit {
   volverAlHome() {
     this.router.navigate(['']);
     this.dialogRef.close();
-  }
-
-  descargarPDF() {
+  }descargarPDF() {
     const doc = new jsPDF('p', 'mm', 'a4'); // Tamaño de hoja DIN A4 (210x297 mm)
 
     // Obtener los datos de la compra y la película correspondiente al ID
@@ -46,22 +44,28 @@ export class FinalizarCompraComponent implements OnInit {
         // Calcular la cantidad de entradas necesarias
         const cantidadEntradas = compra[3]?.Asientos.length;
 
-        // Generar una entrada por página
-        for (let i = 0; i < cantidadEntradas; i++) {
-          // Calcular la posición de la entrada
-          const entradaX = 20; // Posición X de la entrada
-          const entradaY = 20; // Posición Y de la entrada
+        // Generar una entrada por asiento y tipo de entrada
+        compra[3]?.Asientos.forEach((asiento: { row: any; seat: any; }, index: number) => {
+          const tipoEntrada = compra[4]?.Entradas[index]?.nombreEntrada;
+          const tipoEntradaAsociado = compra[4]?.Entradas[index]?.precio;
 
-          if (i > 0) {
+          if (index > 0) {
             doc.addPage();
           }
 
           // Agregar la imagen de la película en la entrada
-          doc.addImage(imgElement, 'PNG', entradaX, entradaY, entradaWidth / 3, entradaHeight);
+          doc.addImage(
+            imgElement,
+            'PNG',
+            20, // Posición X de la entrada
+            20, // Posición Y de la entrada
+            entradaWidth / 3,
+            entradaHeight
+          );
 
           // Agregar los detalles de la entrada (título, duración, día, hora, asiento y tipo de entrada)
-          const detallesX = entradaX + entradaWidth / 3 + 10; // Posición X de los detalles
-          const detallesY = entradaY + 10; // Posición Y de los detalles
+          const detallesX = 20 + entradaWidth / 3 + 10; // Posición X de los detalles
+          const detallesY = 30; // Posición Y de los detalles
 
           doc.setFontSize(12);
           doc.setFont('helvetica', 'bold');
@@ -69,25 +73,26 @@ export class FinalizarCompraComponent implements OnInit {
 
           doc.setFontSize(10);
           doc.setFont('helvetica', 'normal');
-          doc.text(`Duración: ${pelicula?.duracion ?? 'Sin duración'}`, detallesX, detallesY + 10);
+          doc.text(
+            `Duración: ${pelicula?.duracion ?? 'Sin duración'}`,
+            detallesX,
+            detallesY + 10
+          );
           doc.text(`Día: ${compra[2]?.DiaID}`, detallesX, detallesY + 20);
           doc.text(`Hora: ${compra[1]?.HoraID}`, detallesX, detallesY + 30);
 
-          const asiento = compra[3]?.Asientos[i];
           doc.text(
             `Asiento: Fila ${asiento.row}, Asiento ${asiento.seat}`,
             detallesX,
             detallesY + 40
           );
 
-          const tipoEntrada = compra[4]?.Entradas[i]?.nombreEntrada;
-          const tipoEntradaAsociado = compra[4]?.Entradas[i]?.tipoAsociado;
-          doc.text(`Tipo de entrada: ${tipoEntrada} - ${tipoEntradaAsociado}`, detallesX, detallesY + 50);
-
-          if (i !== cantidadEntradas - 1) {
-            doc.addPage();
-          }
-        }
+          doc.text(
+            `Tipo de entrada: ${tipoEntrada} - ${tipoEntradaAsociado}`,
+            detallesX,
+            detallesY + 50
+          );
+        });
 
         // Guardar el PDF
         doc.save('compra.pdf');
@@ -99,7 +104,6 @@ export class FinalizarCompraComponent implements OnInit {
       console.error('No se pudo obtener la URL de la imagen.');
     }
   }
-
 
 
 

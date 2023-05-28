@@ -101,6 +101,20 @@
   margin-bottom: -90px; /* Ajusta el tamaño máximo de la imagen según tus necesidades */
 }
 
-.boton{
+.boton {
   margin-top: -30px;
+}
+
+.entrar {
+  color: black;
+  background-color: #f1be41;
+  padding: 12px 22px; /* Ajusta los valores de padding según tus preferencias */
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.entrar:hover {
+  background-color: #c09935;
 }
