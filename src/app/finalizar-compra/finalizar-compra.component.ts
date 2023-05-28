@@ -36,7 +36,6 @@ export class FinalizarCompraComponent implements OnInit {
 
     const entradaWidth = 160; // Ancho de la entrada
     const entradaHeight = 80; // Alto de la entrada
-    const entradaMargin = 10; // Margen entre entradas
 
     // Verificar que imagenURL tenga un valor antes de asignarlo
     if (imagenURL) {
@@ -54,7 +53,7 @@ export class FinalizarCompraComponent implements OnInit {
 
           // Calcular la posición de la entrada
           const entradaX = 20; // Posición X de la entrada
-          const entradaY = 20 + i * (entradaHeight + entradaMargin); // Posición Y de la entrada
+          const entradaY = 20 + i * entradaHeight; // Posición Y de la entrada
 
           // Agregar la imagen de la película en la entrada
           doc.addImage(imgElement, 'PNG', entradaX, entradaY, entradaWidth / 3, entradaHeight);
@@ -94,4 +93,5 @@ export class FinalizarCompraComponent implements OnInit {
       console.error('No se pudo obtener la URL de la imagen.');
     }
   }
+
 }

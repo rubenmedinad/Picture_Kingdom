@@ -16,8 +16,8 @@ export class MetodospagoComponent {
   total: number = 0;
   entradasSeleccionadas: { nombreEntrada: string, numero: number, precio: number, total: number }[] = [];
 
-  asientosLength:number=0
-  A:any[]=[]
+  asientosLength: number = 0;
+  A: any[] = [];
   entradas: any[] = [];
 
   constructor(
@@ -25,19 +25,15 @@ export class MetodospagoComponent {
     private route: ActivatedRoute
   ) { }
 
-
-ngOnInit() {
-
-
-    this.A=this.peliculasS.obtenerVentas();
+  ngOnInit() {
+    this.A = this.peliculasS.obtenerVentas();
     this.asientosLength = this.A[3].Asientos.length;
     console.log(this.asientosLength);
     this.entradas = this.peliculasS.entradas;
     if (this.peliculasS.obtenerVentas().length == 5) {
-      this.peliculasS.eliminarUltimoElemento(4)
+      this.peliculasS.eliminarUltimoElemento(4);
     }
-  this.inicializarNumerosEntradas()
-
+    this.inicializarNumerosEntradas();
   }
 
   inicializarNumerosEntradas() {
@@ -120,16 +116,14 @@ ngOnInit() {
 
     // Recorrer las entradas seleccionadas
     for (const entrada of this.entradas) {
-      // Construir el objeto con los datos finales
-      const entradaSeleccionada = {
-        nombreEntrada: entrada.nombreEntrada,
-        numero: entrada.numero,
-        precio: entrada.precio,
-        total: entrada.precio * entrada.numero
-      };
-
-      // Agregar el objeto al array entradasSeleccionadas si el número de entradas es mayor a 0
-      if (entradaSeleccionada.numero > 0) {
+      // Agregar el objeto al array entradasSeleccionadas una a una
+      for (let i = 0; i < entrada.numero; i++) {
+        const entradaSeleccionada = {
+          nombreEntrada: entrada.nombreEntrada,
+          numero: 1,
+          precio: entrada.precio,
+          total: entrada.precio
+        };
         this.entradasSeleccionadas.push(entradaSeleccionada);
       }
     }
