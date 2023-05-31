@@ -3,6 +3,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh; /* Establece el alto del cuerpo al 100% del viewport */
+  background-color: black;
 }
 
 

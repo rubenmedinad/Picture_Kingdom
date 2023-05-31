@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: rgb(255, 255, 255); /* Establece el color de fondo del cuerpo del documento */
+  background-color: rgb(0, 0, 0); /* Establece el color de fondo del cuerpo del documento */
   background-size: cover; /* Ajusta la imagen de fondo para que cubra todo el elemento */
   background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
 }
@@ -17,7 +17,7 @@ h2 {
   font-size: 40px; /* Establece el tamaño de fuente a 40 píxeles */
   font-family: arial; /* Establece la fuente del texto como Arial */
   margin-top: 80px; /* Agrega un margen superior de 80 píxeles al elemento */
-  color: aqua; /* Establece el color del texto como Aqua */
+  color: #f1be41; /* Establece el color del texto como Aqua */
   text-shadow: 0px 0px 6px black; /* Agrega una sombra de texto con desplazamiento y difuminado */
 }
 
@@ -46,12 +46,12 @@ h2 {
   height: 200px; /* Establece la altura del elemento a 200 píxeles */
   overflow: hidden; /* Oculta cualquier contenido que se desborde del elemento */
   position: absolute; /* Establece el posicionamiento absoluto del elemento */
-  box-shadow: 0px 0px 20px 0px black; /* Agrega una sombra al elemento */
+  box-shadow: 0px 0px 20px 0px f1be41; /* Agrega una sombra al elemento */
   transition: all 300ms; /* Aplica una transición suave a todas las propiedades durante 300 milisegundos */
 }
 
 .content-carrousel figure:hover {
-  box-shadow: 0px 0px 0px 0px black; /* Elimina la sombra del elemento cuando se pasa el cursor sobre él */
+  box-shadow: 0px 0px 0px 0px f1be41; /* Elimina la sombra del elemento cuando se pasa el cursor sobre él */
   transition: all 300ms; /* Aplica una transición suave a todas las propiedades durante 300 milisegundos */
 }
 .content-carrousel figure:nth-child(1){transform: rotateY(0deg) translateZ(300px);}/* Aplica una rotación 3D y una traslación en el eje Z al primer elemento */
@@ -86,7 +86,7 @@ h2 {
 
 h1 {
   font-family: serif; /* Establece la fuente del texto como una fuente serif */
-  color: rgb(0, 0, 0); /* Establece el color del texto como negro */
+  color: #f1be41; /* Establece el color del texto como negro */
   font-size: 1.8em; /* Establece el tamaño de fuente a 1.8 veces el tamaño normal */
   text-align: center; /* Centra el texto horizontalmente dentro del elemento */
   text-transform: uppercase; /* Convierte el texto a mayúsculas */
@@ -100,7 +100,7 @@ h1::after {
   left: 50%; /* Establece la posición izquierda del elemento después del texto */
   width: 100px; /* Establece el ancho del elemento a 100 píxeles */
   height: 3px; /* Establece la altura del elemento a 3 píxeles */
-  background-color: rgb(0, 0, 0); /* Establece el color de fondo del elemento como negro */
+  background-color: #f1be41; /* Establece el color de fondo del elemento como negro */
   transform: translateX(-50%); /* Desplaza el elemento horizontalmente en un 50% hacia la izquierda */
 }
 
@@ -112,13 +112,13 @@ h1::before {
   width: 10px; /* Establece el ancho del elemento a 10 píxeles */
   height: 10px; /* Establece la altura del elemento a 10 píxeles */
   border-radius: 50%; /* Establece el radio de borde para crear un círculo */
-  background-color: rgb(0, 0, 0); /* Establece el color de fondo del elemento como negro */
+  background-color: #f1be41; /* Establece el color de fondo del elemento como negro */
   transform: translate(-50%, 50%); /* Desplaza el elemento horizontalmente en un 50% hacia la izquierda y verticalmente en un 50% hacia abajo */
-  box-shadow: 0 0 20px rgb(0, 0, 0); /* Agrega una sombra al elemento */
+  box-shadow: 0 0 20px #f1be41; /* Agrega una sombra al elemento */
 }
 
 .header {
-  color: rgb(0, 0, 0); /* Establece el color del texto como negro */
+  color:#f1be41; /* Establece el color del texto como negro */
   text-align: center; /* Centra el texto horizontalmente dentro del elemento */
   text-decoration: underline; /* Subraya el texto */
   font-weight: bold; /* Establece el grosor de la fuente como negrita */

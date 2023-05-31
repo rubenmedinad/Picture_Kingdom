@@ -1,10 +1,5 @@
-a {
-  text-decoration: none; /* Elimina la decoración de enlace */
-  color: inherit; /* Hereda el color del texto del padre */
-  align-items: center; /* Centra verticalmente */
-  justify-content: center; /* Centra horizontalmente */
-}
+
 body{
-  background-color: white;
+  background-color: rgb(0, 0, 0);
 }
 

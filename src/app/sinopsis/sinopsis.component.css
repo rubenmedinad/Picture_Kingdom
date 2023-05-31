@@ -6,7 +6,7 @@
 }
 
 .sidebar {
-  flex: 0 0 25%; /* Reducir el ancho del sidebar al 25% del contenedor */
+  flex: 0 0 25%;
   padding-right: 20px;
 }
 
@@ -16,10 +16,10 @@
 
 .sidebar img.movie-image-small {
   display: block;
-  width: 80%; /* Reducir el tamaño de la imagen al 80% */
+  width: 80%;
   height: auto;
-  margin-right: -20px; /* Pegar la imagen al borde izquierdo del sidebar */
-  margin-bottom: 20px; /* Añadir espacio inferior */
+  margin-right: -20px;
+  margin-bottom: 20px;
 }
 
 .sidebar .left-table {
@@ -30,15 +30,16 @@
   text-align: center;
   margin-bottom: 20px;
   font-weight: bold;
+  color: white;
 }
 
 .content .right-table-large {
-  margin-top: 20px; /* Aumentar la separación entre los párrafos */
+  margin-top: 20px;
   width: 100%;
 }
 
 .content .right-table-large tr td {
-  padding-bottom: 20px; /* Aumentar la separación entre los párrafos */
+  padding-bottom: 20px;
 }
 
 .dia-menu {
@@ -63,7 +64,7 @@
 .dia-menu button.active {
   border-color: #f1be41;
   background-color: #f1be41;
-  color: #fff;
+  color: #000;
 }
 
 .button-row-full-width {
@@ -82,7 +83,7 @@
   color: #333;
   cursor: pointer;
   flex-grow: 1;
-  margin: 10px; /* Añadir un margen de 10px en todos los lados */
+  margin: 10px;
 }
 
 .button-row-full-width button:hover {
@@ -92,8 +93,8 @@
 }
 
 .linea-cine {
-  background-color: black;
-  color: #f1be41;
+  background-color: #f1be41;
+  color: #000;
   text-align: center;
   padding: 10px 0;
   margin-bottom: 20px;
@@ -104,4 +105,23 @@
   font-size: 24px;
   letter-spacing: 3px;
   font-weight: bold;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.content h1,
+.content .sinopsis,
+.content .directores,
+.content .reparto,
+.content .duracion,
+.content .anio,
+.content .genero {
+  color: white;
+}
+
+.sidebar .left-table mark {
+  color: #f1be41;
 }
