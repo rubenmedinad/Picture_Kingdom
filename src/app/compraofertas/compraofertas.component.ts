@@ -45,7 +45,6 @@ export class CompraofertasComponent implements OnInit {
     // Llamar al método del servicio para agregar los datos al array venta_ofertas
     this.pictureKingdomService.rellenarVenta_Ofertas(this.datosCompra[this.datosCompra.length - 1]);
 
-    this.abrirDialogo();
   }
 
 
@@ -71,16 +70,12 @@ export class CompraofertasComponent implements OnInit {
   getTotalDeCompra(): number {
     return this.entrada.precio * this.entrada.numero;
   }
-
   abrirDialogo(): void {
     const dialogRef = this.dialog.open(FinalizarCompraOfertasComponent, {
-      width: '500px',
-      height: '300px',
+      width: '500px', // Cambia el ancho del diálogo
+      height: '300px', // Cambia la altura del diálogo
       disableClose: true,
-      data: {
-        offerData: this.datosCompra[this.datosCompra.length - 1],
-        totalPrice: this.getTotalDeCompra()
-      }
+      data: {}
     });
   }
 }

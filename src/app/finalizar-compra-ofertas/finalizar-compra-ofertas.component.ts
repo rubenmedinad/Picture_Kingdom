@@ -20,10 +20,12 @@ export class FinalizarCompraOfertasComponent implements OnInit {
     // Código relacionado con la inicialización del componente
   }
 
-  volverAlHome() {
+  volverAlHomeOfertas() {
     this.router.navigate(['']);
     this.dialogRef.close();
   }
+
+
 
   descargarPDF() {
     const doc = new jsPDF();

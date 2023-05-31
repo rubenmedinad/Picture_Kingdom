@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'compraofertas/:id/:name/:image', component: CompraofertasComponent },
   { path: 'login',component:LoginComponent},
   { path: 'finalizar', component: FinalizarCompraComponent },
-  { path:'registro',component:RegistroComponent},
+  { path: 'registro',component:RegistroComponent},
   { path: 'registro',component:RegistroComponent},
   { path: 'editarperfil',component:EditarperfilComponent},
   { path: 'perfil', component:PerfilComponent},

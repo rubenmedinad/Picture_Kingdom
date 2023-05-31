@@ -1,14 +1,16 @@
 <body>
   <div class="container">
-    <form class="login-form">
+    <form class="login-form" (submit)="guardarDatos(usuario.value, nombre.value, email.value, password.value, confirmPassword.value)">
       <h2>Registro</h2>
-      <input type="text" id="nombre" placeholder="Nombre" class="large-input">
+      <input type="text" #usuario id="usuario" placeholder="Usuario" class="large-input">
 
-      <input type="email" id="email" placeholder="Correo electrónico" class="large-input">
+      <input type="text" #nombre id="nombre" placeholder="Nombre" class="large-input">
 
-      <input type="password" id="password" placeholder="Contraseña" class="large-input">
+      <input type="email" #email id="email" placeholder="Correo electrónico" class="large-input">
 
-      <input type="password" id="confirm-password" placeholder="Confirmar contraseña" class="large-input">
+      <input type="password" #password id="password" placeholder="Contraseña" class="large-input">
+
+      <input type="password" #confirmPassword id="confirm-password" placeholder="Confirmar contraseña" class="large-input">
 
       <button type="submit" class="submit-button">Registrarse</button>
     </form>
