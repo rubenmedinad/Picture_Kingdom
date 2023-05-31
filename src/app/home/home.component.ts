@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Peliculas } from '../_Modules/Peliculas';
 import { PictureKingdomService } from '../picture-kingdom.service';
+import { BasedeDatosService } from '../basede-datos.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,13 +10,13 @@ import { PictureKingdomService } from '../picture-kingdom.service';
 export class HomeComponent {
   peliculas: Peliculas[] = []
   ide:number = 0
-  constructor(private peliculasS:PictureKingdomService){
-    this.peliculas = peliculasS.getPeliculas()
+  constructor(private peliculasS:PictureKingdomService, private servicio : BasedeDatosService){
+    //this.peliculas = peliculasS.getPeliculas()
   }
   pelicula :Peliculas= new Peliculas(0,"","","","","","","","")
 
   ngOnInit(){
-    console.log(this.peliculasS.obtenerVentas())
+    this.servicio.listarpeliculas().subscribe(datos => this.peliculas=datos);
     this.pelicula=this.peliculas[this.ide-1]
   }
 

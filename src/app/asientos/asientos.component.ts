@@ -2,24 +2,20 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PictureKingdomService } from '../picture-kingdom.service';
 
-
 interface Seat {
 row: string;
 name: number;
 occupied: boolean;
 selected: boolean;
 }
-
 interface Row {
 name: string;
 seats: Seat[];
 }
-
 @Component({
-selector: 'app-asientos',
-templateUrl: './asientos.component.html',
-styleUrls: ['./asientos.component.css'],
-
+  selector: 'app-asientos',
+  templateUrl: './asientos.component.html',
+  styleUrls: ['./asientos.component.css'],
 })
 
 export class AsientosComponent {

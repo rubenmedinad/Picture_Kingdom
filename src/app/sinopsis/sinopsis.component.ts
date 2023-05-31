@@ -3,6 +3,7 @@ import { Peliculas } from '../_Modules/Peliculas';
 import { PictureKingdomService } from '../picture-kingdom.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Ventas } from '../_Modules/Ventas';
+import { BasedeDatosService } from '../basede-datos.service';
 
 @Component({
   selector: 'app-sinopsis',
@@ -22,21 +23,26 @@ export class SinopsisComponent {
   constructor(
     private peliculasS: PictureKingdomService,
     private activarrutas: ActivatedRoute,
-    private rutes: Router
+    private rutes: Router,
+    private servicio: BasedeDatosService
   ) {
     this.peliculas = peliculasS.getPeliculas();
   }
-
-  ngOnInit() {
-    this.activarrutas.params.subscribe(data => {
-      this.ide = data['id'];
-    });
-    this.pelicula = this.peliculas[this.ide - 1];
-    this.peliculasS.vaciarVentas();
-    this.generarFechas();
-  }
-
-
+ngOnInit() {
+  this.ide = this.activarrutas.snapshot.params['id'];
+  this.servicio.listarpeliculas().subscribe(datos => {
+    this.peliculas = datos;
+    const peliculaEncontrada = this.peliculas.filter(pelicula => pelicula.id === +this.ide);
+    if (peliculaEncontrada.length > 0) {
+      this.pelicula = peliculaEncontrada[0];
+      this.peliculasS.vaciarVentas();
+      this.generarFechas();
+      console.log(this.ide);
+    } else {
+      // Aquí puedes manejar el caso de que no se encuentre ninguna película con el ID proporcionado.
+    }
+  });
+}
 
   generarFechas() {
     const fechaActual = new Date();
@@ -68,9 +74,6 @@ export class SinopsisComponent {
     const horarios = this.getHorariosPorDia(dia);
     return horarios.join(', ');
   }
-
-
-
   obtenerFechaActual(dia: number): string {
     const fechaActual = new Date();
     fechaActual.setDate(fechaActual.getDate() + dia);
@@ -81,9 +84,6 @@ export class SinopsisComponent {
     };
     return fechaActual.toLocaleDateString('es-ES', opcionesFecha);
   }
-
-
-
 ActualizarArray(hora: string){
   this.horaSeleccionada = hora;
   this.peliculasS.rellenarVentas({PeliculaID:this.ide})
@@ -91,7 +91,5 @@ ActualizarArray(hora: string){
   this.peliculasS.rellenarVentas({HoraID: this.horaSeleccionada});
 
 }
-
-
 
 }
