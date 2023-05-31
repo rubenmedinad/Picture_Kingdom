@@ -4,6 +4,13 @@
   margin-top: 50px;
   margin-bottom: 50px;
 }
+h1 {
+  text-align: center; /* Centra el texto del encabezado horizontalmente */
+  margin-bottom: 50px; /* Agrega un margen inferior de 50 píxeles al elemento */
+}
+li {
+  list-style: none; /* Elimina los marcadores de lista predeterminados */
+}
 
 .sidebar {
   flex: 0 0 25%;
@@ -11,6 +18,10 @@
 }
 
 .content {
+  margin-right: -500%; /* Desplaza la imagen hacia la izquierda, fuera de la vista (-500% del ancho del contenedor) */
+  margin: 0 auto; /* Centra la imagen horizontalmente dentro de su contenedor */
+  width: 17%; /* Establece el ancho de la imagen al 17% del ancho del contenedor */
+  height: auto; /* Ajusta automáticamente la altura de la imagen proporcionalmente */
   flex: 1;
 }
 
