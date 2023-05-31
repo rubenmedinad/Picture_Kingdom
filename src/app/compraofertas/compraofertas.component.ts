@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PictureKingdomService } from '../picture-kingdom.service';
+import { MatDialog } from '@angular/material/dialog';
+import { FinalizarCompraOfertasComponent } from '../finalizar-compra-ofertas/finalizar-compra-ofertas.component';
 
 @Component({
   selector: 'app-compraofertas',
@@ -14,11 +16,13 @@ export class CompraofertasComponent implements OnInit {
     numero: 0,
     precio: 0
   };
+  datosCompra: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private pictureKingdomService: PictureKingdomService
+    private pictureKingdomService: PictureKingdomService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -29,8 +33,22 @@ export class CompraofertasComponent implements OnInit {
   }
 
   buyOffer(offer: any) {
-    // Código para realizar la compra
+    // Añadir los datos seleccionados al array datosCompra
+    this.datosCompra.push({
+      name: offer.name,
+      price: this.entrada.precio,
+      numero: this.entrada.numero,
+      totalPrice: this.getTotalDeCompra(),
+      image: offer.image
+    });
+
+    // Llamar al método del servicio para agregar los datos al array venta_ofertas
+    this.pictureKingdomService.rellenarVenta_Ofertas(this.datosCompra[this.datosCompra.length - 1]);
+
+    this.abrirDialogo();
   }
+
+
   incrementarNumero() {
     this.entrada.numero++;
     this.calculatePrice();
@@ -52,5 +70,17 @@ export class CompraofertasComponent implements OnInit {
 
   getTotalDeCompra(): number {
     return this.entrada.precio * this.entrada.numero;
+  }
+
+  abrirDialogo(): void {
+    const dialogRef = this.dialog.open(FinalizarCompraOfertasComponent, {
+      width: '500px',
+      height: '300px',
+      disableClose: true,
+      data: {
+        offerData: this.datosCompra[this.datosCompra.length - 1],
+        totalPrice: this.getTotalDeCompra()
+      }
+    });
   }
 }

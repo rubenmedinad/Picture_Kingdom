@@ -65,6 +65,7 @@ html, body {
     .footer .footer-name {
       color: #f1be41;
       font-weight: bold;
+      margin-right: 20px;
     }
 
     .footer .footer-contact {

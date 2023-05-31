@@ -20,19 +20,18 @@ import { MetodospagoComponent } from './metodospago/metodospago.component';
 import { MenuComprasComponent } from './menu-compras/menu-compras.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CompraofertasComponent } from './compraofertas/compraofertas.component';
-import { HttpClient, HttpClientModule } from'@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { PagotarjetaComponent } from './pagotarjeta/pagotarjeta.component';
 import { FinalizarCompraComponent } from './finalizar-compra/finalizar-compra.component';
 import { EditarperfilComponent } from './editarperfil/editarperfil.component';
 import { MidialogoComponent } from './midialogo/midialogo.component';
-import { MatDialogModule } from '@angular/material/dialog';
-
-
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { FinalizarCompraOfertasComponent } from './finalizar-compra-ofertas/finalizar-compra-ofertas.component';
 
 @NgModule({
   declarations: [
@@ -54,8 +53,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     FinalizarCompraComponent,
     EditarperfilComponent,
     MidialogoComponent,
-
-
+    FinalizarCompraOfertasComponent // Agrega FinalizarCompraOfertasComponent aquí
   ],
   imports: [
     BrowserModule,
@@ -65,17 +63,16 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BsDatepickerModule.forRoot(),
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatDialogModule,
-
-
+    MatDialogModule
   ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
