@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="sidebar">
+  <div class="top-left-container">
     <img [src]="pelicula.imagen" alt="Imagen" class="movie-image-small">
     <table class="left-table">
       <tr>
@@ -8,33 +8,35 @@
       <tr>
         <td>GENERO: <br><mark class="genero">{{ pelicula.genero }}</mark></td>
       </tr>
-
     </table>
   </div>
-  <div class="content">
+  <div class="top-right-container">
     <h1><strong>{{ pelicula.titulo }}</strong></h1>
     <table class="right-table-large">
       <tr>
         <td>DIRECTORES:<br><span class="directores">{{ pelicula.director }}</span></td>
       </tr>
       <tr>
-        <td>REPARTO:<br><span class="reparto">{{ pelicula.reparto }}</span></td>
+        <td>REPARTO:<br><p class="reparto">{{ pelicula.reparto }}</p></td>
       </tr>
       <tr>
-        <td>SINOPSIS:<br><span class="sinopsis">{{ pelicula.sinopsis }}</span></td>
+        <td>SINOPSIS:<br><p class="sinopsis">{{ pelicula.sinopsis }}</p></td>
       </tr>
     </table>
   </div>
-  <div class="dia-menu">
-    <button *ngFor="let dia of diasPeliculas" (click)="cambiarDiaSeleccionado(dia)" [class.active]="diaSeleccionado === dia">
-      {{ obtenerFechaActual(dia) }}
-    </button>
-  </div>
-  <div class="button-row">
-    <button *ngFor="let hora of getHorariosPorDia(diaSeleccionado)"
-  [routerLink]="['/asientos']"
-  (click)="ActualizarArray(hora)">
-  {{ hora }}
-</button>
+  <div class="bottom-container">
+    <div class="linea-cine">
+      <h2>HORARIOS</h2>
+    </div>
+    <div class="dia-menu">
+      <button *ngFor="let dia of diasPeliculas" (click)="cambiarDiaSeleccionado(dia)" [class.active]="diaSeleccionado === dia">
+        {{ obtenerFechaActual(dia) }}
+      </button>
+    </div>
+    <div class="button-row">
+      <button *ngFor="let hora of getHorariosPorDia(diaSeleccionado)" [routerLink]="['/asientos']" (click)="ActualizarArray(hora)">
+        {{ hora }}
+      </button>
+    </div>
   </div>
 </div>

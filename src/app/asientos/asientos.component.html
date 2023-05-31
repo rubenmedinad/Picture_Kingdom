@@ -21,7 +21,7 @@
     <table class="table-no-border">
       <tbody>
         <tr  *ngFor="let row of seats; let i = index">
-          <td >{{ row.name }}</td>
+          <td>{{ row.name }}</td>
           <ng-container *ngFor="let seat of row.seats; let j = index">
             <td [ngClass]="{ 'seat': true, 'occupied': seat.occupied, 'selected': seat.selected }"
                 (click)="toggleSeatSelection(seat)">
