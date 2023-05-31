@@ -1,18 +1,18 @@
 <body>
-
   <div class="container">
     <form class="login-form" (ngSubmit)="onSubmit()">
-      <mat-form-field appearance="outline">
+      <h2>Inicia Sesión</h2>
+      <mat-form-field appearance="outline" class="input-field">
         <mat-label>CORREO</mat-label>
-        <input matInput [(ngModel)]="CORREO" name="username" >
-      </mat-form-field><br>
-      <mat-form-field appearance="outline">
+        <input matInput [(ngModel)]="correo" name="username">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="input-field">
         <mat-label>CONTRASEÑA</mat-label>
         <input matInput [(ngModel)]="contrasena" name="password" type="password">
-      </mat-form-field><br>
-      <button mat-raised-button color="primary">ENTRAR</button>
+      </mat-form-field>
+     <button class="registro-link" entrar mat-raised-button (click)="navegarPerfil()">ENTRAR</button>
 
-      <p [routerLink]="['/registro']">REGISTRARSE</p>
+      <p class="registro-link" [routerLink]="['/registro']">REGISTRARSE</p>
     </form>
   </div>
 </body>

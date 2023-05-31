@@ -3,21 +3,32 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: aliceblue;
+  background-color: black;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background-color: rgba(255, 215, 0, 0.5);
+  background-color: rgb(248, 244, 244);
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 6px #f1be41;
   width: 500px;
-  height: 400px;
+  height: 550px;
   border-radius: 10px;
   padding: 20px;
 }
+
+
+h2 {
+  text-align: center;
+  font-family: "Registrar una cuenta", Arial, sans-serif;
+  font-size: 24px; /* Tamaño más grande */
+  font-weight: bold; /* Negrita */
+  margin-bottom: 5px;
+}
+
+
 
 .login-form {
   display: flex;
@@ -34,18 +45,63 @@ body {
   padding: 20px;
   height: 60px;
   width: 100%;
+  color: black; /* Cambiado a negro */
+  background-color: #f1be41;
+  border: 2px solid black; /* Agregado borde negro */
+}
+
+.large-input:focus {
+  outline-color: #f1be41;
 }
 
 .submit-button {
-  padding: 15px 30px;
-  font-size: 18px;
-  background-color: #FFD700;
-  color: #fff;
-  border: none;
+  color: white;
+  background-color: #f1be41;
+  padding: 22px;
   border-radius: 5px;
+  text-align: center;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .submit-button:hover {
-  background-color: #DAA520;
+  background-color: #c09935;
+}
+
+.registro-link {
+  color: white;
+  background-color: #f1be41;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.registro-link:hover {
+  background-color: #c09935;
+}
+
+.large-input[type="email"],
+.large-input[type="password"] {
+  font-size: 18px;
+  padding: 20px;
+  height: 60px;
+  width: 100%;
+  color: black; /* Cambiado a negro */
+  background-color: #f1be41;
+  border: 2px solid black; /* Agregado borde negro */
+}
+
+.large-input:focus[type="email"],
+.large-input:focus[type="password"] {
+  outline-color: #f1be41;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #f1be41;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  border-color: #f1be41;
 }

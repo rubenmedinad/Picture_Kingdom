@@ -65,24 +65,21 @@ li {
   line-height: 1.4;
 }
 
+
 .button {
-  display: inline-block;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  padding: 12px 24px;
-  font-size: 18px;
-  font-weight: 500;
-  text-align: center;
+  color: white;
+  background-color: #f1be41;
+  padding: 12px 22px; /* Ajusta los valores de padding según tus preferencias */
+  border-radius: 5px;
   text-decoration: none;
-  border-radius: 4px;
-  color: #fff;
-  background-color: #007bff;
-  transition: background-color 0.3s ease;
-  border: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
 }
 
 .button:hover {
-  background-color: #0056b3;
-  cursor: pointer;
+  background-color: #c09935;
 }
+

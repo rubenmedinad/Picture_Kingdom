@@ -20,18 +20,20 @@ import { MetodospagoComponent } from './metodospago/metodospago.component';
 import { MenuComprasComponent } from './menu-compras/menu-compras.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CompraofertasComponent } from './compraofertas/compraofertas.component';
-import { HttpClient, HttpClientModule } from'@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 import { PagotarjetaComponent } from './pagotarjeta/pagotarjeta.component';
-import { FinalizarpagoComponent } from './finalizarpago/finalizarpago.component';
 import { FinalizarCompraComponent } from './finalizar-compra/finalizar-compra.component';
 import { EditarperfilComponent } from './editarperfil/editarperfil.component';
 import { MidialogoComponent } from './midialogo/midialogo.component';
+import { FinalizarCompraOfertasComponent } from './finalizar-compra-ofertas/finalizar-compra-ofertas.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PerfilComponent } from './perfil/perfil.component';
+import { MisentradasComponent } from './misentradas/misentradas.component';
 
 
 
@@ -52,10 +54,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginComponent,
     RegistroComponent,
     PagotarjetaComponent,
-    FinalizarpagoComponent,
     FinalizarCompraComponent,
     EditarperfilComponent,
     MidialogoComponent,
+    FinalizarCompraOfertasComponent,// Agrega FinalizarCompraOfertasComponent aquí
+    PerfilComponent,
+    MisentradasComponent
 
 
   ],
@@ -67,17 +71,16 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BsDatepickerModule.forRoot(),
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatDialogModule,
-
-
+    MatDialogModule
   ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

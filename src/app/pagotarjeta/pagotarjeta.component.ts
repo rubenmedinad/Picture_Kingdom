@@ -44,18 +44,22 @@ export class PagotarjetaComponent implements OnInit {
       this.cardNumberValue = this.cardNumberValue.slice(0, 19);
     }
   }
+  cvvValueFocused: boolean = false;
 
-  toggleCVVVisibility() {
-    this.showCVV = !this.showCVV;
+  onCVVFocus() {
+    this.cvvValueFocused = true;
   }
 
+  toggleCVVVisibility(show: boolean) {
+    if (!this.cvvValueFocused) {
+      this.showCVV = show;
+    }
+  }
+
+
+
   enviar() {
-    if (
-      this.cardNumberValue &&
-      this.expirationMonthValue &&
-      this.expirationYearValue &&
-      this.cvvValue
-    ) {
+    if (this.formValid()) {
       const datos = {
         numeroCuenta: this.cardNumberValue,
         mes: Number(this.expirationMonthValue),
@@ -72,6 +76,15 @@ export class PagotarjetaComponent implements OnInit {
       this.expirationYearValue = '';
       this.cvvValue = '';
     }
+  }
+
+  formValid() {
+    return (
+      this.cardNumberValue &&
+      this.expirationMonthValue &&
+      this.expirationYearValue &&
+      this.cvvValue
+    );
   }
 
   ActualizarArray() {
@@ -95,11 +108,10 @@ export class PagotarjetaComponent implements OnInit {
 
   abrirDialogo(): void {
     const dialogRef = this.dialog.open(FinalizarCompraComponent, {
-      width: '400px',
+      width: '500px', // Cambia el ancho del diálogo
+      height: '300px', // Cambia la altura del diálogo
       disableClose: true,
       data: {}
     });
-
-    
   }
 }

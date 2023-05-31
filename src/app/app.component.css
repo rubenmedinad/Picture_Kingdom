@@ -8,6 +8,7 @@ html, body {
   height: 100px;
   background-color: rgb(0, 0, 0);
   padding: 0 16px;
+  border: 2px solid #f1be41; /* Agregado borde de color #f1be41 */
 
 }
 
@@ -48,12 +49,45 @@ html, body {
     }
 
 
+    .footer {
+      background-color: black;
+      color: #f1be41;
+      border: 2px solid #f1be41; /* Agregado borde de color #f1be41 */
+    }
 
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
 
-.footer-name {
-  margin-top: 40px;
-  color: white;
-}
+    .footer .footer-name {
+      color: #f1be41;
+      font-weight: bold;
+      margin-right: 20px;
+    }
 
+    .footer .footer-contact {
+      text-align: center;
+      margin-top: 20px;
+    }
 
+    .footer .footer-contact .contact-link {
+      display: block;
+      margin-bottom: 5px;
+      color: #f1be41;
+    }
+
+    .footer .footer-contact mat-icon {
+      margin-right: 5px;
+    }
+
+    .footer .social-link {
+      color: #f1be41;
+    }
+
+    .footer .social-link mat-icon {
+      margin-right: 5px;
+    }
 

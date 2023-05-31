@@ -9,38 +9,42 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: transparent; /* Elimina el fondo de la tabla */
+  background-color: transparent;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
   text-align: left;
-  border: none; /* Elimina los bordes entre columnas */
-}
-td:nth-child(4) {
-  max-width: 50px; /* Ajusta el ancho máximo según tus necesidades */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-td:nth-child(2) {
-  max-width: 100px; /* Ajusta el ancho máximo según tus necesidades */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin-right: -40px; /* Ajusta el margen derecho negativo según tus necesidades */
-}
-td:nth-child(2) input[type="number"] {
-  max-width: 70px; /* Ajusta el ancho máximo según tus necesidades */
-}
-td:nth-child(3) {
-  max-width: 100px; /* Ajusta el ancho máximo según tus necesidades */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin-left: -10px; /* Ajusta el margen derecho negativo según tus necesidades */
+  border: none;
 }
 
+td:nth-child(4) {
+  max-width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+td:nth-child(2) {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: -40px;
+}
+
+td:nth-child(2) input[type="number"] {
+  max-width: 70px;
+}
+
+td:nth-child(3) {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-left: -10px;
+}
 
 th {
   background-color: transparent;
@@ -50,18 +54,14 @@ tr:nth-child(even) {
   background-color: transparent;
 }
 
-
-
 .input-cont input[type="number"] {
   width: 20%;
-
-  border: none; /* Elimina el borde */
-  outline: none; /* Elimina el contorno al recibir el foco */
-  background-color: transparent; /* Elimina el fondo */
+  border: none;
+  outline: none;
+  background-color: transparent;
   font-size: 14px;
-  pointer-events: none; /* Hace que el input no sea cliclable */
+  pointer-events: none;
 }
-
 
 .center {
   display: flex;
@@ -85,7 +85,7 @@ tr:nth-child(even) {
   height: 30px;
   padding: 0;
   border: none;
-  background-color: transparent; /* Elimina el fondo del botón */
+  background-color: transparent;
   font-size: 16px;
   cursor: pointer;
 }
@@ -96,7 +96,6 @@ tr:nth-child(even) {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .addNumber_cont h1 {
@@ -114,10 +113,40 @@ tr:last-child {
 }
 
 tr:last-child td:first-child {
+  text-align: left;
+}
+
+tr:last-child td.total-value {
   text-align: right;
 }
 
 tr:last-child h1 {
   font-size: 28px;
   margin: 0;
+}
+
+
+.total-text {
+  text-align: left;
+}
+
+.total-value {
+  text-align: right;
+}
+
+.dia-menu button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  background-color: #ccc;
+  color: #333;
+  cursor: pointer;
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+
+.dia-menu button.active {
+  border-color: #f1be41;
+  background-color: #f1be41;
+  color: #fff;
 }

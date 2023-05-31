@@ -61,7 +61,7 @@ ngOnInit() {
   }
 
   cambiarDiaSeleccionado(dia: number) {
-    
+
     this.diaSeleccionado = dia;
 
   }
@@ -87,8 +87,9 @@ ngOnInit() {
 ActualizarArray(hora: string){
   this.horaSeleccionada = hora;
   this.peliculasS.rellenarVentas({PeliculaID:this.ide})
-  this.peliculasS.rellenarVentas({ HoraID: this.horaSeleccionada });
   this.peliculasS.rellenarVentas({DiaID:this.obtenerFechaActual(this.diaSeleccionado)})
+  this.peliculasS.rellenarVentas({HoraID: this.horaSeleccionada});
+
 }
 
 }

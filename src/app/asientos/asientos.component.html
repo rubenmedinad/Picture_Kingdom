@@ -35,31 +35,22 @@
       </tbody>
     </table>
   </div>
-  
+
 
   <div class="selected-seats">
     <p>Asientos seleccionados:</p>
-    <ul>
-      <li *ngFor="let selectedSeat of selectedSeats">Fila: {{ selectedSeat.row }}, Asiento: {{ selectedSeat.seat }}</li>
-    </ul>
+    <div class="selected-seats-list">
+      <ul>
+        <li *ngFor="let selectedSeat of selectedSeats">Fila: {{ selectedSeat.row }}, Asiento: {{ selectedSeat.seat }}</li>
+      </ul>
+    </div>
   </div>
+
 </div>
 
 <div>
   <img src="../../assets/pantalla.png" class="pantallas-image">
 </div>
-
-
 <div class="text-center mt-4">
-  <button (click)="reserveSeat(); ActualizarArray()" [routerLink]="['/metodos']" [disabled]="selectedSeats.length === 0" style="margin-bottom: 20px;">Reservar</button>
+  <button class="entrar boton" (click)="reserveSeat(); ActualizarArray()" [routerLink]="['/metodos']" [disabled]="selectedSeats.length === 0" style="margin-bottom: 20px;">Reservar</button>
 </div>
-<tr *ngFor="let elemento of asientos">
-  <td>{{elemento.asientoid}}</td>
-  <td>{{elemento.salaid}}</td>
-  <td>{{elemento.letrafila}}</td>
-  <td>{{elemento.numeroasiento}}</td>
-  <td>{{elemento.estado}}</td>
-  <td>{{elemento.seleccionado}}</td>
-  </tr>
-
-

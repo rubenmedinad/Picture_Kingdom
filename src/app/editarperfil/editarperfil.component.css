@@ -1,75 +1,57 @@
-.form-container {
-  display: inline-block;
-  flex-direction: row;
-  align-items: flex-start;
-  text-align: left;
-}
-
 .container {
   display: flex;
   align-items: flex-start;
-  text-align: relative;
+  justify-content: center;
+  position: relative;
+  text-align: left;
+  border: 2px solid #f1be41;
+  background-color: black;
+  margin: 20px auto;
+  width: 70%;
+  height: auto;
+  box-sizing: border-box;
 }
-
 
 .container img {
-  margin: 120px 20px 10px 60px; /* Agrega margen superior, derecho, inferior e izquierdo */
-  width: 15%;
+  margin: 100px 100px 10px 150px;
+  width: 20%;
   height: auto;
 }
-.corner-button {
-  position: absolute; /* Corrige el valor de posición */
-  bottom: 0;
-  right: 0;
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  margin-right: 858px;
+
+.container table {
+  margin-top: 90px;
+}
+
+.container table tr {
   margin-bottom: 10px;
-  /* Otros estilos personalizados */
 }
 
-
-/* Estilos para el formulario */
-form {
-  width: 500px; /* Puedes ajustar el ancho según tus necesidades */
-  margin: 0 auto; /* Centra el formulario en la página */
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: -190px;
-}
-
-th, td {
-  padding: 8px;
-  text-align: center;
-}
-
-/* Estilos adicionales para los inputs */
 input[type="text"] {
   width: 100%;
   padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  border-bottom: none; /* Elimina la línea debajo del input */
+  border-top-style: solid;
+  border-radius: 15px;
+  border-bottom: none;
+  margin-top: 10px;
+  border: 2px solid #f1be41;
 }
 
-/* Estilos para el botón */
 button[type="submit"] {
   padding: 8px 16px;
-  background-color: #4CAF50;
+  background-color: #f1be41;
   color: white;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   margin: 9px;
-  margin-left: 334px;
-  margin-bottom: 100px;
+  margin-left: 0;
+  margin-bottom: 20px;
 }
 
 button[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #e3b43d;
+}
 
+.container table tr:last-child td {
+  margin-top: 30px; /* Margen superior adicional para el último td */
 }

@@ -1,27 +1,48 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Establece el alto del cuerpo al 100% del viewport */
+}
+
+
 .card-deck {
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: center; /* Centra horizontalmente las tarjetas */
+  align-items: center; /* Centra verticalmente las tarjetas */
+  max-width: 1200px; /* Establece un ancho máximo para el contenedor de tarjetas */
+  margin: 0 auto; /* Centra el contenedor de tarjetas dentro del cuerpo */
 }
 
 .card {
-  flex: 0 0 calc(33.33% - 20px);
-  margin: 0 10px 20px;
+  flex: 0 0 calc(30% - 20px); /* Aumenta el ancho de las cartas a aproximadamente el 30% */
+  margin: 0 15px 30px; /* Aumenta el margen inferior y lateral de las cartas */
   transform: scale(0.9);
   transition: transform 0.3s ease-in-out;
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 calc(50% - 20px); /* Ajusta el ancho de las cartas a 50% en pantallas más pequeñas */
+    margin: 0 10px 20px; /* Ajusta el margen inferior y lateral de las cartas en pantallas más pequeñas */
+  }
+}
+
+
+
 .card:hover {
   transform: scale(0.9) translateY(-10px);
 }
+
 
 .card-img-top {
   max-width: 100%;
   width: 100%;
   height: auto;
+  object-fit: contain; /* Ensures the image fits within the card while maintaining its aspect ratio */
 }
-
 .card-footer {
   display: flex;
   justify-content: center;
@@ -30,7 +51,15 @@
 
 .card-footer .btn {
   text-align: center;
+  background-color: #f1be41;
+  transition: background-color 0.3s ease-in-out;
+  border: 1px solid black; /* Agrega un borde de 2px sólido de color negro */
 }
+
+.card-footer .btn:hover {
+  background-color: #ffb500;
+}
+
 
 h1 {
   font-family: serif;

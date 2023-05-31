@@ -13,20 +13,23 @@ export class PictureKingdomService {
     { name: 'Inicio', route: '/' },
     { name: 'Cartelera', route: '/cartelera' },
     { name: 'Perfil', route: '/editarperfil' }
-
   ];
+
   entradas: any[] = [
     { nombreEntrada: 'Normal', precio: 8.90, numero: 0 },
     { nombreEntrada: 'Abono Joven', precio: 6.50, numero: 0 },
     { nombreEntrada: 'Familia Numerosa', precio: 6.50, numero: 0 }
-
   ];
+
   pelis = [
-    { titulo  : 'Inicio', route: '/' },
+    { titulo: 'Inicio', route: '/' },
     { name: 'Cartelera', route: '/cartelera' },
     { name: 'Contact', route: '/contact' }
   ];
-  ventas:any[] = []
+
+  ventas: any[] = [];
+
+  venta_ofertas: any[] = [];
 
   peliculas: Peliculas[] = [];
 
@@ -36,25 +39,39 @@ export class PictureKingdomService {
     { id: 3, name: "¡Consigue una entrada al cine al comprar paquetes de Popitas!", image: '../assets/venta_fb.jpg', price: "14.99" }
   ];
 
+  imagenSeleccionada: string = '';
+
   getOffers(): any[] {
     return this.offers;
   }
-  getPeliculas():Peliculas[] {
-    return this.peliculas
+
+  getPeliculas(): Peliculas[] {
+    return this.peliculas;
   }
+
   rellenarVentas(params: any) {
     this.ventas.push(params);
   }
-
+  rellenarVenta_Ofertas(params: any) {
+    this.venta_ofertas.push(params);
+  }
+  getVenta_Ofertas(): any[] {
+    return this.venta_ofertas;
+  }
   obtenerVentas(): any[] {
     return this.ventas;
   }
+
   vaciarVentas() {
     this.ventas = [];
   }
-  eliminarUltimoElemento(exceso: number): void {
 
-      this.ventas.splice(exceso);
+  eliminarUltimoElemento(exceso: number): void {
+    this.ventas.splice(exceso);
+  }
+
+  getImagenSeleccionada(imagenSeleccionada: string): void {
+    this.imagenSeleccionada = imagenSeleccionada;
   }
 
   constructor( ) { }

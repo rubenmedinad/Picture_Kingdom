@@ -1,42 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
-  CORREO: string="";
-  contrasena: string="";
+export class LoginComponent implements OnInit {
+  correo: string = "";
+  contrasena: string = "";
 
-  onSubmit() {
-    // Accede a los valores de los campos
-    console.log(this.CORREO);
-    console.log(this.contrasena);
+  constructor(private router: Router) {}
 
-    // Lógica para manejar el envío del formulario
-
+  ngOnInit() {
+    console.log("Datos del localStorage:", localStorage.getItem('usuarios'));
   }
-  /*function verificarContrasena(String contrasena) {
-    // Reglas para la contraseña
-    const reglas = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-        if (reglas.test(contrasena)) {
-      return true;
+  navegarPerfil() {
+    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+    const usuarioExistente = usuarios.find((user: any) => user.email === this.correo && user.password === this.contrasena);
+
+    if (usuarioExistente) {
+      this.router.navigate(['/perfil']);
+      alert("Has iniciado sesión con éxito");
     } else {
-      return false; // Contraseña inválida
+      alert("El usuario no existe o la contraseña es incorrecta");
     }
   }
 
-  // Ejemplo de uso
-  const contrasenaIngresada = "MiContraseña123!";
-  const esValida = verificarContrasena(contrasenaIngresada);
-
-  if (esValida) {
-    console.log("La contraseña es válida.");
-  } else {
-    console.log("La contraseña es inválida.");
-  }*/
-
+  onSubmit() {
+    console.log(this.correo);
+    console.log(this.contrasena);
+  }
 }
-

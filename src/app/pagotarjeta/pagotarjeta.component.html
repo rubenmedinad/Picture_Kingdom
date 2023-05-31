@@ -23,12 +23,13 @@
     <div class="form-group">
       <label for="inputCVV">CVV</label>
       <div class="cvv-input-wrapper">
-        <input type="{{ showCVV ? 'text' : 'password' }}" class="form-control" id="inputCVV" [(ngModel)]="cvvValue" placeholder="CVV" minlength="3" maxlength="3" required>
-        <button mat-icon-button class="cvv-toggle-button" (mousedown)="toggleCVVVisibility()" (mouseup)="toggleCVVVisibility()" (mouseleave)="toggleCVVVisibility()">
+        <input type="text" class="form-control" id="inputCVV" [(ngModel)]="cvvValue" placeholder="CVV" minlength="3" maxlength="3" required [attr.type]="showCVV ? 'text' : 'password'">
+        <button mat-icon-button class="cvv-toggle-button" (mousedown)="toggleCVVVisibility(true)" (mouseup)="toggleCVVVisibility(false)">
           <mat-icon>{{ showCVV ? 'visibility' : 'visibility_off' }}</mat-icon>
         </button>
       </div>
+
     </div>
-    <button type="button" (click)="enviar(); ActualizarArray(); abrirDialogo()">Enviar</button>
+    <button type="button" (click)="enviar();ActualizarArray();abrirDialogo();" [disabled]="!formValid()">Enviar</button>
   </div>
 </div>

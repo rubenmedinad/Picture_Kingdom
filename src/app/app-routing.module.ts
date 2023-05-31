@@ -15,6 +15,11 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { FinalizarCompraComponent } from './finalizar-compra/finalizar-compra.component';
 import { EditarperfilComponent } from './editarperfil/editarperfil.component';
+import { FinalizarCompraOfertasComponent } from './finalizar-compra-ofertas/finalizar-compra-ofertas.component';
+
+
+import { PerfilComponent } from './perfil/perfil.component';
+import { MisentradasComponent } from './misentradas/misentradas.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -26,13 +31,16 @@ const routes: Routes = [
   { path: 'promocion3', component: Promocion3Component },
   { path: 'tarjeta/:cantidadAsientos/:calcularTotalGeneral', component: PagotarjetaComponent },
   { path: 'sinopsis/:id', component: SinopsisComponent },
+  { path: 'finalizar-compra-ofertas', component: FinalizarCompraOfertasComponent },
   { path: 'metodos', component: MetodospagoComponent },
   { path: 'compraofertas/:id/:name/:image', component: CompraofertasComponent },
   { path: 'login',component:LoginComponent},
   { path: 'finalizar', component: FinalizarCompraComponent },
-  {path:'registro',component:RegistroComponent},
   { path: 'registro',component:RegistroComponent},
-  { path: 'editarperfil',component:EditarperfilComponent}
+  { path: 'registro',component:RegistroComponent},
+  { path: 'editarperfil',component:EditarperfilComponent},
+  { path: 'perfil', component:PerfilComponent},
+  { path: 'misentradas', component:MisentradasComponent},
 ]
 
 @NgModule({
