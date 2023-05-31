@@ -30,8 +30,12 @@ import { PagotarjetaComponent } from './pagotarjeta/pagotarjeta.component';
 import { FinalizarCompraComponent } from './finalizar-compra/finalizar-compra.component';
 import { EditarperfilComponent } from './editarperfil/editarperfil.component';
 import { MidialogoComponent } from './midialogo/midialogo.component';
-import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { FinalizarCompraOfertasComponent } from './finalizar-compra-ofertas/finalizar-compra-ofertas.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { PerfilComponent } from './perfil/perfil.component';
+import { MisentradasComponent } from './misentradas/misentradas.component';
+
+
 
 @NgModule({
   declarations: [
@@ -53,7 +57,11 @@ import { FinalizarCompraOfertasComponent } from './finalizar-compra-ofertas/fina
     FinalizarCompraComponent,
     EditarperfilComponent,
     MidialogoComponent,
-    FinalizarCompraOfertasComponent // Agrega FinalizarCompraOfertasComponent aquí
+    FinalizarCompraOfertasComponent,// Agrega FinalizarCompraOfertasComponent aquí
+    PerfilComponent,
+    MisentradasComponent
+
+
   ],
   imports: [
     BrowserModule,

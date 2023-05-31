@@ -10,7 +10,8 @@
         <mat-label>CONTRASEÑA</mat-label>
         <input matInput [(ngModel)]="contrasena" name="password" type="password">
       </mat-form-field>
-      <button class="entrar" mat-raised-button>ENTRAR</button>
+     <button class="registro-link" entrar mat-raised-button (click)="navegarPerfil()">ENTRAR</button>
+
       <p class="registro-link" [routerLink]="['/registro']">REGISTRARSE</p>
     </form>
   </div>
