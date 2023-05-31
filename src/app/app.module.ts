@@ -31,6 +31,8 @@ import { FinalizarCompraComponent } from './finalizar-compra/finalizar-compra.co
 import { EditarperfilComponent } from './editarperfil/editarperfil.component';
 import { MidialogoComponent } from './midialogo/midialogo.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PerfilComponent } from './perfil/perfil.component';
+import { MisentradasComponent } from './misentradas/misentradas.component';
 
 
 
@@ -54,6 +56,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     FinalizarCompraComponent,
     EditarperfilComponent,
     MidialogoComponent,
+    PerfilComponent,
+    MisentradasComponent,
 
 
   ],

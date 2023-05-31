@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="sidebar">
+      <table class="left-table">
+        <tr>
+          <td>NOMBRE: <br><mark>{{ perfil.nombre }}</mark></td>
+        </tr>
+        <tr>
+          <td>APELLIDOS: <br><mark>{{ perfil.apellido }}</mark></td>
+        </tr>
+        <tr>
+          <td>CONTRASEÑA ANTIGÜA: <br><mark>{{ perfil.contrasenaantigua }}</mark></td>
+        </tr>
+        <tr>
+          <td> CORREO ELÉCTRONICO : <br><mark>{{ perfil.email }}</mark></td>
+        </tr>
+        <tr>
+          <td>TELÉFONO  : <br><mark>{{ perfil.telefono }}</mark></td>
+        </tr>
+        <button routerLink="/editarperfil">Editar Perfil </button>
+        <button routerLink="/misentradas">Mis Entradas </button>
+      </table>
+    </div>

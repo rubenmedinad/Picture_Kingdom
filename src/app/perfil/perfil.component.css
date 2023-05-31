@@ -1,0 +1,66 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Registrar una cuenta", Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(248, 244, 244);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px #f1be41;
+  width: 500px;
+  height: 400px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.container .sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.container .sidebar table {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.container .sidebar table td {
+  padding: 5px;
+}
+
+.container .sidebar table td mark {
+  background-color: #f1be41;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.container .sidebar button {
+  color: white;
+  background-color: #f1be41;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.container .sidebar button:hover {
+  background-color: #c09935;
+}
+
