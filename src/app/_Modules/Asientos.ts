@@ -1,22 +1,30 @@
 export class Asientos {
-    asientoid: number=0;
-    salaid: number=0;
-    letrafila: number=0;
-    numeroasiento: number=0;
-    estado: boolean = false;
-    seleccionado: boolean = false;
+  asientoid: number;
+  salaid: number;
+  peliculaid: number;
+  horarioid: number;
+  diaid: number;
+  letra_fila: string;
+  num_asiento: number;
+  ocupado: boolean;
   
-    // constructor(
-    //   AsientoID: number,
-    //   SalaID: number,
-    //   Letra_Fila: number,
-    //   Num_Asiento: number,
-    //   Estado: boolean
-    // ) {
-    //   this.asientoid = AsientoID;
-    //   this.salaid = SalaID;
-    //   this.letrafila = Letra_Fila;
-    //   this.numasiento = Num_Asiento;
-    //   this.estado = Estado;
-    // }
+  constructor(
+    asientoid: number,
+    salaid: number,
+    peliculaid: number,
+    horarioid: number,
+    diaid: number,
+    letra_fila: string,
+    num_asiento: number,
+    ocupado: boolean
+  ) {
+    this.asientoid = asientoid;
+    this.salaid = salaid;
+    this.peliculaid = peliculaid;
+    this.horarioid = horarioid;
+    this.diaid = diaid;
+    this.letra_fila = letra_fila;
+    this.num_asiento = num_asiento;
+    this.ocupado = ocupado;
   }
+}

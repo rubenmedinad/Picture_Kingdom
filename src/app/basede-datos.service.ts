@@ -15,21 +15,21 @@ export class BasedeDatosService {
   UrlUsuarios : string = "http://localhost:8080/usuarios";
   Urlhorarios : string = "http://localhost:8080/horarios";
   Urldias : string = "http://localhost:8080/dias";
+
   constructor(private http: HttpClient) { }
 
-  listarasientos(): Observable<Asientos[]> {
-    return this.http.get<Asientos[]>(this.Urlasientos);
+    listarasientos(): Observable<Asientos[]> {
+      return this.http.get<Asientos[]>(this.Urlasientos);
+    }
+
+    listarpeliculas(): Observable<Peliculas[]> {
+      return this.http.get<Peliculas[]>(this.Urlpeliculas);
   }
-
-  listarpeliculas(): Observable<Peliculas[]> {
-    return this.http.get<Peliculas[]>(this.Urlpeliculas);
-}
-
   listarusuarios(): Observable<Usuarios> {
   return this.http.get<Usuarios>(this.UrlUsuarios);
 }
-  listarhorarios(): Observable<Horarios> {
-  return this.http.get<Horarios>(this.Urlhorarios);
+listarhorarios(): Observable<Horarios[]> {
+  return this.http.get<Horarios[]>(this.Urlhorarios);
 }
   listardiass(): Observable<Dias> {
   return this.http.get<Dias>(this.Urldias);
@@ -41,5 +41,11 @@ agregarUsuario(usuario: Usuarios): Observable<any> {
 agregarAsiento(asiento: Asientos): Observable<any> {
   const url = this.Urlasientos+"/agregarAsientos"; 
   return this.http.post(url, asiento);
+}
+obtenerDiaId(dia: string): Observable<number> {
+  return this.http.get<number>(`${this.Urldias}/obtenerDiaId?dia=${dia}`);
+}
+obtenerPorPeliculaYDia(peliculaid: number, diaid: number): Observable<Horarios[]> {
+  return this.http.get<Horarios[]>(`${this.Urlhorarios}/pelicula/${peliculaid}/dia/${diaid}`);
 }
 }
