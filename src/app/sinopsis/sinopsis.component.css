@@ -1,56 +1,79 @@
 .container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: flex-start;
   margin-top: 50px;
   margin-bottom: 50px;
 }
-h1 {
-  text-align: center; /* Centra el texto del encabezado horizontalmente */
-  margin-bottom: 50px; /* Agrega un margen inferior de 50 píxeles al elemento */
-}
-li {
-  list-style: none; /* Elimina los marcadores de lista predeterminados */
-}
 
-.sidebar {
+.top-left-container {
   flex: 0 0 25%;
   padding-right: 20px;
 }
 
-.content {
-  margin-right: -500%; /* Desplaza la imagen hacia la izquierda, fuera de la vista (-500% del ancho del contenedor) */
-  margin: 0 auto; /* Centra la imagen horizontalmente dentro de su contenedor */
-  width: 17%; /* Establece el ancho de la imagen al 17% del ancho del contenedor */
-  height: auto; /* Ajusta automáticamente la altura de la imagen proporcionalmente */
-  flex: 1;
+.top-right-container {
+  flex: 0 0 75%;
 }
 
-.sidebar img.movie-image-small {
+.bottom-container {
+  width: 100%;
+}
+
+.movie-image-small {
   display: block;
   width: 80%;
   height: auto;
-  margin-right: -20px;
   margin-bottom: 20px;
 }
 
-.sidebar .left-table {
-  margin-top: 20px;
+.top-left-container p,
+.top-right-container p {
+  color: white;
+  margin-bottom: 15px;
 }
 
-.content h1 {
+.top-left-container strong,
+.top-right-container strong {
+  color: white;
+}
+
+.left-table mark {
+  color: #f1be41;
+}
+
+h1 {
   text-align: center;
   margin-bottom: 20px;
   font-weight: bold;
   color: white;
 }
 
-.content .right-table-large {
-  margin-top: 20px;
-  width: 100%;
+.sinopsis,
+.reparto,
+.directores {
+  color: white;
+  margin-bottom: 20px;
 }
 
-.content .right-table-large tr td {
-  padding-bottom: 20px;
+.linea-cine {
+  background-color: #f1be41;
+  color: #000;
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.linea-cine h2 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+body {
+  background-color: black;
+  color: white;
 }
 
 .dia-menu {
@@ -78,15 +101,15 @@ li {
   color: #000;
 }
 
-.button-row-full-width {
+.button-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
-.button-row-full-width button {
+.button-row button {
   padding: 10px 20px;
   font-size: 16px;
   border: 2px solid #ccc;
@@ -94,45 +117,11 @@ li {
   color: #333;
   cursor: pointer;
   flex-grow: 1;
-  margin: 10px;
+  margin: 5px;
 }
 
-.button-row-full-width button:hover {
+.button-row button:hover {
   border-color: #f1be41;
   background-color: #f1be41;
   color: #fff;
-}
-
-.linea-cine {
-  background-color: #f1be41;
-  color: #000;
-  text-align: center;
-  padding: 10px 0;
-  margin-bottom: 20px;
-}
-
-.linea-cine h2 {
-  margin: 0;
-  font-size: 24px;
-  letter-spacing: 3px;
-  font-weight: bold;
-}
-
-body {
-  background-color: black;
-  color: white;
-}
-
-.content h1,
-.content .sinopsis,
-.content .directores,
-.content .reparto,
-.content .duracion,
-.content .anio,
-.content .genero {
-  color: white;
-}
-
-.sidebar .left-table mark {
-  color: #f1be41;
 }
