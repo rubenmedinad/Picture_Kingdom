@@ -3,6 +3,7 @@
   import { MatDialogRef } from '@angular/material/dialog';
   import { PictureKingdomService } from '../picture-kingdom.service';
   import jsPDF from 'jspdf';
+  import { Asientos } from '../_Modules/Asientos';
 
   @Component({
     selector: 'app-finalizar-compra',
@@ -10,6 +11,9 @@
     styleUrls: ['./finalizar-compra.component.css'],
   })
   export class FinalizarCompraComponent implements OnInit {
+    asientos : Asientos [] = []
+    informacion : any[]=[]
+    asiento : Asientos = new Asientos(0,0,0,0,0,'',0,true)
     constructor(
       private router: Router,
       private peliculasS: PictureKingdomService,
@@ -17,6 +21,12 @@
     ) {}
 
     ngOnInit() {
+      this.peliculasS.obtenerVentas()
+      this.informacion=this.peliculasS.obtenerVentas()
+      console.log(this.informacion)
+      this.asientos=this.informacion[3]
+      console.log(this.asientos)
+    
       // Código relacionado con la inicialización del componente
     }
 
