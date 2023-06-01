@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="app.component.css"> <!-- Agrega esta línea -->
+  <link rel="stylesheet" href="app.component.css">
   <title>Picture Kingdom</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
       <img class="logo-img" src="../assets/Picture_Kingdom.jpg" alt="Picture Kingdom Logo">
     </a>
 
-    <button mat-icon-button [routerLink]="['/login']"class="example-icon mat-icon-no-color" aria-label="Example icon-button with menu icon">
+    <button mat-icon-button [routerLink]="['/login']" class="example-icon mat-icon-no-color" aria-label="Example icon-button with menu icon">
       <mat-icon><span class="material-symbols-outlined">
         person_book
         </span></mat-icon>
@@ -30,36 +30,33 @@
       </mat-nav-list>
     </mat-sidenav>
 
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-    <footer class="footer">
-      <div class="footer-container">
-        <mat-toolbar color="black">
-          <div class="footer-line">
-            <span class="footer-name" style="color: #f1be41;">PICTURE KINGDOM</span>
-          </div>
-          <div class="footer-line">
-            <a mat-button href="https://www.instagram.com/picturekingdomofficial/" target="_blank" class="social-link" style="color: #f1be41;">
-              <mat-icon>photo_camera</mat-icon>Síguenos en Instagram
-            </a>
-            <a mat-button href="https://twitter.com/picturekingdom" target="_blank" class="social-link" style="color: #f1be41;">
-              <mat-icon>verifie</mat-icon>Síguenos en Twitter
-            </a>
-            <a mat-button href="mailto:info@picturekingdom.com" target="_blank" class="contact-link" style="color: #f1be41;">
-              <mat-icon>email</mat-icon> info@picturekingdom.com
-            </a>
-            <a mat-button href="tel:+15551234567" class="contact-link" target="_blank" style="color: #f1be41;">
-              <mat-icon>phone</mat-icon>+1 (555) 123-4567
-            </a>
-          </div>
-        </mat-toolbar>
-      </div>
-    </footer>
-
-
-
-
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <mat-toolbar color="black">
+        <div class="footer-line">
+          <span class="footer-name" style="color: #f1be41;">PICTURE KINGDOM</span>
+        </div>
+        <div class="footer-line">
+          <a mat-button href="https://www.instagram.com/picturekingdomofficial/" target="_blank" class="social-link" style="color: #f1be41;">
+            <mat-icon>photo_camera</mat-icon>Síguenos en Instagram
+          </a>
+          <a mat-button href="https://twitter.com/picturekingdom" target="_blank" class="social-link" style="color: #f1be41;">
+            <mat-icon>verifie</mat-icon>Síguenos en Twitter
+          </a>
+          <a mat-button href="mailto:info@picturekingdom.com" target="_blank" class="contact-link" style="color: #f1be41;">
+            <mat-icon>email</mat-icon> info@picturekingdom.com
+          </a>
+          <a mat-button href="tel:+15551234567" class="contact-link" target="_blank" style="color: #f1be41;">
+            <mat-icon>phone</mat-icon>+1 (555) 123-4567
+          </a>
+        </div>
+      </mat-toolbar>
+    </div>
+  </footer>
 </body>
 </html>

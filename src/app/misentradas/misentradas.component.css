@@ -1,7 +1,7 @@
 body {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 100vh;
   background-color: #282c34;
   margin: 0;
@@ -12,14 +12,15 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   background-color: #fff;
+  min-height: 500px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  width: auto;
+  width: 990px;
   height: auto;
   padding: 20px;
+  overflow-x: auto; /* Agregado para desplazamiento horizontal */
 }
 
 .sidebar {
@@ -27,13 +28,14 @@ body {
 }
 
 .left-table {
-  width: 100%;
+  width: max-content; /* Cambiado a "max-content" para ajustarse al contenido */
   border-collapse: collapse;
 }
 
 .left-table td {
   padding: 10px;
   border-bottom: 1px solid #ccc;
+  white-space: nowrap; /* Agregado para mostrar en una sola línea */
 }
 
 .left-table td:first-child {
@@ -45,6 +47,17 @@ body {
   color: white;
   padding: 2px 4px;
   border-radius: 2px;
+}
+
+.scrollable-content {
+  overflow-x: auto; /* Agregado para desplazamiento horizontal */
+  max-width: 100%; /* Agregado para ajustar al contenido */
+}
+
+.button-container {
+  margin-top: auto;
+  display: flex;
+  padding-top: 20px; /* Agregado para espacio entre contenido y botón */
 }
 
 .back-button {

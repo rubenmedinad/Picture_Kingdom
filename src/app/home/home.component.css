@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: rgb(0, 0, 0); /* Establece el color de fondo del cuerpo del documento */
+  background-color: #111213; /* Establece el color de fondo del cuerpo del documento */
   background-size: cover; /* Ajusta la imagen de fondo para que cubra todo el elemento */
   background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
 }

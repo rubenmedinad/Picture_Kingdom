@@ -1,13 +1,18 @@
 <div class="container">
   <div class="sidebar">
-    <table class="left-table">
-      <tr *ngFor="let entrada of mientrada">
-        <td>NOMBRE: <mark>{{ entrada.nombrepeli }}</mark></td>
-        <td>APELLIDOS: <mark>{{ entrada.fechapeli }}</mark></td>
-        <td>CONTRASEÑA ANTIGUA: <mark>{{ entrada.asientospeli }}</mark></td>
-        <td>CORREO ELECTRÓNICO: <mark>{{ entrada.salapeli }}</mark></td>
-      </tr>
-    </table>
+    <div class="scrollable-content">
+      <table class="left-table">
+        <tr *ngFor="let entrada of mientrada">
+          <td>TITULO: <mark>{{ entrada.nombrepeli }}</mark></td>
+          <td>FECHA: <mark>{{ entrada.fechapeli }}</mark></td>
+          <td>ASIENTO: <mark>{{ entrada.asientospeli }}</mark></td>
+          <td>SALA: <mark>{{ entrada.salapeli }}</mark></td>
+          <td>DESCARGAR PDF: </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="button-container">
     <button class="back-button" routerLink="/perfil">Atrás</button>
   </div>
 </div>
