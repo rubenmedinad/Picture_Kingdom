@@ -12,7 +12,6 @@ import { Horarios } from './_Modules/Horarios';
 export class BasedeDatosService {
   Urlasientos: string = "http://localhost:8080/asientos";
   Urlpeliculas: string = "http://localhost:8080/peliculas";
-  Urlsinopsis : string = "http://localhost:8080/peliculas";
   UrlUsuarios : string = "http://localhost:8080/usuarios";
   Urlhorarios : string = "http://localhost:8080/horarios";
   Urldias : string = "http://localhost:8080/dias";
@@ -24,10 +23,6 @@ export class BasedeDatosService {
 
   listarpeliculas(): Observable<Peliculas[]> {
     return this.http.get<Peliculas[]>(this.Urlpeliculas);
-}
-
-  listarsinopsis(): Observable<Peliculas> {
-    return this.http.get<Peliculas>(this.Urlsinopsis);
 }
 
   listarusuarios(): Observable<Usuarios> {
@@ -42,5 +37,9 @@ export class BasedeDatosService {
 agregarUsuario(usuario: Usuarios): Observable<any> {
     const url = this.UrlUsuarios+"/agregarUsuario"; 
     return this.http.post(url, usuario);
+}
+agregarAsiento(asiento: Asientos): Observable<any> {
+  const url = this.Urlasientos+"/agregarAsientos"; 
+  return this.http.post(url, asiento);
 }
 }
