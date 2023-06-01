@@ -15,6 +15,7 @@ export class BasedeDatosService {
   UrlUsuarios : string = "http://localhost:8080/usuarios";
   Urlhorarios : string = "http://localhost:8080/horarios";
   Urldias : string = "http://localhost:8080/dias";
+
   constructor(private http: HttpClient) { }
 
   listarasientos(): Observable<Asientos[]> {
@@ -41,5 +42,11 @@ agregarUsuario(usuario: Usuarios): Observable<any> {
 agregarAsiento(asiento: Asientos): Observable<any> {
   const url = this.Urlasientos+"/agregarAsientos"; 
   return this.http.post(url, asiento);
+}
+obtenerDiaId(dia: string): Observable<number> {
+  return this.http.get<number>(`${this.Urldias}/obtenerDiaId?dia=${dia}`);
+}
+obtenerPorPeliculaYDia(peliculaid: number, diaid: number): Observable<Horarios[]> {
+  return this.http.get<Horarios[]>(`${this.Urlhorarios}/pelicula/${peliculaid}/dia/${diaid}`);
 }
 }
