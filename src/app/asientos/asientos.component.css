@@ -5,10 +5,10 @@
   flex-direction: row;
   margin-top: 50px;
   margin-bottom: 50px;
-  justify-content: center;
   border-radius: 10px;
   padding: 20px;
 }
+
 
 .legend,
 .selected-seats,
@@ -24,6 +24,7 @@
   padding-left: 10px;
   margin-left: 40px;
   margin-right: 20px;
+  max-height: 312px; /* Ajusta este valor según tus necesidades */
 }
 
 .table-no-border {
@@ -42,7 +43,7 @@
 .selected-seats {
   margin-left: 20px;
   margin-top: 0px;
-  max-height: 150px;
+  height: 312px; /* Ajusta este valor según tus necesidades */
   overflow-y: scroll;
 }
 
@@ -103,6 +104,7 @@
 
 .text-center {
   text-align: center;
+  color: white  ;
 }
 
 .pantallas-image {
