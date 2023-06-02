@@ -31,8 +31,8 @@ export class BasedeDatosService {
 listarhorarios(): Observable<Horarios[]> {
   return this.http.get<Horarios[]>(this.Urlhorarios);
 }
-  listardiass(): Observable<Dias> {
-  return this.http.get<Dias>(this.Urldias);
+  listardiass(): Observable<Dias[]> {
+  return this.http.get<Dias[]>(this.Urldias);
 }
 agregarUsuario(usuario: Usuarios): Observable<any> {
     const url = this.UrlUsuarios+"/agregarUsuario"; 

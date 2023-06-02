@@ -13,6 +13,7 @@ export class PictureKingdomService {
     { name: 'Inicio', route: '/' },
     { name: 'Cartelera', route: '/cartelera' },
     { name: 'Perfil', route: '/editarperfil' }
+    
   ];
 
   entradas: any[] = [
