@@ -20,7 +20,6 @@ interface Row {
 export class AsientosComponent {
   seats: Row[] = [];
   selectedSeats: { row: string; seat: number }[] = [];
-  pasoActual = 'Asientos';
   cantidadAsientos: number = 0;
   constructor(
     private router: Router,
@@ -47,6 +46,18 @@ export class AsientosComponent {
       this.peliculasS.eliminarUltimoElemento(3);
     }
   }
+  markSeatAsOccupied(row: string, seatNumber: number) {
+    const rowToMark = this.seats.find((rowData) => rowData.name === row);
+    if (rowToMark) {
+      const seatToMark = rowToMark.seats.find(
+        (seat) => seat.name === seatNumber
+      );
+      if (seatToMark) {
+        seatToMark.occupied = true;
+      }
+    }
+  }
+
   toggleSeatSelection(seat: Seat) {
     if (!seat.occupied) {
       seat.selected = !seat.selected;
