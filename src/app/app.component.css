@@ -1,5 +1,7 @@
 html, body {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .mat-toolbar {
@@ -8,8 +10,7 @@ html, body {
   height: 100px;
   background-color: rgb(0, 0, 0);
   padding: 0 16px;
-  border: 2px solid #f1be41; /* Agregado borde de color #f1be41 */
-
+  border: 2px solid #f1be41;
 }
 
 .mat-icon-no-color {
@@ -21,74 +22,71 @@ html, body {
 .logo-img {
   max-height: 80px;
   max-width: 100%;
-  position:  center;
-
+  position: center;
 }
 
+.sidenav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  box-shadow: 2px 0px 4px rgb(0, 0, 0);
+  width: 240px;
+  background-color: rgb(255, 255, 255);
+}
 
-    .sidenav {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      z-index: 1000;
-      box-shadow: 2px 0px 4px rgb(0, 0, 0);
-      width: 240px;
-      background-color:black
+.mat-sidenav-container {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
 
-    }
+.mat-sidenav-content.main-content {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 100px); /* 100px is the height of the toolbar */
+  margin-top: 100px; /* To leave space for the toolbar */
+}
 
-    .mat-sidenav-container {
-      width: 100%;
-      height: 100%;
-      background-color:black
+.footer {
+  background-color: black;
+  color: #f1be41;
+  border: 2px solid #f1be41;
+  margin-top: auto;
+}
 
-    }
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
 
-    .mat-sidenav-content {
-      height: 100%;
-      width: 100%;
-    }
+.footer .footer-name {
+  color: #f1be41;
+  font-weight: bold;
+  margin-right: 20px;
+}
 
+.footer .footer-contact {
+  text-align: center;
+  margin-top: 20px;
+}
 
-    .footer {
-      background-color: black;
-      color: #f1be41;
-      border: 2px solid #f1be41; /* Agregado borde de color #f1be41 */
-    }
+.footer .footer-contact .contact-link {
+  display: block;
+  margin-bottom: 5px;
+  color: #f1be41;
+}
 
-    .footer-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
+.footer .footer-contact mat-icon {
+  margin-right: 5px;
+}
 
-    .footer .footer-name {
-      color: #f1be41;
-      font-weight: bold;
-      margin-right: 20px;
-    }
+.footer .social-link {
+  color: #f1be41;
+}
 
-    .footer .footer-contact {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .footer .footer-contact .contact-link {
-      display: block;
-      margin-bottom: 5px;
-      color: #f1be41;
-    }
-
-    .footer .footer-contact mat-icon {
-      margin-right: 5px;
-    }
-
-    .footer .social-link {
-      color: #f1be41;
-    }
-
-    .footer .social-link mat-icon {
-      margin-right: 5px;
-    }
-
+.footer .social-link mat-icon {
+  margin-right: 5px;
+}

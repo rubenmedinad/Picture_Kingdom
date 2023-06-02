@@ -32,6 +32,11 @@
   color: white;
   margin-bottom: 15px;
 }
+.right-table-large td {
+  padding-bottom: 20px;
+}
+
+
 
 .top-left-container strong,
 .top-right-container strong {
@@ -55,7 +60,9 @@ h1 {
   color: white;
   margin-bottom: 20px;
 }
-
+.td{
+  color: white;
+}
 .linea-cine {
   background-color: #f1be41;
   color: #000;

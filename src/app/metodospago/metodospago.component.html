@@ -4,7 +4,7 @@
 <div class="container">
   <div class="container">
     <p>Asientos = {{ asientosLength }}</p>
-    <table>
+    <table class="custom-table">
       <tr>
         <th>Tipo de Entrada</th>
         <th>Precio</th>
@@ -21,11 +21,11 @@
         <td>
           <div class="center">
             <div class="addNumber_cont">
-              <button id="decrementar-btn" style="margin:20%" (click)="decrementarNumero(entrada)"> - </button>
+              <button id="decrementar-btn" style="margin:20%; color: #000000;" (click)="decrementarNumero(entrada)"> - </button>
               <div class="input_cont">
                 <h1 class="text-center text-bottom">{{ entrada.numero }}</h1>
               </div>
-              <button id="incrementar-btn" style="margin:20%" (click)="incrementarNumero(entrada)"> + </button>
+              <button id="incrementar-btn" style="margin:20%; color: #000000;" (click)="incrementarNumero(entrada)"> + </button>
             </div>
           </div>
         </td>
@@ -39,14 +39,14 @@
       <tr>
         <td colspan="4" class="total-value">
           <h1 style="float: left;">Total general:</h1>
-          <h1 style="float: right;">{{ calcularTotalGeneral() }} €</h1>
+          <h1 style="float: right;margin-right: 36px;">{{ calcularTotalGeneral() }} €</h1>
         </td>
       </tr>
 
 
       <tr>
         <td colspan="4" class="reserve-button">
-          <a mat-button (click)="ActualizarArray()" [routerLink]="['/tarjeta', asientosLength, calcularTotalGeneral()]" [disabled]="entrada.numero < asientosLength && this.calcularTotalEntradas() < this.asientosLength" style="background-color: #f1be41;">Realizar pago</a>
+          <a mat-button (click)="ActualizarArray()"  [routerLink]="['/tarjeta', asientosLength, calcularTotalGeneral()]" [disabled]="entrada.numero < asientosLength && this.calcularTotalEntradas() < this.asientosLength" class="button-gold">Realizar pago</a>
         </td>
       </tr>
     </table>

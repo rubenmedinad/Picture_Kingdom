@@ -1,23 +1,25 @@
 <div class="container">
   <div class="sidebar">
-    <table class="left-table">
-      <tr>
-        <td>NOMBRE: <mark>{{ perfil.nombre }}</mark></td>
-      </tr>
-      <tr>
-        <td>APELLIDOS: <mark>{{ perfil.apellido }}</mark></td>
-      </tr>
-      <tr>
-        <td>CONTRASEÑA ANTIGÜA: <mark>{{ perfil.contrasenaantigua }}</mark></td>
-      </tr>
-      <tr>
-        <td>CORREO ELECTRÓNICO: <mark>{{ perfil.email }}</mark></td>
-      </tr>
-      <tr>
-        <td>TELÉFONO: <mark>{{ perfil.telefono }}</mark></td>
-      </tr>
-    </table>
-    <button routerLink="/editarperfil">Editar Perfil</button>
-    <button routerLink="/misentradas">Mis Entradas</button>
+    <h2>Perfil</h2>
+    <form>
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="perfil.nombre" name="nombre" required>
+      </div>
+      <div>
+        <label for="apellido">Apellidos:</label>
+        <input type="text" id="apellido" [(ngModel)]="perfil.apellido" name="apellido" required>
+      </div>
+      <div>
+        <label for="contrasenaantigua">Contraseña Antigua:</label>
+        <input type="password" id="contrasenaantigua" [(ngModel)]="perfil.contrasenaantigua" name="contrasenaantigua" required>
+      </div>
+      <div>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" [(ngModel)]="perfil.email" name="email" required>
+      </div>
+      <button routerLink="/editarperfil">Editar Perfil</button>
+      <button routerLink="/misentradas">Mis Entradas</button>
+    </form>
   </div>
 </div>
