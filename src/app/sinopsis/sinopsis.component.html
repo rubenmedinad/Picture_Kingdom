@@ -35,13 +35,27 @@
         <h2>HORARIOS</h2>
       </div>
       <div class="dia-menu">
-        <button *ngFor="let dia of diasPeliculas" (click)="cambiarDiaSeleccionado(dia)" [class.active]="diaSeleccionado === dia">
-          {{ obtenerFechaActual(dia) }}
-        </button>
+        <div class="dia-menu">
+          <div class="dia-menu">
+            <button *ngFor="let dia of dias">
+              {{ dia.diaid }}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-    <button *ngFor="let hora of getHorariosPorDia(diaSeleccionado)" [routerLink]="['/asientos']" (click)="ActualizarArray(hora)">
-      {{ hora }}
+    <button *ngFor="let hora of getHorariosPorDia()" [routerLink]="['/asientos']">
+      {{ hora.hora_inicio }}
     </button>
   </div>
 </div>
+<table>
+  <tr *ngFor="let elemento of dias">
+
+    <td>{{elemento.diaid}}</td>
+    
+    <td>{{elemento.dia}}</td>
+    
+    </tr>
+</table>
+
