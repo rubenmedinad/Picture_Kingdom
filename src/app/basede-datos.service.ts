@@ -40,7 +40,8 @@ export class BasedeDatosService {
   return this.http.get<Dias>(this.Urldias);
 }
 agregarUsuario(usuario: Usuarios): Observable<any> {
-    const url = this.UrlUsuarios+"/agregarUsuario"; 
+    const url = this.UrlUsuarios+"/agregarUsuario";
     return this.http.post(url, usuario);
 }
+
 }

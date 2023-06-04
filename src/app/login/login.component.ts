@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    console.log("Datos del localStorage:", localStorage.getItem('usuarios'));
   }
 
   navegarPerfil() {
