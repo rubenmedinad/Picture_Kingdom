@@ -4,9 +4,15 @@
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
+  background-color: #f1be41;
+  color: rgb(0, 0, 0);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 6px #f1be41;
 }
 
-table {
+table.custom-table {
   width: 100%;
   border-collapse: collapse;
   background-color: transparent;
@@ -17,6 +23,7 @@ td {
   padding: 10px;
   text-align: left;
   border: none;
+  color: rgb(0, 0, 0);
 }
 
 td:nth-child(4) {
@@ -125,28 +132,19 @@ tr:last-child h1 {
   margin: 0;
 }
 
-
 .total-text {
   text-align: left;
 }
 
 .total-value {
-  text-align: right;
+  margin-right: 10px;
+
 }
 
-.dia-menu button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: 2px solid #ccc;
-  background-color: #ccc;
-  color: #333;
-  cursor: pointer;
-  flex-grow: 1;
-  margin-bottom: 10px;
-}
 
-.dia-menu button.active {
-  border-color: #f1be41;
-  background-color: #f1be41;
-  color: #fff;
+.reserve-button a.button-gold {
+  background-color: #000000;
+  box-shadow: 0 0 10px #f1be41;
+  color: white;
+
 }

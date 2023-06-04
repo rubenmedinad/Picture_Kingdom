@@ -1,9 +1,14 @@
 .container {
   border-radius: 20px;
+  background-color: white;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
   margin: 20px auto; /* Centrar el contenedor y aplicar margen en la parte superior e inferior */
   padding: 20px;
+  margin-top: 90px;
+  margin-bottom: 90px;
   max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+  border-radius: 10px; /* Agrega bordes redondos */
+  box-shadow: 0 0 6px #f1be41; /* Agrega una sombra dorada de 6px */
 }
 
 

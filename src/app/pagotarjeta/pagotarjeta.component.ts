@@ -29,21 +29,31 @@ export class PagotarjetaComponent implements OnInit {
     this.generateYearOptions();
   }
 
-  formatCardNumber() {
-    let formattedNumber = this.cardNumberValue.replace(/[^0-9]/g, ''); // Eliminar caracteres no numéricos
+  preventInvalidInput(event: any) {
+    const invalidCharacters = ['e', '+', '-', '.']; // Caracteres no permitidos en un input de tipo number
+    if (invalidCharacters.includes(event.key)) {
+      event.preventDefault();
+    }
+  }
 
+  formatCardNumber() {
+    let formattedNumber = this.cardNumberValue.toString();
+
+    // Agregar guiones cada cuatro caracteres
     const chunks = [];
     for (let i = 0; i < formattedNumber.length; i += 4) {
       chunks.push(formattedNumber.substr(i, 4));
     }
-
-    this.cardNumberValue = chunks.join('-'); // Unir con guiones
+    this.cardNumberValue = chunks.join('-');
 
     // Limitar el número de caracteres a 19
     if (this.cardNumberValue.length > 19) {
       this.cardNumberValue = this.cardNumberValue.slice(0, 19);
     }
   }
+
+
+
   cvvValueFocused: boolean = false;
 
   onCVVFocus() {

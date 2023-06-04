@@ -5,18 +5,30 @@
   flex-direction: row;
   margin-top: 50px;
   margin-bottom: 50px;
-  justify-content: center; /* Agrega esta línea */
+  border-radius: 10px;
+  padding: 20px;
 }
+
+
+.legend,
+.selected-seats,
 .seating-plan {
-  padding-right: 10px;
-  padding-left: 10px;
-  margin-left: 10px;
+  background-color: #f1be41;
+  border-radius: 10px;
+  padding: 20px;
+
 }
 
+.seating-plan {
 
+  padding-left: 10px;
+  margin-left: 40px;
+  margin-right: 20px;
+  max-height: 312px; /* Ajusta este valor según tus necesidades */
+}
 
 .table-no-border {
-  margin-bottom: 20px; /* Márgen inferior de la tabla */
+  margin-bottom: 20px;
 }
 
 .index-column {
@@ -24,22 +36,22 @@
   flex-direction: column;
   align-items: center;
   margin-right: 20px;
-  margin-bottom: -50px;
+  margin-bottom: 0px;
+  margin-top: 0;
 }
+
 .selected-seats {
   margin-left: 20px;
   margin-top: 0px;
-  max-height: 150px; /* Establece una altura máxima para mostrar el desplazamiento */
-  overflow-y: scroll; /* Utiliza scroll en lugar de auto */
+  height: 312px; /* Ajusta este valor según tus necesidades */
+  overflow-y: scroll;
 }
-
 
 .selected-seats-list ul {
   padding: 0;
   list-style: none;
   margin: 0;
 }
-
 
 .selected-seats li {
   margin-bottom: 5px;
@@ -84,7 +96,6 @@
   flex-direction: column;
   align-items: center;
   margin-right: 20px;
-  margin-top: -50px;
 }
 
 .legend span {
@@ -93,16 +104,16 @@
 
 .text-center {
   text-align: center;
+  color: white  ;
 }
 
 .pantallas-image {
   margin-top: -190px;
   margin-left: 40px;
   width: 100%;
-  max-width: 1200px; /* Ajusta el tamaño máximo de la imagen según tus necesidades */
-  margin-bottom: -90px; /* Ajusta el margen inferior según tus necesidades */
+  max-width: 1200px;
+  margin-bottom: -90px;
 }
-
 
 .boton {
   margin-top: -30px;
@@ -112,7 +123,7 @@
 .entrar {
   color: black;
   background-color: #f1be41;
-  padding: 12px 22px; /* Ajusta los valores de padding según tus preferencias */
+  padding: 12px 22px;
   border-radius: 5px;
   text-align: center;
   cursor: pointer;

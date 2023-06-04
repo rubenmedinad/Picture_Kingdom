@@ -5,13 +5,15 @@
   position: relative;
   text-align: left;
   border: 2px solid #f1be41;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   margin: 20px auto;
   width: 70%;
   height: auto;
   box-sizing: border-box;
-}
 
+  border-radius: 10px; /* Agrega bordes redondos */
+  box-shadow: 0 0 6px #f1be41; /* Agrega una sombra dorada de 6px */
+}
 .container img {
   margin: 100px 100px 10px 150px;
   width: 20%;
