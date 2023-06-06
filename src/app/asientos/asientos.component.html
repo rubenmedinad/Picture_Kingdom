@@ -51,3 +51,24 @@
 <div class="text-center mt-4">
   <button class="entrar boton" (click)="reserveSeat(); ActualizarArray()" [routerLink]="['/metodos']" [disabled]="selectedSeats.length === 0" style="margin-bottom: 20px;">Reservar</button>
 </div>
+
+
+
+<tr *ngFor="let asiento of asientos">
+
+  <td>{{asiento.letra_fila}}</td>
+
+  <td>{{asiento.num_asiento}}</td>
+
+  </tr>
+
+
+
+
+
+
+
+
+
+
+

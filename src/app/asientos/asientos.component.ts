@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { PictureKingdomService } from '../picture-kingdom.service';
+import { BasedeDatosService } from '../basede-datos.service';
+import { Asientos } from '../_Modules/Asientos';
 
 interface Seat {
   row: string;
@@ -21,9 +23,11 @@ export class AsientosComponent {
   seats: Row[] = [];
   selectedSeats: { row: string; seat: number }[] = [];
   cantidadAsientos: number = 0;
+  info:any[]=[]
+  asientos:Asientos[]=[]
   constructor(
     private router: Router,
-    private peliculasS: PictureKingdomService
+    private peliculasS: PictureKingdomService,private servicio: BasedeDatosService
   ) {
     for (let i = 1; i <= 10; i++) {
       let row: Row = { name: String.fromCharCode(75 - i), seats: [] };
@@ -38,13 +42,26 @@ export class AsientosComponent {
       }
       this.seats.push(row);
     }
+    this.info=peliculasS.obtenerVentas()
+    this.servicio.findAsientos(this.info[0],this.info[1],this.info[2]).subscribe(datos => {
+      this.asientos = datos;
+
+      this.asientos.forEach(asiento => {
+        this.markSeatAsOccupied(asiento.letra_fila, asiento.num_asiento);
+      });
+    });
+
   }
   ngOnInit() {
     console.log(this.peliculasS.obtenerVentas());
-    console.log(this.peliculasS.obtenerVentas().length);
-    if (this.peliculasS.obtenerVentas().length >= 4) {
+    if (this.peliculasS.obtenerVentas().length >= 5) {
       this.peliculasS.eliminarUltimoElemento(3);
     }
+    this.servicio.listarasientos().subscribe(datos => {
+      this.asientos = datos;
+    })
+    console.log(this.asientos)
+
   }
   markSeatAsOccupied(row: string, seatNumber: number) {
     const rowToMark = this.seats.find((rowData) => rowData.name === row);

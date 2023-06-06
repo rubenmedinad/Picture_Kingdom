@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Usuarios } from '../_Modules/Usuarios';
 
 @Component({
   selector: 'app-registro',
@@ -6,12 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent {
+
+/*
   guardarDatos(usuario: string, nombre: string, email: string, password: string, confirmPassword: string): void {
     if (usuario && nombre && email && password && confirmPassword && password === confirmPassword) {
-      // Obtener los datos existentes del LocalStorage (si los hay)
-      const datosExistentes = localStorage.getItem('usuarios');
 
-      let usuarios = [];
+      let usuarios= [];
       if (datosExistentes) {
         usuarios = JSON.parse(datosExistentes);
       }
@@ -58,6 +59,5 @@ export class RegistroComponent {
     for (let i = 0; i < inputs.length; i++) {
       inputs[i].value = '';
     }
-  }
+  }*/
 }
-  

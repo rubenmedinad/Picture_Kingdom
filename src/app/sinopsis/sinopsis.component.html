@@ -43,7 +43,7 @@
       </div>
       <div class="dia-menu">
         <ng-container *ngFor="let horarios of horariosPorDia; let i = index">
-          <button (click)="obtenerHorario(horarios.horarioid);actualizararray() " [routerLink]="['/asientos']" >
+          <button (click)="obtenerHorario(horarios.horarioid,horarios.salaid);actualizararray() " [routerLink]="['/asientos']" >
             {{ horarios.hora_inicio }}</button>
         </ng-container>
       </div>
