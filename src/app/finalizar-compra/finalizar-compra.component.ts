@@ -24,9 +24,11 @@
       this.peliculasS.obtenerVentas()
       this.informacion=this.peliculasS.obtenerVentas()
       console.log(this.informacion)
+      const peliculaID = this.informacion[0].PeliculaID;
+      console.log(peliculaID)
       this.asientos=this.informacion[3]
       console.log(this.asientos)
-    
+
       // Código relacionado con la inicialización del componente
     }
 

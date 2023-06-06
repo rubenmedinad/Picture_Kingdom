@@ -7,8 +7,9 @@
   <div class="payment-form">
     <div class="form-group">
       <label for="inputCardNumber">Número de tarjeta</label>
-      <input type="number" class="form-control" id="inputCardNumber" [(ngModel)]="cardNumberValue" placeholder="Número de tarjeta" (input)="formatCardNumber()" (keydown)="preventInvalidInput($event)" required max="9999" min="0">
+      <input type="text" class="form-control" id="inputCardNumber" [(ngModel)]="cardNumberValue" placeholder="Número de tarjeta" (input)="formatCardNumber()" (keydown)="preventInvalidInput($event)" required maxlength="19" pattern="\d{0,4}-?\d{0,4}-?\d{0,4}-?\d{0,4}">
     </div>
+
     <div class="form-group">
       <label for="inputExpirationMonth">Fecha de caducidad</label>
       <div class="expiration-inputs">
@@ -31,6 +32,7 @@
 
     </div>
     <br>
-    <button type="button" class="btn" (click)="enviar();ActualizarArray();abrirDialogo();" [disabled]="!formValid()">Enviar</button>
+    <button type="button" class="boton-abajo" (click)="enviar(); ActualizarArray(); abrirDialogo();" [disabled]="!formValid()">Enviar</button>
+
 </div>
 </div>
