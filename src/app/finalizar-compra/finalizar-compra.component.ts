@@ -4,6 +4,7 @@
   import { PictureKingdomService } from '../picture-kingdom.service';
   import jsPDF from 'jspdf';
   import { Asientos } from '../_Modules/Asientos';
+import { BasedeDatosService } from '../basede-datos.service';
 
   @Component({
     selector: 'app-finalizar-compra',
@@ -11,12 +12,15 @@
     styleUrls: ['./finalizar-compra.component.css'],
   })
   export class FinalizarCompraComponent implements OnInit {
-    asientos : Asientos [] = []
+    asientos : any [] = []
     informacion : any[]=[]
     asiento : Asientos = new Asientos(0,0,0,0,0,'',0,true)
+
+    a1:[]=[]
     constructor(
       private router: Router,
       private peliculasS: PictureKingdomService,
+      private servicio:BasedeDatosService,
       private dialogRef: MatDialogRef<FinalizarCompraComponent>
     ) {}
 
@@ -24,10 +28,11 @@
       this.peliculasS.obtenerVentas()
       this.informacion=this.peliculasS.obtenerVentas()
       console.log(this.informacion)
-      this.asientos=this.informacion[3]
+      this.asientos=this.informacion[4]
       console.log(this.asientos)
-    
-      // Código relacionado con la inicialización del componente
+      this.a1=this.asientos[0]
+      console.log(this.a1)
+      this.insert()
     }
 
     volverAlHome() {
@@ -114,11 +119,18 @@
       } else {
         console.error('No se pudo obtener la URL de la imagen.');
       }
+
     }
+    insert(){
 
 
+        //for (let i=0;i<this.asientos.length;i++) {
+          //fila:String = this.asientos
+          this.asiento=new Asientos(3,this.informacion[3],this.informacion[0],this.informacion[2],this.informacion[1],"A",1,false);
+          console.log(this.asiento)
+          this.servicio.agregarAsiento(this.asiento);
+        //}
 
 
-
-
+    }
   }

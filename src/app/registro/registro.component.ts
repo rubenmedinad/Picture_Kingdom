@@ -8,10 +8,9 @@ import { Usuarios } from '../_Modules/Usuarios';
 })
 export class RegistroComponent {
 
-  
+/*
   guardarDatos(usuario: string, nombre: string, email: string, password: string, confirmPassword: string): void {
     if (usuario && nombre && email && password && confirmPassword && password === confirmPassword) {
-
 
       let usuarios= [];
       if (datosExistentes) {
@@ -60,5 +59,5 @@ export class RegistroComponent {
     for (let i = 0; i < inputs.length; i++) {
       inputs[i].value = '';
     }
-  }
+  }*/
 }

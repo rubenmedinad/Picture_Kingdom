@@ -27,11 +27,11 @@ export class MetodospagoComponent {
 
   ngOnInit() {
     this.A = this.peliculasS.obtenerVentas();
-    this.asientosLength = this.A[3].Asientos.length;
+    this.asientosLength = this.A[4].Asientos.length;
     console.log(this.asientosLength);
     this.entradas = this.peliculasS.entradas;
-    if (this.peliculasS.obtenerVentas().length == 5) {
-      this.peliculasS.eliminarUltimoElemento(4);
+    if (this.peliculasS.obtenerVentas().length <= 6) {
+      this.peliculasS.eliminarUltimoElemento(5);
     }
     this.inicializarNumerosEntradas();
   }

@@ -1,5 +1,5 @@
 export class Asientos {
-  asientoid: number;
+  asientoid?: number;
   salaid: number;
   peliculaid: number;
   horarioid: number;
@@ -7,7 +7,7 @@ export class Asientos {
   letra_fila: string;
   num_asiento: number;
   ocupado: boolean;
-  
+
   constructor(
     asientoid: number,
     salaid: number,

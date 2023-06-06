@@ -35,15 +35,15 @@
         <h2>HORARIOS</h2>
       </div>
       <div class="dia-menu">
-        <ng-container *ngFor="let dia of dias; let i = index"> 
+        <ng-container *ngFor="let dia of dias; let i = index">
         <ng-container *ngIf="i < 6">
           <button (click)="obtenerIdDiaSeleccionado(dia.diaid)">{{ dia.dia }}</button>
         </ng-container>
         </ng-container>
       </div>
       <div class="dia-menu">
-        <ng-container *ngFor="let horarios of horariosPorDia; let i = index"> 
-          <button (click)="obtenerHorario(horarios.horarioid);actualizararray() " [routerLink]="['/asientos']" >
+        <ng-container *ngFor="let horarios of horariosPorDia; let i = index">
+          <button (click)="obtenerHorario(horarios.horarioid,horarios.salaid);actualizararray() " [routerLink]="['/asientos']" >
             {{ horarios.hora_inicio }}</button>
         </ng-container>
       </div>
