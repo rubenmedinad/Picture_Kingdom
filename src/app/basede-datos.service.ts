@@ -40,12 +40,12 @@ export class BasedeDatosService {
     return this.http.post(url, usuario);
   }
 
-
   agregarAsiento(asiento: Asientos): Observable<any> {
     const url = this.Urlasientos+"/agregarAsientos";
+    console.log(url, asiento);
     return this.http.post(url, asiento);
+    
   }
-
 
   obtenerDiaId(dia: string): Observable<number> {
     return this.http.get<number>(`${this.Urldias}/obtenerDiaId?dia=${dia}`);

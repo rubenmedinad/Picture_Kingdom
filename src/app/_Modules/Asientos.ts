@@ -1,7 +1,7 @@
 import { Dias } from "./Dias";
 import { Horarios } from "./Horarios";
 import { Peliculas } from "./Peliculas";
-import { Sala } from "./Sala";
+import { Sala } from "./Salas";
 
 export class Asientos {
   asientoid: number;
