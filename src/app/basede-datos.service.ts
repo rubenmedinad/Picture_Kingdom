@@ -18,12 +18,12 @@ export class BasedeDatosService {
 
   constructor(private http: HttpClient) { }
 
-    listarasientos(): Observable<Asientos[]> {
-      return this.http.get<Asientos[]>(this.Urlasientos);
-    }
+  listarasientos(): Observable<Asientos[]> {
+  return this.http.get<Asientos[]>(this.Urlasientos);
+  }
 
-    listarpeliculas(): Observable<Peliculas[]> {
-      return this.http.get<Peliculas[]>(this.Urlpeliculas);
+  listarpeliculas(): Observable<Peliculas[]> {
+  return this.http.get<Peliculas[]>(this.Urlpeliculas);
   }
   listarusuarios(): Observable<Usuarios> {
   return this.http.get<Usuarios>(this.UrlUsuarios);
@@ -38,10 +38,14 @@ export class BasedeDatosService {
     const url = this.UrlUsuarios+"/agregarUsuario";
     return this.http.post(url, usuario);
   }
+
+
   agregarAsiento(asiento: Asientos): Observable<any> {
     const url = this.Urlasientos+"/agregarAsientos";
     return this.http.post(url, asiento);
   }
+
+
   obtenerDiaId(dia: string): Observable<number> {
     return this.http.get<number>(`${this.Urldias}/obtenerDiaId?dia=${dia}`);
   }
