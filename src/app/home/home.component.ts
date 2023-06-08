@@ -13,7 +13,7 @@ export class HomeComponent {
   constructor(private peliculasS:PictureKingdomService, private servicio : BasedeDatosService){
     //this.peliculas = peliculasS.getPeliculas()
   }
-  pelicula :Peliculas= new Peliculas(0,"","","","","","","","")
+  pelicula :Peliculas= new Peliculas(0,"","","","","","","")
 
   ngOnInit(){
     this.servicio.listarpeliculas().subscribe(datos => this.peliculas=datos);

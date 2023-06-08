@@ -16,7 +16,7 @@ import { Observable } from 'rxjs';
 export class SinopsisComponent {
   peliculas: Peliculas[] = [];
   ide: number = 0;
-  pelicula: Peliculas = new Peliculas(0, "", "", "", "", "", "", "", "");
+  pelicula: Peliculas = new Peliculas(0, "", "", "", "", "", "", "");
   diasPeliculas: number[] = [];
   horariosPorDia: Horarios[]  = [];
   diaSeleccionado: number = 0;

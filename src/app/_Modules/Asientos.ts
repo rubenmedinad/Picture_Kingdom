@@ -1,19 +1,24 @@
+import { Dias } from "./Dias";
+import { Horarios } from "./Horarios";
+import { Peliculas } from "./Peliculas";
+import { Sala } from "./Sala";
+
 export class Asientos {
   asientoid: number;
-  salaid: number;
-  peliculaid: number;
-  horarioid: number;
-  diaid: number;
+  salaid: Sala;
+  peliculaid: Peliculas;
+  horarioid: Horarios;
+  diaid: Dias;
   letra_fila: string;
   num_asiento: number;
   ocupado: boolean;
   
   constructor(
     asientoid: number,
-    salaid: number,
-    peliculaid: number,
-    horarioid: number,
-    diaid: number,
+    salaid: Sala,
+    peliculaid: Peliculas,
+    horarioid: Horarios,
+    diaid: Dias,
     letra_fila: string,
     num_asiento: number,
     ocupado: boolean

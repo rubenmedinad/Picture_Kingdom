@@ -10,11 +10,12 @@ import { Horarios } from './_Modules/Horarios';
   providedIn: 'root'
 })
 export class BasedeDatosService {
-  Urlasientos: string = "http://localhost:8080/asientos";
+  
   Urlpeliculas: string = "http://localhost:8080/peliculas";
   UrlUsuarios : string = "http://localhost:8080/usuarios";
   Urlhorarios : string = "http://localhost:8080/horarios";
   Urldias : string = "http://localhost:8080/dias";
+  Urlasientos : string = "http://localhost:8080/asientos";
 
   constructor(private http: HttpClient) { }
 
