@@ -12,7 +12,7 @@ export class Asientos {
   letra_fila: string;
   num_asiento: number;
   ocupado: boolean;
-  
+
   constructor(
     asientoid: number,
     salaid: Sala,

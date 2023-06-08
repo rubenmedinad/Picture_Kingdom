@@ -44,7 +44,7 @@
 }
 
 .left-table mark {
-  color: #f1be41;
+  color: black;
 }
 
 h1 {
@@ -52,11 +52,14 @@ h1 {
   margin-bottom: 20px;
   font-weight: bold;
   color: white;
+  
 }
 
 .sinopsis,
 .reparto,
-.directores {
+.directores,
+.duracion,
+.genero {
   color: white;
   margin-bottom: 20px;
 }

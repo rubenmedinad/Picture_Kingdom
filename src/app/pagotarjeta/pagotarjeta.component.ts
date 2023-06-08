@@ -28,7 +28,6 @@ export class PagotarjetaComponent implements OnInit {
     this.generateMonthOptions();
     this.generateYearOptions();
   }
-
   preventInvalidInput(event: any) {
     const invalidCharacters = ['e', '+', '-', '.']; // Caracteres no permitidos en un input de tipo number
     if (invalidCharacters.includes(event.key)) {
@@ -37,7 +36,7 @@ export class PagotarjetaComponent implements OnInit {
   }
 
   formatCardNumber() {
-    let formattedNumber = this.cardNumberValue.toString();
+    let formattedNumber = this.cardNumberValue.toString().replace(/-/g, ''); // Eliminar guiones existentes
 
     // Agregar guiones cada cuatro caracteres
     const chunks = [];
@@ -89,13 +88,14 @@ export class PagotarjetaComponent implements OnInit {
   }
 
   formValid() {
-    return (
-      this.cardNumberValue &&
-      this.expirationMonthValue &&
-      this.expirationYearValue &&
-      this.cvvValue
-    );
+    const cardNumberValid = this.cardNumberValue.length === 19;
+    const expirationMonthValid = !!this.expirationMonthValue;
+    const expirationYearValid = !!this.expirationYearValue;
+    const cvvValid = this.cvvValue.length === 3;
+
+    return cardNumberValid && expirationMonthValid && expirationYearValid && cvvValid;
   }
+
 
   ActualizarArray() {
     this.peliculasS.rellenarVentas({ Datos_Bancarios: this.datosBancarios });

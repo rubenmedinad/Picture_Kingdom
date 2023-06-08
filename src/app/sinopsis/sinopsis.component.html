@@ -3,10 +3,10 @@
     <img [src]="pelicula.imagen" alt="Imagen" class="movie-image-small">
     <table class="left-table">
       <tr>
-        <td>DURACION: <mark class="duracion">{{ pelicula.duracion }}</mark></td>
+        <td class="duracion">DURACION: <mark >{{ pelicula.duracion }}</mark></td>
       </tr>
       <tr>
-        <td>GENERO: <br><mark class="genero">{{ pelicula.genero }}</mark></td>
+        <td class="genero">GENERO: <br><mark >{{ pelicula.genero }}</mark></td>
       </tr>
     </table>
   </div>
@@ -14,13 +14,13 @@
     <h1><strong>{{ pelicula.titulo }}</strong></h1>
     <table class="right-table-large">
       <tr>
-        <td>DIRECTORES:<br><span class="directores">{{ pelicula.director }}</span></td>
+        <td class="directores">DIRECTORES:<br><span >{{ pelicula.director }}</span></td>
       </tr>
       <tr>
-        <td>REPARTO:<br><p class="reparto">{{ pelicula.reparto }}</p></td>
+        <td class="reparto">REPARTO:<br><p>{{ pelicula.reparto }}</p></td>
       </tr>
       <tr>
-        <td>SINOPSIS:<br><p class="sinopsis">{{ pelicula.sinopsis }}</p></td>
+        <td class="sinopsis">SINOPSIS:<br><p >{{ pelicula.sinopsis }}</p></td>
       </tr>
     </table>
   </div>
@@ -35,15 +35,15 @@
         <h2>HORARIOS</h2>
       </div>
       <div class="dia-menu">
-        <ng-container *ngFor="let dia of dias; let i = index"> 
+        <ng-container *ngFor="let dia of dias; let i = index">
         <ng-container *ngIf="i < 6">
           <button (click)="obtenerIdDiaSeleccionado(dia.diaid)">{{ dia.dia }}</button>
         </ng-container>
         </ng-container>
       </div>
       <div class="dia-menu">
-        <ng-container *ngFor="let horarios of horariosPorDia; let i = index"> 
-          <button (click)="obtenerHorario(horarios.horarioid);actualizararray() " [routerLink]="['/asientos']" >
+        <ng-container *ngFor="let horarios of horariosPorDia; let i = index">
+          <button (click)="obtenerHorario(horarios.horarioid,horarios.salaid);actualizararray() " [routerLink]="['/asientos']" >
             {{ horarios.hora_inicio }}</button>
         </ng-container>
       </div>

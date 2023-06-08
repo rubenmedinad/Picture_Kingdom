@@ -11,9 +11,8 @@ export class PictureKingdomService {
 
   menuItems = [
     { name: 'Inicio', route: '/' },
-    { name: 'Cartelera', route: '/cartelera' },
-    { name: 'Perfil', route: '/editarperfil' }
-    
+    { name: 'Cartelera', route: '/cartelera' }
+
   ];
 
   entradas: any[] = [
@@ -25,7 +24,7 @@ export class PictureKingdomService {
   pelis = [
     { titulo: 'Inicio', route: '/' },
     { name: 'Cartelera', route: '/cartelera' },
-    { name: 'Contact', route: '/contact' }
+    { name: 'Contact', route: '/conñtact' }
   ];
 
   ventas: any[] = [];

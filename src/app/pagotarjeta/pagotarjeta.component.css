@@ -50,21 +50,23 @@ h1 {
   right: 5px;
   transform: translateY(-50%);
   border: none;
-  background-color: transparent;
   box-shadow: none;
 }
-.card-footer .btn {
+
+
+
+.boton-abajo {
   margin-top: 10px;
   text-align: center;
   background-color: #f1be41;
-  transition: background-color 0.3s ease-in-out;
   border: 1px solid black; /* Agrega un borde de 1px sólido de color negro */
   color: white;
   padding: 10px;
   border-radius: 5px;
-  cursor: pointer;
+
 }
 
-.card-footer .btn:hover {
-  background-color: #ffb500;
+.boton-abajo:hover {
+  border: 1px solid black; /* Agrega un borde de 1px sólido de color negro */
+  background-color: #ce9504;
 }

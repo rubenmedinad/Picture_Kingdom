@@ -4,7 +4,7 @@ export class Horarios {
     salaid: number;
     diaid: number;
     hora_inicio: string;
-  
+
     constructor(
       horarioid: number,
       peliculaid: number,
@@ -19,4 +19,3 @@ export class Horarios {
       this.hora_inicio = hora_inicio;
     }
   }
-  
