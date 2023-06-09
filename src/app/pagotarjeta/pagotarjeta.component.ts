@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { FinalizarCompraComponent } from '../finalizar-compra/finalizar-compra.component';
 import { PictureKingdomService } from '../picture-kingdom.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pagotarjeta',
@@ -20,11 +21,15 @@ export class PagotarjetaComponent implements OnInit {
   years: number[] = [];
 
   constructor(
+    private router: Router,
     private dialog: MatDialog,
     private peliculasS: PictureKingdomService
   ) {}
 
   ngOnInit() {
+    if(this.peliculasS.obtenerVentas().length == 0){
+      this.router.navigateByUrl('/cartelera');
+    }
     this.generateMonthOptions();
     this.generateYearOptions();
   }

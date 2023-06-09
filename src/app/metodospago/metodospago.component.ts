@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { PictureKingdomService } from '../picture-kingdom.service';
 import { ActivatedRoute } from '@angular/router';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-metodospago',
   templateUrl: './metodospago.component.html',
@@ -21,11 +21,15 @@ export class MetodospagoComponent {
   entradas: any[] = [];
 
   constructor(
+    private router: Router,
     private peliculasS: PictureKingdomService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    if(this.peliculasS.obtenerVentas().length == 0){
+      this.router.navigateByUrl('/cartelera');
+    }
     this.A = this.peliculasS.obtenerVentas();
     this.asientosLength = this.A[4].Asientos.length;
     console.log(this.asientosLength);

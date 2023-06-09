@@ -57,6 +57,9 @@ export class AsientosComponent {
   ngOnInit() {
     console.log(this.peliculasS.obtenerVentas());
     console.log(this.objetos)
+    if(this.peliculasS.obtenerVentas().length == 0){
+      this.router.navigateByUrl('/cartelera');
+    }
     if (this.peliculasS.obtenerVentas().length >= 5) {
       this.peliculasS.eliminarUltimoElemento(3);
     }
