@@ -7,6 +7,7 @@ import { BasedeDatosService } from '../basede-datos.service';
 import { Horarios } from '../_Modules/Horarios';
 import { Dias } from '../_Modules/Dias';
 import { Observable } from 'rxjs';
+import { Sala } from '../_Modules/Salas';
 
 @Component({
   selector: 'app-sinopsis',
@@ -17,6 +18,9 @@ export class SinopsisComponent {
   peliculas: Peliculas[] = [];
   ide: number = 0;
   pelicula: Peliculas = new Peliculas(0, "", "", "", "", "", "", "");
+  dia:Dias = new Dias(0,"")
+  sala:Sala = new Sala(0,"","");
+  horario:Horarios = new Horarios(0,this.pelicula,this.sala,this.dia,"")
   diasPeliculas: number[] = [];
   horariosPorDia: Horarios[]  = [];
   diaSeleccionado: number = 0;
@@ -40,8 +44,10 @@ export class SinopsisComponent {
       if (peliculaEncontrada.length > 0) {
         this.pelicula = peliculaEncontrada[0];
         this.peliculasS.vaciarVentas();
+        this.peliculasS.vaciarObjetos();
         console.log(this.ide);
         this.peliculasS.rellenarVentas(this.ide)
+        this.peliculasS.rellenarObjetos(this.pelicula)
       }
     });
     this.servicio.listardiass().subscribe(datos => {
@@ -55,16 +61,28 @@ export class SinopsisComponent {
 
     })
   }
+  rellenarDia(dia:Dias):void{
+    console.log(dia)
+    this.dia=dia;
+  }
   obtenerHorario(hora:number,sala:any): void {
     this.horaSeleccionada=hora
     console.log(sala.nombre)
     this.salaSeleccionada=sala.salaid;
     console.log(this.salaSeleccionada)
-
+  }
+  rellenarHorario(h:Horarios,s:Sala): void {
+    this.horario=h
+    this.sala=s
+    console.log(this.horario)
+    console.log(this.sala)
   }
   actualizararray(): void {
     this.peliculasS.rellenarVentas(this.diaSeleccionado)
     this.peliculasS.rellenarVentas(this.horaSeleccionada)
     this.peliculasS.rellenarVentas(this.salaSeleccionada)
+    this.peliculasS.rellenarObjetos(this.dia)
+    this.peliculasS.rellenarObjetos(this.sala)
+    this.peliculasS.rellenarObjetos(this.horario)
   }
 }

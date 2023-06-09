@@ -24,6 +24,7 @@ export class AsientosComponent {
   selectedSeats: { row: string; seat: number }[] = [];
   cantidadAsientos: number = 0;
   info:any[]=[]
+  objetos:any[]=[]
   asientos:Asientos[]=[]
   constructor(
     private router: Router,
@@ -42,7 +43,8 @@ export class AsientosComponent {
       }
       this.seats.push(row);
     }
-    this.info=peliculasS.obtenerVentas()
+    this.info = peliculasS.obtenerVentas()
+    this.objetos = peliculasS.obtenerObjetos()
     this.servicio.findAsientos(this.info[0],this.info[1],this.info[2]).subscribe(datos => {
       this.asientos = datos;
 
@@ -54,8 +56,12 @@ export class AsientosComponent {
   }
   ngOnInit() {
     console.log(this.peliculasS.obtenerVentas());
+    console.log(this.objetos)
     if (this.peliculasS.obtenerVentas().length >= 5) {
       this.peliculasS.eliminarUltimoElemento(3);
+    }
+    if (this.peliculasS.obtenerObjetos().length >= 5) {
+      this.peliculasS.eliminarUltimoElementoObjetos(3);
     }
     this.servicio.listarasientos().subscribe(datos => {
       this.asientos = datos;

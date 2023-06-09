@@ -29,6 +29,8 @@ export class PictureKingdomService {
 
   ventas: any[] = [];
 
+  objetos:any[]=[];
+
   venta_ofertas: any[] = [];
 
   peliculas: Peliculas[] = [];
@@ -52,21 +54,34 @@ export class PictureKingdomService {
   rellenarVentas(params: any) {
     this.ventas.push(params);
   }
+  rellenarObjetos(params: any) {
+    this.objetos.push(params);
+  }
   rellenarVenta_Ofertas(params: any) {
     this.venta_ofertas.push(params);
   }
+
   getVenta_Ofertas(): any[] {
     return this.venta_ofertas;
   }
   obtenerVentas(): any[] {
     return this.ventas;
   }
+  obtenerObjetos(): any[] {
+    return this.objetos;
+  }
 
   vaciarVentas() {
     this.ventas = [];
   }
+  vaciarObjetos(){
+    this.objetos=[]
+  }
 
   eliminarUltimoElemento(exceso: number): void {
+    this.ventas.splice(exceso);
+  }
+  eliminarUltimoElementoObjetos(exceso: number): void {
     this.ventas.splice(exceso);
   }
 

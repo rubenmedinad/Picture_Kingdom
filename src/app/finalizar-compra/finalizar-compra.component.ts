@@ -17,18 +17,17 @@ import { selectedSeats } from '../_Modules/SelectedSeats';
     styleUrls: ['./finalizar-compra.component.css'],
   })
   export class FinalizarCompraComponent implements OnInit {
-    peliculas : Peliculas [] = [];
-    sala : Sala = new Sala(1,"Sala 1","Normal")
-    pelicula : Peliculas = new Peliculas(1,"Super Mario Bros: La película", "Adaptación de la serie de videojuegos de Nintendo. La película cuenta la historia de Mario y Luigi, dos hermanos que viajan a un mundo oculto para rescatar a la Princesa Peach, capturada por el malvado Rey Bowser. Las cosas, sin embargo no serán sencillas. Mario y Luigi tendrán que enfrentarse a un ejército de setas animadas antes de luchar contra su oponente. Rutas de ladrillos y castillos con múltiples peligros serán algunos de los obstáculos que los hermanos tendrán que superar para conseguir su objetivo.", "Aaron Horvath, Michael Jelenic", "Chris Pratt como Mario, Anya Taylor-Joy como la Princesa Peach, Charlie Day como Luigi, Jack Black como Bowser, Keegan-Michael Key como Toad, Seth Rogen como Donkey Kong, Fred Armisen como Cranky Kong, Sebastian Maniscalco como el Capataz Spike, Kevin Michael Richardson como Kamek, Khary Payton como el Rey Pingüino, Eric Bauza como los Koopas Soldados, Rino Romano como el Tío Tony, John DiMaggio como el Tío Arthur, Jessica DiCicco como un Toad Amarillo, Juliet Jelenic como Destello.", "1h 32min", "COMEDIA, AVENTURA, ANIMACIÓN", "../assets/mariosinopsis.jpg")
-    dias : Dias = new Dias(1,"vie, 1 de junio")
-    horario : Horarios =  new Horarios(3,this.pelicula,this.sala,this.dias,"16:00 PM")
-    
-    asientos: any[] = [];
+    pelicula: Peliculas = new Peliculas(0, "", "", "", "", "", "", "");
+    dia:Dias = new Dias(0,"")
+    sala:Sala = new Sala(0,"","");
+    horario:Horarios = new Horarios(0,this.pelicula,this.sala,this.dia,"")
     asientosseleccionados: selectedSeats = new selectedSeats("",0)
     ide: number = 0;
     informacion : any[]=[]
+    asientos: any[] = [];
+    objetos: any[] = [];
 
-    asiento : Asientos = new Asientos(0,this.sala,this.pelicula,this.horario,this.dias,'D',1,true)
+    asiento : Asientos = new Asientos(0,this.sala,this.pelicula,this.horario,this.dia,'',0,false)
   constructor(
     private router: Router,
     private peliculasS: PictureKingdomService,
@@ -49,21 +48,9 @@ import { selectedSeats } from '../_Modules/SelectedSeats';
 
     this.asientosseleccionados=this.asientos[0]
     console.log(this.asientosseleccionados)
-    console.log(this.asientosseleccionados.row)
 
-    this.servicio.listarpeliculas().subscribe((datos) => {
-      this.peliculas = datos;
-      const peliculaEncontrada = this.peliculas.filter(
-        (pelicula) => pelicula.id == +this.ide
-      );
-      this.pelicula = peliculaEncontrada[0];
-    });
-    this.insert();
+    this.insertAsientos();
 
-    console.log(this.asiento);
-    this.servicio.agregarAsiento(this.asiento).subscribe(
-      {next:data =>(console.log(data)),error:error=>console.error(error)}
-    )
 
   }
 
@@ -174,7 +161,21 @@ import { selectedSeats } from '../_Modules/SelectedSeats';
     }
   }
 
-  insert() {
-    
+  insertAsientos() {
+    this.objetos=this.peliculasS.obtenerObjetos()
+    this.pelicula=this.objetos[0]
+    this.dia=this.objetos[1]
+    this.sala=this.objetos[2]
+    this.horario=this.objetos[3]
+    console.log(this.pelicula,this.dia,this.sala,this.horario,)
+    for (let i = 0; i < this.asientos.length; i++) {
+      this.asientosseleccionados = this.asientos[i]
+      let asiento = new Asientos(0,this.sala,this.pelicula,this.horario,this.dia,this.asientosseleccionados.row,this.asientosseleccionados.seat,false)
+      console.log(asiento)
+      this.servicio.agregarAsiento(asiento).subscribe(
+        {next:data =>(console.log(data)),error:error=>console.error(error)}
+      )
+    }
+
   }
 }
