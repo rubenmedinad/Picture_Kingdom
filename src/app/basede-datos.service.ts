@@ -6,6 +6,7 @@ import { Peliculas } from './_Modules/Peliculas';
 import { Usuarios } from './_Modules/Usuarios';
 import { Dias } from './_Modules/Dias';
 import { Horarios } from './_Modules/Horarios';
+import { Ventas } from './_Modules/Ventas';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +17,7 @@ export class BasedeDatosService {
   Urlhorarios : string = "http://localhost:8080/horarios";
   Urldias : string = "http://localhost:8080/dias";
   Urlasientos : string = "http://localhost:8080/asientos";
+  Urlventas : string = "http://localhost:8080/ventas";
 
   constructor(private http: HttpClient) { }
 
@@ -44,6 +46,12 @@ export class BasedeDatosService {
     const url = this.Urlasientos+"/agregarAsientos";
     console.log(url, asiento);
     return this.http.post(url, asiento);
+    
+  }
+  agregarVentas(ventas: Ventas): Observable<any> {
+    const url = this.Urlventas+"/agregarVentas";
+    console.log(url, ventas);
+    return this.http.post(url, ventas);
     
   }
 
