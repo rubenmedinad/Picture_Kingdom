@@ -51,7 +51,10 @@ export class SinopsisComponent {
       }
     });
     this.servicio.listardiass().subscribe(datos => {
-      this.dias = datos;
+      const fechaActual = new Date(); // Obtener la fecha actual
+      const diaActual = fechaActual.getDate(); // Obtener el día actual (1-31)
+      const diasJunio = datos.filter(dia => +dia.dia.split(',')[1].trim().split(' ')[0] >= diaActual); // Filtrar los días de junio a partir del día actual
+      this.dias = diasJunio;
     })
   }
   obtenerIdDiaSeleccionado(dii:number): void {
