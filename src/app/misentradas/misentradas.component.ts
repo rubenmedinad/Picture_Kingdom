@@ -20,5 +20,12 @@ export class MisentradasComponent {
     new MisEntradas("Piratas del Caribe", "4 Junio 15:45", "Fila E Asiento 7", "4"),
     new MisEntradas("Jurassic Park", "5 Junio 14:00", "Fila D Asiento 3", "2")
   ];
+  descargarPDF(entrada: MisEntradas) {
+    // Aquí puedes implementar la lógica para descargar el PDF con los datos de la entrada seleccionada
+    // Puedes acceder a los datos de la entrada utilizando la variable 'entrada' pasada como parámetro
+    // Ejemplo: entrada.nombrepeli, entrada.fechapeli, entrada.asientospeli, entrada.salapeli
 
+    // Llama a la función correspondiente en el componente 'FinalizarCompraComponent'
+    // Puedes usar una redirección o una comunicación entre componentes para lograrlo
+  }
 }

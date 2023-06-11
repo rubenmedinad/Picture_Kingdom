@@ -1,22 +1,18 @@
 <div class="container">
   <div class="sidebar">
-    <h2>Perfil</h2>
+    <h2><span class="profile-heading">Perfil</span></h2>
     <form>
       <div>
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" [(ngModel)]="perfil.nombre" name="nombre" required>
+        <input type="text" id="nombre" [(ngModel)]="perfil.nombre" name="nombre" required readonly>
       </div>
       <div>
         <label for="apellido">Apellidos:</label>
-        <input type="text" id="apellido" [(ngModel)]="perfil.apellido" name="apellido" required>
-      </div>
-      <div>
-        <label for="contrasenaantigua">Contraseña Antigua:</label>
-        <input type="password" id="contrasenaantigua" [(ngModel)]="perfil.contrasenaantigua" name="contrasenaantigua" required>
+        <input type="text" id="apellido" [(ngModel)]="perfil.apellido" name="apellido" required readonly>
       </div>
       <div>
         <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" [(ngModel)]="perfil.email" name="email" required>
+        <input type="email" id="email" [(ngModel)]="perfil.email" name="email" required readonly>
       </div>
       <button routerLink="/editarperfil">Editar Perfil</button>
       <button routerLink="/misentradas">Mis Entradas</button>
