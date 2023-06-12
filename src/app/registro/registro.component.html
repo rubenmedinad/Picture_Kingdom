@@ -2,17 +2,20 @@
   <div class="container">
     <form class="login-form">
       <h2>Registro</h2>
-      <input type="text" #usuario id="usuario" placeholder="Usuario" class="large-input">
+      <input type="text" [(ngModel)]="usuario" id="usuario" name="usuario" placeholder="Usuario" class="large-input">
+      <div *ngIf="!usuarioCoincide" class="error-message">El usuario ya esta registrado.</div>
+      <input type="text" [(ngModel)]="nombre" id="nombre" name="nombre" placeholder="Nombre" class="large-input">
 
-      <input type="text" #nombre id="nombre" placeholder="Nombre" class="large-input">
+      <input type="email" [(ngModel)]="email" id="email" name="email" placeholder="Correo electrónico" class="large-input">
 
-      <input type="email" #email id="email" placeholder="Correo electrónico" class="large-input">
+      <input type="password" [(ngModel)]="password" id="password" name="password" placeholder="Contraseña" class="large-input">
 
-      <input type="password" #password id="password" placeholder="Contraseña" class="large-input">
+      <input type="password" [(ngModel)]="confirmPassword" id="confirm-password" name="confirmPassword" placeholder="Confirmar contraseña" class="large-input">
 
-      <input type="password" #confirmPassword id="confirm-password" placeholder="Confirmar contraseña" class="large-input">
+      <div *ngIf="!contrasenasCoinciden" class="error-message">Las contraseñas no coinciden.</div>
 
-      <button type="submit" class="submit-button">Registrarse</button>
+      <div *ngIf="registroExitoso" class="registro-exitoso">El usuario se ha registrado correctamente.</div>
+      <button type="submit" class="submit-button" (click)="registrarUsuario()">Registrarse</button>
     </form>
   </div>
 </body>
