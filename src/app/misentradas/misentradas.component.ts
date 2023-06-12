@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MisEntradas } from '../_Modules/MisEntradas';
+import { PictureKingdomService } from '../picture-kingdom.service';
+import { BasedeDatosService } from '../basede-datos.service';
+import { Ventas } from '../_Modules/Ventas';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-misentradas',
@@ -8,24 +12,33 @@ import { MisEntradas } from '../_Modules/MisEntradas';
   styleUrls: ['./misentradas.component.css']
 })
 export class MisentradasComponent {
-  constructor(private router: Router) {}
-  mientrada: MisEntradas[] = [
-    new MisEntradas("A todo gas", "1 Junio 12:00", "Fila F Asiento 10", "2"),
-    new MisEntradas("El señor de los anillos", "2 Junio 18:30", "Fila B Asiento 5", "3"),
-    new MisEntradas("La La Land", "3 Junio 20:15", "Fila C Asiento 12", "1"),
-    new MisEntradas("Piratas del Caribe", "4 Junio 15:45", "Fila E Asiento 7", "4"),
-    new MisEntradas("A todo gas", "1 Junio 12:00", "Fila F Asiento 10", "2"),
-    new MisEntradas("El señor de los anillos", "2 Junio 18:30", "Fila B Asiento 5", "3"),
-    new MisEntradas("La La Land", "3 Junio 20:15", "Fila C Asiento 12", "1"),
-    new MisEntradas("Piratas del Caribe", "4 Junio 15:45", "Fila E Asiento 7", "4"),
-    new MisEntradas("Jurassic Park", "5 Junio 14:00", "Fila D Asiento 3", "2")
-  ];
-  descargarPDF(entrada: MisEntradas) {
-    // Aquí puedes implementar la lógica para descargar el PDF con los datos de la entrada seleccionada
-    // Puedes acceder a los datos de la entrada utilizando la variable 'entrada' pasada como parámetro
-    // Ejemplo: entrada.nombrepeli, entrada.fechapeli, entrada.asientospeli, entrada.salapeli
+  ventas:Ventas[]=[]
+  secretKey: string = "1234"
 
-    // Llama a la función correspondiente en el componente 'FinalizarCompraComponent'
-    // Puedes usar una redirección o una comunicación entre componentes para lograrlo
+  constructor(private peliculasS: PictureKingdomService,
+    private activarrutas: ActivatedRoute,
+    private rutes: Router,
+    private servicio: BasedeDatosService) {}
+
+  ngOnInit() {
+    this.servicio.listarventas().subscribe(datos => {
+      this.ventas = datos;
+      console.log(this.ventas);
+
+      const userStorage = localStorage.getItem('user');
+      if (userStorage !== null) {
+        // Desencriptar la contraseña
+        const decryptedBytes = CryptoJS.AES.decrypt(userStorage, this.secretKey);
+        const decryptedPassword = decryptedBytes.toString(CryptoJS.enc.Utf8);
+
+        // Filtrar el array por decryptedPassword
+        this.ventas = this.ventas.filter(venta => venta.usuario === decryptedPassword);
+      } else {
+        this.rutes.navigate(['/login']);
+      }
+    });
+  }
+  descargarPDF(entrada: MisEntradas) {
+    
   }
 }

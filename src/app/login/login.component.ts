@@ -27,9 +27,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    console.log('Correo:', this.usuario);
-    console.log('Contraseña:', this.pass);
-
     this.servicio.listarusuarios().subscribe(datos => {
       this.usuarios = datos;
       console.log(this.usuarios);
