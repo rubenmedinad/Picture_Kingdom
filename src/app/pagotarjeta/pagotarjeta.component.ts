@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { FinalizarCompraComponent } from '../finalizar-compra/finalizar-compra.component';
 import { PictureKingdomService } from '../picture-kingdom.service';
 import { Router } from '@angular/router';
+import { BasedeDatosService } from '../basede-datos.service';
+import { Usuarios } from '../_Modules/Usuarios';
 
 @Component({
   selector: 'app-pagotarjeta',
@@ -19,11 +21,16 @@ export class PagotarjetaComponent implements OnInit {
 
   months: number[] = [];
   years: number[] = [];
+  usuarios: Usuarios[] = []
+  secretKey: string = "1234"
+  isLoggedIn: boolean = false
+  user:Usuarios = new Usuarios("","","","","")
 
   constructor(
     private router: Router,
     private dialog: MatDialog,
-    private peliculasS: PictureKingdomService
+    private peliculasS: PictureKingdomService,
+    private servicio: BasedeDatosService
   ) {}
 
   ngOnInit() {
@@ -32,6 +39,34 @@ export class PagotarjetaComponent implements OnInit {
     }
     this.generateMonthOptions();
     this.generateYearOptions();
+    const userStorage = localStorage.getItem('user');
+    if (userStorage !== null) {
+      // Desencriptar la contraseña
+      const decryptedBytes = CryptoJS.AES.decrypt(userStorage, this.secretKey);
+      const decryptedPassword = decryptedBytes.toString(CryptoJS.enc.Utf8);
+      console.log(decryptedPassword)
+      this.servicio.listarusuarios().subscribe(datos => {
+        this.usuarios = datos;
+        console.log(this.usuarios);
+        const usuarioExistente = this.usuarios.find(usuario => usuario.usuario === decryptedPassword);
+
+        if (usuarioExistente) {
+          this.user = usuarioExistente
+          console.log(this.user)
+        }else{
+          localStorage.removeItem('user'); // Eliminar el valor del localStorage
+          window.location.reload();
+        }
+        if (decryptedPassword !== null) {
+          this.isLoggedIn = true;
+        } else {
+          this.isLoggedIn = false;
+        }
+      })
+    } else {
+      this.isLoggedIn = false;
+      this.router.navigate(['/login']);
+    }
   }
   preventInvalidInput(event: any) {
     const invalidCharacters = ['e', '+', '-', '.']; // Caracteres no permitidos en un input de tipo number

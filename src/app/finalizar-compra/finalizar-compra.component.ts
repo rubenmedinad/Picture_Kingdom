@@ -10,7 +10,9 @@ import { Horarios } from '../_Modules/Horarios';
 import { Dias } from '../_Modules/Dias';
 import { BasedeDatosService } from '../basede-datos.service';
 import { selectedSeats } from '../_Modules/SelectedSeats';
-
+import { EntradaSeleccionada } from '../_Modules/EntradaSeleccionada';
+import { Ventas } from '../_Modules/Ventas';
+import * as CryptoJS from 'crypto-js';
 @Component({
   selector: 'app-finalizar-compra',
   templateUrl: './finalizar-compra.component.html',
@@ -22,11 +24,15 @@ export class FinalizarCompraComponent implements OnInit {
   sala: Sala = new Sala(0, '', '');
   horario: Horarios = new Horarios(0, this.pelicula, this.sala, this.dia, '');
   asientosseleccionados: selectedSeats = new selectedSeats('', 0);
+  entradaselecionada:EntradaSeleccionada = new EntradaSeleccionada("",0,0,0)
   ide: number = 0;
   informacion: any[] = [];
   asientos: any[] = [];
+  entradas: any[] = [];
   objetos: any[] = [];
-
+  a:Asientos[]=[]
+  sitio:any
+  secretKey: string = "1234"
   objetosDescripcion = this.peliculasS.obtenerObjetos();
   diaDescripcion = this.objetosDescripcion[1].dia;
   horarioDescripcion = this.objetosDescripcion[3].hora_inicio;
@@ -52,17 +58,16 @@ export class FinalizarCompraComponent implements OnInit {
   ngOnInit() {
     this.peliculasS.obtenerVentas();
     this.informacion = this.peliculasS.obtenerVentas();
-    console.log(this.informacion);
+    console.log(this.informacion)
 
-    this.asientos = this.informacion[4]?.Asientos;
-    console.log(this.asientos);
-
-    this.ide = this.informacion[0];
-
-    this.asientosseleccionados = this.asientos[0];
+    this.asientos = this.informacion[4]?.Asientos
+    console.log(this.asientos)
+    this.entradas = this.informacion[5]?.Entradas
+    console.log(this.entradas)
+    this.ide = this.informacion[0]
     console.log(this.asientosseleccionados);
 
-    this.insertAsientos();
+    this.insertAsientos()
   }
 
   volverAlHome() {
@@ -163,7 +168,12 @@ export class FinalizarCompraComponent implements OnInit {
     this.horario = this.objetos[3];
     console.log(this.pelicula, this.dia, this.sala, this.horario);
     for (let i = 0; i < this.asientos.length; i++) {
+
       this.asientosseleccionados = this.asientos[i];
+      this.entradaselecionada = this.entradas[i];
+
+      console.log(this.entradaselecionada)
+
       let asiento = new Asientos(
         0,
         this.sala,
@@ -174,9 +184,30 @@ export class FinalizarCompraComponent implements OnInit {
         this.asientosseleccionados.seat,
         false
       );
+
       console.log(asiento);
+
       this.servicio.agregarAsiento(asiento).subscribe({
-        next: (data) => console.log(data),
+        next: (data) => {
+          console.log(data);
+          const userStorage = localStorage.getItem('user');
+          if (userStorage !== null) {
+            // Desencriptar la contraseña
+            const decryptedBytes = CryptoJS.AES.decrypt(userStorage, this.secretKey);
+            const decryptedPassword = decryptedBytes.toString(CryptoJS.enc.Utf8);
+            const currentDate = new Date();
+            const formattedDateTime = currentDate.toISOString().replace(/T/, ' ').replace(/\..+/, '');
+              let venta = new Ventas(null,this.pelicula,data,this.sala,decryptedPassword,this.horario,this.dia,formattedDateTime,this.entradaselecionada.precio,this.entradaselecionada.nombreEntrada)
+              this.servicio.agregarVentas(venta).subscribe(
+              (response) => {
+                // Manejar la respuesta del servidor
+              },
+              (error) => {
+                // Manejar el error de la solicitud
+              }
+            );
+          }
+        },
         error: (error) => console.error(error),
       });
     }

@@ -3,10 +3,12 @@ export class Usuarios {
     pass: string;
     nombre: string;
     correo_electronico: string;
-    constructor(u:string,p:string,n:string,c:string){
-      this.usuario=u;
-      this.pass=p
-      this.nombre=n
-      this.correo_electronico=c
+    img:string;
+    constructor(usuario:string,pass:string,nombre:string,correo_electronico:string,img:string){
+      this.usuario=usuario;
+      this.pass=pass
+      this.nombre=nombre
+      this.correo_electronico=correo_electronico
+      this.img=img
     }
 }

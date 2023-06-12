@@ -63,4 +63,7 @@ export class BasedeDatosService {
   findAsientos(peliculaid:number,diaid:number,horarioid:number): Observable<Asientos[]> {
     return this.http.get<Asientos[]>(`${this.Urlasientos}/pelicula/${peliculaid}/${diaid}/${horarioid}`);
   }
+  findAsientosFila(peliculaid:number,diaid:number,horarioid:number,letra_fila:String): Observable<Asientos[]> {
+    return this.http.get<Asientos[]>(`${this.Urlasientos}/asientos/${peliculaid}/${diaid}/${horarioid}/${letra_fila}`);
+  }
 }

@@ -5,42 +5,24 @@
       <tr>
         <th style="color:black;">Nombre</th>
         <td>
-          <input type="text" id="nombre" name="nombre" [(ngModel)]="editar.nombre">
-        </td>
-      </tr>
-      <tr>
-        <th style="color:black;">Apellido</th>
-        <td>
-          <input type="text" id="apellido" name="apellido" [(ngModel)]="editar.apellido">
-        </td>
-      </tr>
-      <tr>
-        <th style="color:black;">Contraseña Antigua</th>
-        <td>
-          <input type="text" id="contrasenaantigua" name="contrasenaantigua" [(ngModel)]="editar.contrasenaantigua">
+          <input type="text" id="nombre" name="nombre" [(ngModel)]="user.nombre">
         </td>
       </tr>
       <tr>
         <th style="color:black;">Contraseña Nueva</th>
         <td>
-          <input type="text" id="contrasenanueva" name="contrasenanueva" [(ngModel)]="editar.contrasenanueva">
+          <input type="text" id="contrasenanueva" name="contrasenanueva" [(ngModel)]="user.pass">
         </td>
       </tr>
       <tr>
         <th style="color:black;">Email</th>
         <td>
-          <input type="text" id="email" name="email" [(ngModel)]="editar.email">
-        </td>
-      </tr>
-      <tr>
-        <th style="color:black;">Teléfono</th>
-        <td>
-          <input type="text" id="telefono" name="telefono" [(ngModel)]="editar.telefono">
+          <input type="text" id="email" name="email" [(ngModel)]="user.correo_electronico">
         </td>
       </tr>
       <tr>
         <td colspan="2" style="text-align: center;">
-          <button type="submit">Guardar Cambios</button>
+          <button type="submit" (click)="guardar()">Guardar Cambios</button>
         </td>
       </tr>
     </table>

@@ -1,43 +1,47 @@
 import { Asientos } from "./Asientos";
+import { Dias } from "./Dias";
 import { Horarios } from "./Horarios";
 import { Peliculas } from "./Peliculas";
-import { Usuarios } from "./Usuarios";
 import { Sala } from "./Salas";
 
 export class Ventas {
-  ventaId: number;
-  peliculaId: Peliculas;
-  asientoId: Asientos;
-  salaId: Sala;
-  usuarioId: Usuarios;
-  horarioId: Horarios;
-  fechaventa:number;
+  ventaid?: number;
+  peliculaid: Peliculas;
+  asientoid: Asientos;
+  salaid: Sala;
+  usuario: string;
+  horarioid: Horarios;
+  diaid:Dias;
+  fechaventa:string;
   precio:number;
   tipo_entrada:String;
 
 
   constructor(
-    ventaId: number,
+    ventaId: number | null, // Indicar que ventaId puede ser null
     peliculaId: Peliculas,
     asientoId: Asientos,
     salaId: Sala,
-    usuarioId: Usuarios,
+    usuario: string,
     horarioId: Horarios,
-    fechaventa: number,
+    diaid: Dias,
+    fechaventa: string,
     precio: number,
-    tipo_entrada:String
-  ) {
-    this.ventaId = ventaId;
-    this.peliculaId = peliculaId;
-    this.asientoId = asientoId;
-    this.salaId = salaId;
-    this.usuarioId = usuarioId;
-    this.horarioId = horarioId;
-    this.fechaventa = fechaventa,
-    this.precio = precio,
-    this.tipo_entrada=tipo_entrada
-
-}
+    tipo_entrada: String
+      ) {
+      if (ventaId !== null) { // Validar si ventaId no es null antes de asignarlo
+          this.ventaid = ventaId;
+      }
+      this.peliculaid = peliculaId;
+      this.asientoid = asientoId;
+      this.salaid = salaId;
+      this.usuario = usuario;
+      this.horarioid = horarioId;
+      this.diaid = diaid;
+      this.fechaventa = fechaventa;
+      this.precio = precio;
+      this.tipo_entrada = tipo_entrada;
+  }
 }
 
 

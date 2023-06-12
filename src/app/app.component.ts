@@ -13,7 +13,7 @@ export class AppComponent {
   title = 'Picture_Kingdom'
   menuItems: any[]
   isLoggedIn: boolean = false
-  user:Usuarios = new Usuarios("","","","")
+  user:Usuarios = new Usuarios("","","","","")
   usuarios: Usuarios[] = []
   secretKey: string = "1234"
   us:string=""
@@ -34,7 +34,8 @@ export class AppComponent {
         const usuarioExistente = this.usuarios.find(usuario => usuario.usuario === decryptedPassword);
 
         if (usuarioExistente) {
-
+          this.user = usuarioExistente
+          console.log(this.user)
         }else{
           localStorage.removeItem('user'); // Eliminar el valor del localStorage
           window.location.reload();

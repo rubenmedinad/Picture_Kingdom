@@ -18,10 +18,9 @@ export class RegistroComponent {
   email: string="";
   password: string="";
   confirmPassword: string="";
-  user:Usuarios = new Usuarios("","","","");
+  user:Usuarios = new Usuarios("","","","","");
   usuarios: Usuarios[] = [];
   registroExitoso:boolean = false;
-  U:Usuarios= new Usuarios("1","2","3","4")
   constructor(
     private peliculasS: PictureKingdomService,
     private activarrutas: ActivatedRoute,
@@ -52,7 +51,7 @@ export class RegistroComponent {
         this.usuario,
         this.password,
         this.nombre,
-        this.email
+        this.email,"../../assets/azul.jpg"
       );
       console.log(this.user);
 
@@ -68,7 +67,7 @@ export class RegistroComponent {
       this.registroExitoso = true;
       setTimeout(() => {
         this.registroExitoso = false;
-        this.rutes.navigate(['/login']); 
+        this.rutes.navigate(['/login']);
       }, 3000);
 
     });

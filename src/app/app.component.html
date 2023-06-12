@@ -17,7 +17,7 @@
     </a>
 
     <button mat-icon-button *ngIf="isLoggedIn" [routerLink]="['/perfil']" class="example-icon mat-icon-no-color" aria-label="Example icon-button with menu icon">
-      <img src="../assets/azul.jpg" alt="Imagen de perfil">
+      <img src={{user.img}} alt="Imagen de perfil">
     </button>
 
     <button mat-icon-button *ngIf="!isLoggedIn" [routerLink]="['/login']" class="example-icon mat-icon-no-color" aria-label="Example icon-button with menu icon">
