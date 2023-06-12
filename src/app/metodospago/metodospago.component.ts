@@ -33,6 +33,7 @@ export class MetodospagoComponent {
     this.A = this.peliculasS.obtenerVentas();
     this.asientosLength = this.A[4].Asientos.length;
     console.log(this.asientosLength);
+    console.log(this.peliculasS.obtenerVentas())
     this.entradas = this.peliculasS.entradas;
     if (this.peliculasS.obtenerVentas().length <= 6) {
       this.peliculasS.eliminarUltimoElemento(5);
