@@ -11,7 +11,7 @@ import { Ventas } from './_Modules/Ventas';
   providedIn: 'root'
 })
 export class BasedeDatosService {
-  
+
   Urlpeliculas: string = "http://localhost:8080/peliculas";
   UrlUsuarios : string = "http://localhost:8080/usuarios";
   Urlhorarios : string = "http://localhost:8080/horarios";
@@ -24,12 +24,11 @@ export class BasedeDatosService {
   listarasientos(): Observable<Asientos[]> {
   return this.http.get<Asientos[]>(this.Urlasientos);
   }
-
   listarpeliculas(): Observable<Peliculas[]> {
   return this.http.get<Peliculas[]>(this.Urlpeliculas);
   }
-  listarusuarios(): Observable<Usuarios> {
-  return this.http.get<Usuarios>(this.UrlUsuarios);
+  listarusuarios(): Observable<Usuarios[]> {
+  return this.http.get<Usuarios[]>(this.UrlUsuarios);
   }
   listarhorarios(): Observable<Horarios[]> {
     return this.http.get<Horarios[]>(this.Urlhorarios);
@@ -39,6 +38,7 @@ export class BasedeDatosService {
   }
   agregarUsuario(usuario: Usuarios): Observable<any> {
     const url = this.UrlUsuarios+"/agregarUsuario";
+    console.log(url, usuario);
     return this.http.post(url, usuario);
   }
 
@@ -46,13 +46,12 @@ export class BasedeDatosService {
     const url = this.Urlasientos+"/agregarAsientos";
     console.log(url, asiento);
     return this.http.post(url, asiento);
-    
   }
   agregarVentas(ventas: Ventas): Observable<any> {
     const url = this.Urlventas+"/agregarVentas";
     console.log(url, ventas);
     return this.http.post(url, ventas);
-    
+
   }
 
   obtenerDiaId(dia: string): Observable<number> {

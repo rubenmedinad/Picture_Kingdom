@@ -1,17 +1,17 @@
 <body>
   <div class="container">
-    <form class="login-form" (ngSubmit)="onSubmit()">
+    <form class="login-form" >
       <h2>Inicia Sesión</h2>
       <mat-form-field appearance="outline" class="input-field">
         <mat-label>CORREO</mat-label>
-        <input matInput [(ngModel)]="correo" name="username">
+        <input matInput [(ngModel)]="usuario" name="username">
       </mat-form-field>
       <mat-form-field appearance="outline" class="input-field">
         <mat-label>CONTRASEÑA</mat-label>
-        <input matInput [(ngModel)]="contrasena" name="password" type="password">
+        <input matInput [(ngModel)]="pass" name="password" type="password">
       </mat-form-field>
-     <button class="registro-link" entrar mat-raised-button (click)="navegarPerfil()">ENTRAR</button>
-
+      <div *ngIf="usuarioNoEncontrado" class="registro-error">El usuario o la contraseña no coincide.</div>
+      <button class="registro-link" entrar mat-raised-button (click)="login()">ENTRAR</button>
       <p class="registro-link" [routerLink]="['/registro']">REGISTRARSE</p>
     </form>
   </div>

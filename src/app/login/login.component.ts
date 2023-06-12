@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PictureKingdomService } from '../picture-kingdom.service';
+import { BasedeDatosService } from '../basede-datos.service';
+import { Usuarios } from '../_Modules/Usuarios';
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-login',
@@ -7,28 +11,50 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  correo: string = "";
-  contrasena: string = "";
+  usuario: string = "";
+  pass: string = "";
+  usuarios: Usuarios[] = [];
+  usuarioNoEncontrado:boolean = false
+  userEncontrado:boolean = false
+  secretKey: string = "1234";
 
-  constructor(private router: Router) {}
+  constructor(private peliculasS: PictureKingdomService,
+    private activarrutas: ActivatedRoute,
+    private rutes: Router,
+    private servicio: BasedeDatosService) {}
 
   ngOnInit() {
   }
 
-  navegarPerfil() {
-    const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    const usuarioExistente = usuarios.find((user: any) => user.email === this.correo && user.password === this.contrasena);
+  login(){
+    console.log('Correo:', this.usuario);
+    console.log('Contraseña:', this.pass);
 
-    if (usuarioExistente) {
-      this.router.navigate(['/perfil']);
-      alert("Has iniciado sesión con éxito");
-    } else {
-      alert("El usuario no existe o la contraseña es incorrecta");
-    }
-  }
+    this.servicio.listarusuarios().subscribe(datos => {
+      this.usuarios = datos;
+      console.log(this.usuarios);
 
-  onSubmit() {
-    console.log(this.correo);
-    console.log(this.contrasena);
+      const usuarioEncontrado = this.usuarios.find((usuario) => usuario.usuario === this.usuario && usuario.pass === this.pass);
+      this.userEncontrado = usuarioEncontrado !== undefined;
+
+      if (this.userEncontrado) {
+        // Encriptar la contraseña
+        const password = this.usuario;
+        const encryptedPassword = CryptoJS.AES.encrypt(password, this.secretKey).toString();
+
+        console.log('Contraseña encriptada:', encryptedPassword);
+        localStorage.setItem('user', encryptedPassword);
+
+        this.rutes.navigate(['/perfil']);
+
+        // Desencriptar la contraseña
+        const decryptedBytes = CryptoJS.AES.decrypt(encryptedPassword, this.secretKey);
+        const decryptedPassword = decryptedBytes.toString(CryptoJS.enc.Utf8);
+
+        console.log('Contraseña desencriptada:', decryptedPassword);
+      } else {
+        this.usuarioNoEncontrado = true;
+      }
+    });
   }
 }

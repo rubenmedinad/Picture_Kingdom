@@ -5,7 +5,17 @@ body {
   height: 100vh;
   background-color: #111213;
 }
-
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+.registro-exitoso {
+  background-color: #d7f3d9;
+  color: #03ff5b;
+  border: 1px solid #82cfa0;
+  padding: 10px;
+  margin-bottom: 10px;
+}
 .container {
   display: flex;
   justify-content: space-between;

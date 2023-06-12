@@ -5,7 +5,13 @@ body {
   height: 100vh;
   background-color: #111213;
 }
-
+.registro-error {
+  background-color: #f3d7d7;
+  color: #ff2503;
+  border: 1px solid #cf8282;
+  padding: 10px;
+  margin-bottom: 10px;
+}
 h2 {
   text-align: center;
   font-family: "Registrar una cuenta", Arial, sans-serif;
