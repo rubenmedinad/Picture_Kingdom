@@ -61,10 +61,10 @@ export class AsientosComponent {
       this.router.navigateByUrl('/cartelera');
     }
     if (this.peliculasS.obtenerVentas().length >= 5) {
-      this.peliculasS.eliminarUltimoElemento(3);
+      this.peliculasS.eliminarUltimoElemento(4);
     }
     if (this.peliculasS.obtenerObjetos().length >= 5) {
-      this.peliculasS.eliminarUltimoElementoObjetos(3);
+      this.peliculasS.eliminarUltimoElementoObjetos(4);
     }
     this.servicio.listarasientos().subscribe(datos => {
       this.asientos = datos;

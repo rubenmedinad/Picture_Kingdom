@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'tarjeta/:cantidadAsientos/:calcularTotalGeneral', component: PagotarjetaComponent },
   { path: 'sinopsis/:id', component: SinopsisComponent },
   { path: 'finalizar-compra-ofertas', component: FinalizarCompraOfertasComponent },
-  { path: 'metodos', component: MetodospagoComponent },
+  { path: 'metodos/:cantidadAsientos', component: MetodospagoComponent },
   { path: 'compraofertas/:id/:name/:image', component: CompraofertasComponent },
   { path: 'login',component:LoginComponent},
   { path: 'finalizar', component: FinalizarCompraComponent },
