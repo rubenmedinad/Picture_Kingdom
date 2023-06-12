@@ -10,18 +10,18 @@
   width: 70%;
   height: auto;
   box-sizing: border-box;
-
   border-radius: 10px; /* Agrega bordes redondos */
   box-shadow: 0 0 6px #f1be41; /* Agrega una sombra dorada de 6px */
 }
+
 .container img {
-  margin: 100px 100px 10px 150px;
+  margin: 40px 90px 10px 0; /* Agrega margen a la derecha de 5px */
   width: 20%;
   height: auto;
 }
 
 .container table {
-  margin-top: 90px;
+  margin-top: 30px; /* Ajusta el margen superior de la tabla */
 }
 
 .container table tr {
@@ -35,6 +35,7 @@ input[type="text"] {
   border-radius: 15px;
   border-bottom: none;
   margin-top: 10px;
+  margin-left: 5px; /* Agrega margen a la izquierda de 5px */
   border: 2px solid #f1be41;
 }
 
@@ -45,9 +46,7 @@ button[type="submit"] {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  margin: 9px;
-  margin-left: 0;
-  margin-bottom: 20px;
+  margin: 20px 0; /* Ajusta el margen superior e inferior del botón */
 }
 
 button[type="submit"]:hover {

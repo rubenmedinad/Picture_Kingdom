@@ -14,4 +14,5 @@ export class PerfilComponent {
   editarperfil() {
     this.router.navigate(['/editarperfil']);
   }
+  
 }

@@ -17,10 +17,24 @@ body {
   min-height: 500px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  width: 990px;
+  width: 1009px;
   height: auto;
   padding: 20px;
   overflow-x: auto; /* Agregado para desplazamiento horizontal */
+}
+.left-table td mark {
+  vertical-align: middle;
+}
+
+.left-table td .mat-icon {
+  vertical-align: middle;
+  margin-left: 5px; /* Puedes ajustar este valor según sea necesario */
+}
+
+.mat-icon {
+margin-bottom: 1px;
+  align-items: center;
+
 }
 
 .sidebar {
@@ -35,8 +49,10 @@ body {
 .left-table td {
   padding: 10px;
   border-bottom: 1px solid #ccc;
-  white-space: nowrap; /* Agregado para mostrar en una sola línea */
+  white-space: nowrap;
+  line-height: 2.5; /* Ajusta este valor según tus preferencias */
 }
+
 
 .left-table td:first-child {
   font-weight: bold;

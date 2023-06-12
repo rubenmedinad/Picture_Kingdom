@@ -7,7 +7,7 @@
           <td>FECHA: <mark>{{ entrada.fechapeli }}</mark></td>
           <td>ASIENTO: <mark>{{ entrada.asientospeli }}</mark></td>
           <td>SALA: <mark>{{ entrada.salapeli }}</mark></td>
-          <td>DESCARGAR PDF: </td>
+          <td>DESCARGAR PDF: <mat-icon class="mat-icon" (click)="descargarPDF(entrada)">description</mat-icon></td>
         </tr>
       </table>
     </div>
