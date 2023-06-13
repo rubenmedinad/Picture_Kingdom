@@ -152,7 +152,7 @@ export class FinalizarCompraComponent implements OnInit {
           doc.text(footerLines, 20, footerY);
         });
 
-        doc.save('entrada.pdf');
+        doc.save('entrada_asiento.pdf');
       };
 
       imgElement.src = imagenURL;
