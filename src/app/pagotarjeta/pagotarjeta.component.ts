@@ -41,20 +41,20 @@ export class PagotarjetaComponent implements OnInit {
     this.generateYearOptions();
     const userStorage = localStorage.getItem('user');
     if (userStorage !== null) {
-      // Desencriptar la contraseña
+
       const decryptedBytes = CryptoJS.AES.decrypt(userStorage, this.secretKey);
       const decryptedPassword = decryptedBytes.toString(CryptoJS.enc.Utf8);
-      console.log(decryptedPassword)
+
       this.servicio.listarusuarios().subscribe(datos => {
         this.usuarios = datos;
-        console.log(this.usuarios);
+
         const usuarioExistente = this.usuarios.find(usuario => usuario.usuario === decryptedPassword);
 
         if (usuarioExistente) {
           this.user = usuarioExistente
-          console.log(this.user)
+
         }else{
-          localStorage.removeItem('user'); // Eliminar el valor del localStorage
+          localStorage.removeItem('user');
           window.location.reload();
         }
         if (decryptedPassword !== null) {
@@ -69,23 +69,23 @@ export class PagotarjetaComponent implements OnInit {
     }
   }
   preventInvalidInput(event: any) {
-    const invalidCharacters = ['e', '+', '-', '.']; // Caracteres no permitidos en un input de tipo number
+    const invalidCharacters = ['e', '+', '-', '.'];
     if (invalidCharacters.includes(event.key)) {
       event.preventDefault();
     }
   }
 
   formatCardNumber() {
-    let formattedNumber = this.cardNumberValue.toString().replace(/-/g, ''); // Eliminar guiones existentes
+    let formattedNumber = this.cardNumberValue.toString().replace(/-/g, '');
 
-    // Agregar guiones cada cuatro caracteres
+
     const chunks = [];
     for (let i = 0; i < formattedNumber.length; i += 4) {
       chunks.push(formattedNumber.substr(i, 4));
     }
     this.cardNumberValue = chunks.join('-');
 
-    // Limitar el número de caracteres a 19
+
     if (this.cardNumberValue.length > 19) {
       this.cardNumberValue = this.cardNumberValue.slice(0, 19);
     }
@@ -117,7 +117,7 @@ export class PagotarjetaComponent implements OnInit {
       };
 
       this.datosBancarios.push(datos);
-      console.log(this.datosBancarios);
+
 
       // Restablecer los campos
       this.cardNumberValue = '';
@@ -139,7 +139,6 @@ export class PagotarjetaComponent implements OnInit {
 
   ActualizarArray() {
     this.peliculasS.rellenarVentas({ Datos_Bancarios: this.datosBancarios });
-    console.log(this.peliculasS.obtenerVentas());
   }
 
   generateMonthOptions() {

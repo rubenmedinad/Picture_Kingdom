@@ -55,8 +55,6 @@ export class AsientosComponent {
 
   }
   ngOnInit() {
-    console.log(this.peliculasS.obtenerVentas());
-    console.log(this.objetos)
     if(this.peliculasS.obtenerVentas().length == 0){
       this.router.navigateByUrl('/cartelera');
     }
@@ -69,7 +67,7 @@ export class AsientosComponent {
     this.servicio.listarasientos().subscribe(datos => {
       this.asientos = datos;
     })
-    console.log(this.asientos)
+
 
   }
   markSeatAsOccupied(row: string, seatNumber: number) {
@@ -99,11 +97,12 @@ export class AsientosComponent {
     }
   }
   reserveSeat() {
-    // Encontrar los asientos seleccionados
+
     const selectedSeats = this.seats.reduce<Seat[]>((acc, row) => {
       const seats = row.seats.filter((seat) => seat.selected);
       return acc.concat(seats);
-    }, []); // Marcar los asientos seleccionados como ocupados y reiniciar la selección
+    }, []);
+    // Marcar los asientos seleccionados como ocupados y reiniciar la selección
     selectedSeats.forEach((seat) => {
       seat.occupied = true;
       seat.selected = false;
@@ -111,7 +110,7 @@ export class AsientosComponent {
   }
   ActualizarArray() {
     this.cantidadAsientos = this.selectedSeats.length;
-    console.log(this.cantidadAsientos);
+
     this.peliculasS.rellenarVentas({ Asientos: this.selectedSeats });
   }
 }

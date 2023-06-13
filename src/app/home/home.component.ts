@@ -11,7 +11,7 @@ export class HomeComponent {
   peliculas: Peliculas[] = []
   ide:number = 0
   constructor(private peliculasS:PictureKingdomService, private servicio : BasedeDatosService){
-    //this.peliculas = peliculasS.getPeliculas()
+
   }
   pelicula :Peliculas= new Peliculas(0,"","","","","","","")
 

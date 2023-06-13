@@ -12,10 +12,8 @@ export class CarteleraComponent {
   peliculas: Peliculas[] = []
   ide:number = 0
   constructor(private servicio:BasedeDatosService){
-    //this.peliculas = peliculasS.getPeliculas()
-  }
-  //pelicula :Peliculas= new Peliculas(0,"","","","","","","","")
 
+  }
   ngOnInit(){
     this.servicio.listarpeliculas().subscribe(datos => this.peliculas=datos);
 

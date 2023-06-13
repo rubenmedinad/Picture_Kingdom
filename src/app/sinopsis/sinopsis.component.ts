@@ -37,7 +37,6 @@ export class SinopsisComponent {
   }
   ngOnInit() {
     this.ide = this.activarrutas.snapshot.params['id'];
-    console.log("esto"+this.ide)
     this.servicio.listarpeliculas().subscribe(datos => {
       this.peliculas = datos;
       const peliculaEncontrada = this.peliculas.filter(pelicula => pelicula.id == +this.ide);
@@ -45,7 +44,6 @@ export class SinopsisComponent {
         this.pelicula = peliculaEncontrada[0];
         this.peliculasS.vaciarVentas();
         this.peliculasS.vaciarObjetos();
-        console.log(this.ide);
         this.peliculasS.rellenarVentas(this.ide)
         this.peliculasS.rellenarObjetos(this.pelicula)
       }
@@ -65,20 +63,16 @@ export class SinopsisComponent {
     })
   }
   rellenarDia(dia:Dias):void{
-    console.log(dia)
+
     this.dia=dia;
   }
   obtenerHorario(hora:number,sala:any): void {
     this.horaSeleccionada=hora
-    console.log(sala.nombre)
     this.salaSeleccionada=sala.salaid;
-    console.log(this.salaSeleccionada)
   }
   rellenarHorario(h:Horarios,s:Sala): void {
     this.horario=h
     this.sala=s
-    console.log(this.horario)
-    console.log(this.sala)
   }
   actualizararray(): void {
     this.peliculasS.rellenarVentas(this.diaSeleccionado)
