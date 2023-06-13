@@ -7,6 +7,7 @@ import { BasedeDatosService } from '../basede-datos.service';
 import { Router } from '@angular/router';
 import { Usuarios } from '../_Modules/Usuarios';
 import * as CryptoJS from 'crypto-js';
+
 @Component({
   selector: 'app-editarperfil',
   templateUrl: './editarperfil.component.html',
@@ -17,14 +18,17 @@ export class EditarperfilComponent {
   perfil: Perfil;
   editarfoto: string = '../../assets/azul.jpg';
   imagenSeleccionada: string = '';
-  user:Usuarios = new Usuarios("","","","","")
-  usuarios: Usuarios[] = []
-  secretKey: string = "1234"
-  isLoggedIn: boolean = false
+  user:Usuarios = new Usuarios("","","","","");
+  usuarios: Usuarios[] = [];
+  nuevaContrasena: string = '';
+  secretKey: string = "1234";
+  isLoggedIn: boolean = false;
+
   constructor(private pictureKingdomService: PictureKingdomService, public dialog: MatDialog, private menuService: PictureKingdomService,private servicio: BasedeDatosService,private rutes: Router) {
     this.perfil = new Perfil('', '', '', '', '', '', 0);
     this.editar = {};
   }
+
   ngOnInit(){
     const userStorage = localStorage.getItem('user');
     if (userStorage !== null) {
@@ -70,20 +74,27 @@ export class EditarperfilComponent {
       }
     });
   }
+
   guardar(){
-      // Asignar los valores ingresados a las propiedades del objeto user
-      this.user.nombre = this.user.nombre;
-      this.user.pass = this.user.pass;
-      this.user.correo_electronico = this.user.correo_electronico;
-      this.user.img = this.editarfoto;
-      this.servicio.agregarUsuario(this.user).subscribe(
-        (response) => {
-          // Manejar la respuesta del servidor
-        },
-        (error) => {
-          // Manejar el error de la solicitud
-        }
-      );
-      this.rutes.navigate(['/perfil']);
+    // Asignar los valores ingresados a las propiedades del objeto user
+    this.user.nombre = this.user.nombre;
+    this.user.correo_electronico = this.user.correo_electronico;
+    this.user.img = this.editarfoto;
+
+    if (this.nuevaContrasena) {
+      // Si se ingresó una nueva contraseña, actualizarla
+      this.user.pass = this.nuevaContrasena;
+    }
+
+    this.servicio.agregarUsuario(this.user).subscribe(
+      (response) => {
+        // Manejar la respuesta del servidor
+      },
+      (error) => {
+        // Manejar el error de la solicitud
+      }
+    );
+
+    this.rutes.navigate(['/perfil']);
   }
 }

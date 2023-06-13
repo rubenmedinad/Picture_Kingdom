@@ -90,3 +90,8 @@ html, body {
 .footer .social-link mat-icon {
   margin-right: 5px;
 }
+.perfil
+{
+  max-height: 20px;
+  max-width: 100%;
+}

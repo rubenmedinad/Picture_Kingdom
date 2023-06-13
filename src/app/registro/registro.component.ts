@@ -13,14 +13,16 @@ export class RegistroComponent {
 
   contrasenasCoinciden: boolean = true;
   usuarioCoincide: boolean = true;
+  cumpleRequisitos: boolean = true;
   usuario: string = "";
-  nombre: string="";
-  email: string="";
-  password: string="";
-  confirmPassword: string="";
-  user:Usuarios = new Usuarios("","","","","");
+  nombre: string = "";
+  email: string = "";
+  password: string = "";
+  confirmPassword: string = "";
+  user: Usuarios = new Usuarios("", "", "", "", "");
   usuarios: Usuarios[] = [];
-  registroExitoso:boolean = false;
+  registroExitoso: boolean = false;
+
   constructor(
     private peliculasS: PictureKingdomService,
     private activarrutas: ActivatedRoute,
@@ -32,9 +34,18 @@ export class RegistroComponent {
   registrarUsuario(): void {
     if (this.password !== this.confirmPassword) {
       this.contrasenasCoinciden = false;
+      this.cumpleRequisitos = true; // Reiniciar el estado de validación
       return;
     }
     this.contrasenasCoinciden = true;
+
+    // Validar la contraseña
+    const regex = /^(?=.*\d.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+    if (!regex.test(this.password)) {
+      this.cumpleRequisitos = false;
+      return;
+    }
+    this.cumpleRequisitos = true;
 
     this.servicio.listarusuarios().subscribe(datos => {
       this.usuarios = datos;
@@ -51,7 +62,8 @@ export class RegistroComponent {
         this.usuario,
         this.password,
         this.nombre,
-        this.email,"../../assets/azul.jpg"
+        this.email,
+        "../../assets/azul.jpg"
       );
       console.log(this.user);
 

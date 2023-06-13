@@ -3,7 +3,7 @@
     <form class="login-form">
       <h2>Registro</h2>
       <input type="text" [(ngModel)]="usuario" id="usuario" name="usuario" placeholder="Usuario" class="large-input">
-      <div *ngIf="!usuarioCoincide" class="error-message">El usuario ya esta registrado.</div>
+      <div *ngIf="!usuarioCoincide" class="error-message">El usuario ya está registrado.</div>
       <input type="text" [(ngModel)]="nombre" id="nombre" name="nombre" placeholder="Nombre" class="large-input">
 
       <input type="email" [(ngModel)]="email" id="email" name="email" placeholder="Correo electrónico" class="large-input">
@@ -13,6 +13,8 @@
       <input type="password" [(ngModel)]="confirmPassword" id="confirm-password" name="confirmPassword" placeholder="Confirmar contraseña" class="large-input">
 
       <div *ngIf="!contrasenasCoinciden" class="error-message">Las contraseñas no coinciden.</div>
+
+      <div *ngIf="!cumpleRequisitos" class="error-message">La contraseña debe tener al menos una mayúscula, una minúscula, al menos dos números y un total de 8 caracteres.</div>
 
       <div *ngIf="registroExitoso" class="registro-exitoso">El usuario se ha registrado correctamente.</div>
       <button type="submit" class="submit-button" (click)="registrarUsuario()">Registrarse</button>
