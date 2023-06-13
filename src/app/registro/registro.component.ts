@@ -49,7 +49,6 @@ export class RegistroComponent {
 
     this.servicio.listarusuarios().subscribe(datos => {
       this.usuarios = datos;
-      console.log(this.usuarios);
       const usuarioExistente = this.usuarios.find((u) => u.usuario === this.usuario);
 
       if (usuarioExistente) {
@@ -65,14 +64,14 @@ export class RegistroComponent {
         this.email,
         "../../assets/azul.jpg"
       );
-      console.log(this.user);
+
 
       this.servicio.agregarUsuario(this.user).subscribe(
         (response) => {
-          // Manejar la respuesta del servidor
+
         },
         (error) => {
-          // Manejar el error de la solicitud
+
         }
       );
 

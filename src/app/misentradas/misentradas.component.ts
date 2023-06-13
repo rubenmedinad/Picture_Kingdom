@@ -24,15 +24,13 @@ export class MisentradasComponent {
   ngOnInit() {
     this.servicio.listarventas().subscribe(datos => {
       this.ventas = datos;
-      console.log(this.ventas);
+
 
       const userStorage = localStorage.getItem('user');
       if (userStorage !== null) {
-        // Desencriptar la contraseña
         const decryptedBytes = CryptoJS.AES.decrypt(userStorage, this.secretKey);
         const decryptedPassword = decryptedBytes.toString(CryptoJS.enc.Utf8);
 
-        // Filtrar el array por decryptedPassword
         this.ventas = this.ventas.filter(venta => venta.usuario === decryptedPassword);
       } else {
         this.rutes.navigate(['/login']);

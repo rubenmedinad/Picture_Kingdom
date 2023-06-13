@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   login(){
     this.servicio.listarusuarios().subscribe(datos => {
       this.usuarios = datos;
-      console.log(this.usuarios);
+
 
       const usuarioEncontrado = this.usuarios.find((usuario) => usuario.usuario === this.usuario && usuario.pass === this.pass);
       this.userEncontrado = usuarioEncontrado !== undefined;
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         const password = this.usuario;
         const encryptedPassword = CryptoJS.AES.encrypt(password, this.secretKey).toString();
 
-        console.log('Contraseña encriptada:', encryptedPassword);
+
         localStorage.setItem('user', encryptedPassword);
 
         this.rutes.navigate(['/perfil']);
@@ -47,8 +47,6 @@ export class LoginComponent implements OnInit {
         // Desencriptar la contraseña
         const decryptedBytes = CryptoJS.AES.decrypt(encryptedPassword, this.secretKey);
         const decryptedPassword = decryptedBytes.toString(CryptoJS.enc.Utf8);
-
-        console.log('Contraseña desencriptada:', decryptedPassword);
       } else {
         this.usuarioNoEncontrado = true;
       }

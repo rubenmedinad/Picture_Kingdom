@@ -35,15 +35,15 @@ export class EditarperfilComponent {
       // Desencriptar la contraseña
       const decryptedBytes = CryptoJS.AES.decrypt(userStorage, this.secretKey);
       const decryptedPassword = decryptedBytes.toString(CryptoJS.enc.Utf8);
-      console.log(decryptedPassword)
+
       this.servicio.listarusuarios().subscribe(datos => {
         this.usuarios = datos;
-        console.log(this.usuarios);
+
         const usuarioExistente = this.usuarios.find(usuario => usuario.usuario === decryptedPassword);
 
         if (usuarioExistente) {
           this.user = usuarioExistente
-          console.log(this.user)
+          
         }else{
           localStorage.removeItem('user');
           window.location.reload();
@@ -66,11 +66,11 @@ export class EditarperfilComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+
 
       if (result) {
         this.editarfoto = result;
-        console.log(this.editarfoto)
+
       }
     });
   }

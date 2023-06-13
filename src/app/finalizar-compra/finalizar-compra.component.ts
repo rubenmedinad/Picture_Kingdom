@@ -58,14 +58,14 @@ export class FinalizarCompraComponent implements OnInit {
   ngOnInit() {
     this.peliculasS.obtenerVentas();
     this.informacion = this.peliculasS.obtenerVentas();
-    console.log(this.informacion)
+
 
     this.asientos = this.informacion[4]?.Asientos
-    console.log(this.asientos)
+
     this.entradas = this.informacion[5]?.Entradas
-    console.log(this.entradas)
+
     this.ide = this.informacion[0]
-    console.log(this.asientosseleccionados);
+
 
     this.insertAsientos()
   }
@@ -166,13 +166,13 @@ export class FinalizarCompraComponent implements OnInit {
     this.dia = this.objetos[1];
     this.sala = this.objetos[2];
     this.horario = this.objetos[3];
-    console.log(this.pelicula, this.dia, this.sala, this.horario);
+
     for (let i = 0; i < this.asientos.length; i++) {
 
       this.asientosseleccionados = this.asientos[i];
       this.entradaselecionada = this.entradas[i];
 
-      console.log(this.entradaselecionada)
+
 
       let asiento = new Asientos(
         0,
@@ -185,7 +185,7 @@ export class FinalizarCompraComponent implements OnInit {
         false
       );
 
-      console.log(asiento);
+
 
       this.servicio.agregarAsiento(asiento).subscribe({
         next: (data) => {

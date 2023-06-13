@@ -32,8 +32,6 @@ export class MetodospagoComponent {
     }
     this.A = this.peliculasS.obtenerVentas();
     this.asientosLength = this.A[4].Asientos.length;
-    console.log(this.asientosLength);
-    console.log(this.peliculasS.obtenerVentas())
     this.entradas = this.peliculasS.entradas;
     if (this.peliculasS.obtenerVentas().length <= 6) {
       this.peliculasS.eliminarUltimoElemento(5);
@@ -42,7 +40,6 @@ export class MetodospagoComponent {
   }
 
   inicializarNumerosEntradas() {
-    // Lógica para inicializar los números de entradas en 9
     this.entradas.forEach((entrada) => {
       entrada.numero = 0;
     });
@@ -118,10 +115,8 @@ export class MetodospagoComponent {
 
   entradasSelected(): void {
     this.entradasSeleccionadas = [];
-
-    // Recorrer las entradas seleccionadas
     for (const entrada of this.entradas) {
-      // Agregar el objeto al array entradasSeleccionadas una a una
+
       for (let i = 0; i < entrada.numero; i++) {
         const entradaSeleccionada = {
           nombreEntrada: entrada.nombreEntrada,
@@ -132,8 +127,6 @@ export class MetodospagoComponent {
         this.entradasSeleccionadas.push(entradaSeleccionada);
       }
     }
-
-    // Limpiar las entradas seleccionadas
     this.entradas = [];
   }
 

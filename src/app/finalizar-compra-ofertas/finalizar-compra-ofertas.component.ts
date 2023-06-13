@@ -17,7 +17,7 @@ export class FinalizarCompraOfertasComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Código relacionado con la inicialización del componente
+
   }
 
   volverAlHomeOfertas() {
@@ -30,11 +30,10 @@ export class FinalizarCompraOfertasComponent implements OnInit {
   descargarPDF() {
     const doc = new jsPDF();
 
-    // Obtener los datos de compra del servicio
     const ventaOfertas = this.pictureKingdomService.getVenta_Ofertas();
     const oferta = ventaOfertas[ventaOfertas.length - 1];
 
-    // Verificar que se haya realizado una compra
+    
     if (oferta) {
       doc.setFontSize(20);
       doc.setFont('bold');
